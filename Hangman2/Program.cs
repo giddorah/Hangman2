@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hangr
+namespace Hangman2
 {
     class Program
 
@@ -44,100 +44,13 @@ namespace Hangr
             Console.ReadLine();
 
         }
-
-        private static void EndGame() // Avslutar spelet beroende på hur spelaren presterat.
-        {
-            Console.WriteLine("Endgame");
-        }
-
-        private static void CheckEndGame() // Håller reda på om spelaren har gissat rätt ord eller om antal liv är 0.
-        {
-            Console.WriteLine("CheckEndGame");
-        }
-
-        private static void CompareWord() // Metod för att jämföra Guess med WordGenerator.
-        {
-            Console.WriteLine("CompareWord");
-        }
-
-        private static void Guess() // Metod för att samla in gissning från spelaren.
-        {
-            Console.WriteLine("Guess");
-        }
-
-        private static void GameInterface() // Visar "gränssnittet" för spelaren.
-        {
-            Console.WriteLine("GameInterface");
-        }
-
-        private static void GameLoop() // Loopen som spelet körs inom. Startar om efter varje gissning och uppdaterar andra metoder.
-        {
-            Console.WriteLine("GameLoop");
-            GameInterface();
-            Guess();
-            CompareWord();
-            CheckEndGame();
-        }
-
-        private static void WordLength() // Metod för att ta reda på nuvarande ords antal bokstäver.
-        {
-            Console.WriteLine("WordLength");
-        }
-
-        private static void History() // Metod för att visa historiken över gissade ord.
-        {
-            Console.WriteLine("History");
-        }
-
-        private static void Lives() // Metod för att hålla reda på antal liv.
-        {
-            int lives = 3;
-            Console.WriteLine("Liv: {0}", lives);
-        }
-
-        private static void WordGenerator() // Metod för att välja ord från ordlistan.
-        {
-            Console.WriteLine("WordGenerator");
-        }
-
-        private static void StartGame() // Metod för att starta spelet.
-        {
-            Console.Clear();
-            Console.WriteLine("Game started");
-            WordGenerator();
-            Lives();
-            History();
-            WordLength();
-            Console.ReadLine();
-        }
-
-        private static void HowTo() // Metod för att visa HowTo'n.
-        {
-            Console.Clear();
-            Console.WriteLine("Visa howto..");
-            Console.WriteLine("1. Return to MainMenu()");
-            Console.WriteLine("2. StartGame()");
-            int menuSwitchHowTo = int.Parse(Console.ReadLine());
-            switch (menuSwitchHowTo) // Ytterligare en switchmeny men utan loop eftersom att menyn inte behöver visas igen.
-            {
-                case 1:
-                    Console.WriteLine("Returning to MainMenu()");
-                    MainMenu(""); // Låter spelaren återgå till mainmenu utan att ändra stringen för spelarnamn.
-                    break;
-
-                case 2:
-                    Console.WriteLine("StartGame()");
-                    StartGame();
-                    break;
-            }
-        }
-
         private static void TakeName(string playerName) // Metod för att insamla spelarens namn.
         {
             Console.WriteLine("Skriv in namn.");
             playerName = Console.ReadLine();
             MainMenu(playerName);
         }
+
 
         private static void MainMenu(string playerName) // Huvudmenyn till spelet.
         {
@@ -181,5 +94,107 @@ namespace Hangr
                 }
             }
         }
+
+        private static void HowTo() // Metod för att visa HowTo'n.
+        {
+            Console.Clear();
+            Console.WriteLine("Visa howto..");
+            Console.WriteLine("1. Return to MainMenu()");
+            Console.WriteLine("2. StartGame()");
+            int menuSwitchHowTo = int.Parse(Console.ReadLine());
+            switch (menuSwitchHowTo) // Ytterligare en switchmeny men utan loop eftersom att menyn inte behöver visas igen.
+            {
+                case 1:
+                    Console.WriteLine("Returning to MainMenu()");
+                    MainMenu(""); // Låter spelaren återgå till mainmenu utan att ändra stringen för spelarnamn.
+                    break;
+
+                case 2:
+                    Console.WriteLine("StartGame()");
+                    StartGame();
+                    break;
+            }
+        }
+
+
+
+
+
+
+
+        private static void EndGame() // Avslutar spelet beroende på hur spelaren presterat.
+        {
+            Console.WriteLine("Endgame");
+        }
+
+        private static void CheckEndGame() // Håller reda på om spelaren har gissat rätt ord eller om antal liv är 0.
+        {
+            Console.WriteLine("CheckEndGame");
+        }
+
+        private static void CompareWord() // Metod för att jämföra Guess med WordGenerator.
+        {
+            Console.WriteLine("CompareWord");
+        }
+
+        private static void Guess() // Metod för att samla in gissning från spelaren.
+        {
+            Console.WriteLine("Guess");
+        }
+
+        private static void GameInterface() // Visar "gränssnittet" för spelaren.
+        {
+            Console.WriteLine("GameInterface");
+        }
+
+        private static void GameLoop() // Loopen som spelet körs inom. Startar om efter varje gissning och uppdaterar andra metoder.
+        {
+            Console.WriteLine("GameLoop");
+            GameInterface();
+            Guess();
+            CompareWord();
+            CheckEndGame();
+        }
+
+
+
+        private static void WordLength() // Metod för att ta reda på nuvarande ords antal bokstäver.
+        {
+            Console.WriteLine("WordLength");
+        }
+
+        private static void History() // Metod för att visa historiken över gissade ord.
+        {
+            Console.WriteLine("History");
+        }
+
+        private static void Lives() // Metod för att hålla reda på antal liv.
+        {
+            int lives = 3;
+            Console.WriteLine("Liv: {0}", lives);
+        }
+
+        private static void WordGenerator() // Metod för att välja ord från ordlistan.
+        {
+            Console.WriteLine("WordGenerator");
+        }
+
+        private static void StartGame() // Metod för att starta spelet.
+        {
+            Console.Clear();
+            Console.WriteLine("Game started");
+            WordGenerator();
+            Lives();
+            History();
+            WordLength();
+            Console.ReadLine();
+        }
+
+        
+
+
+
+        
+        }
     }
-}
+
