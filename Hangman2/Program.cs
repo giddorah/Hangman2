@@ -10,6 +10,7 @@ namespace Hangman2
     {
         static void Main(string[] args)
         {
+            int test;
         }
     }
 }
