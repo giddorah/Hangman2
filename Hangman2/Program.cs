@@ -15,6 +15,7 @@ namespace Hangman2
         static int seconds;
         static int wordLength;
         static string guessHistory;
+        static int numberOfGuesses;
 
 
         static void Main(string[] args)
