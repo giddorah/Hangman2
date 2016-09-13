@@ -13,7 +13,6 @@ namespace Hangman2
         static string playerName;
         static string playerGuess;
         static int seconds;
-        int lala = 4;
 
 
         static void Main(string[] args)
