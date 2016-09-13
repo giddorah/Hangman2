@@ -36,7 +36,8 @@ namespace Hangman2
             CompareWord(); // Metod för att jämföra gissning med ordet.
             CheckEndGame(); // Metod för att kolla om spelarens liv tagit slut eller spelets ord gissats.
             
-            EndGame(); // Metod för att avsluta spelet.
+            WinGame(); // Metod om man vinner spelet.
+            LoseGame(); // Metod om man förlorar spelet.
             */
 
             //Console.ReadLine();
