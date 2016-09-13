@@ -100,13 +100,13 @@ namespace Hangman2
                 {
                     case 1:
                         
-                        WordGenerator(playerName); // Startar spelet om spelaren trycker på 1.
+                        WordGenerator(); // Startar spelet om spelaren trycker på 1.
                         menuLoop = 0;
                         
                         break;
 
                     case 2:
-                        HowTo(playerName); // Visar HowTo'n om spelaren trycker på 2.
+                        HowTo(); // Visar HowTo'n om spelaren trycker på 2.
                         menuLoop = 0;
                         break;
 
@@ -127,7 +127,7 @@ namespace Hangman2
             }
         }
 
-        private static void HowTo(string playerName) // Metod för att visa HowTo'n.
+        private static void HowTo() // Metod för att visa HowTo'n.
         {
             Console.Clear();
             Console.WriteLine("--------------------------------------------------");
@@ -146,14 +146,14 @@ namespace Hangman2
 
                 case 2:
                     Console.WriteLine("StartGame()");
-                    WordGenerator(playerName);
+                    WordGenerator();
                     break;
             } 
         }
 
 
 
-        private static void WinGame(int numberOfGuesses) // Avslutar spelet beroende på hur spelaren presterat.
+        private static void WinGame() // Avslutar spelet beroende på hur spelaren presterat.
         {
             Console.WriteLine("Grattis. Du är awesome!.");
             Console.ReadLine();
@@ -161,7 +161,7 @@ namespace Hangman2
 
         }
 
-        private static void LoseGame(int numberOfGuesses)
+        private static void LoseGame()
         {
             Console.WriteLine("Du... Dra.");
             Console.ReadLine();
@@ -178,10 +178,10 @@ namespace Hangman2
             numberOfGuesses++;
             if (playerGuess.Equals(wordGeneratorWord))
 
-                WinGame(numberOfGuesses);
+                WinGame();
 
             else if (playerLives == 0|| playerLives<2)
-                LoseGame(numberOfGuesses);
+                LoseGame();
 
 
 
@@ -191,13 +191,13 @@ namespace Hangman2
                 Console.WriteLine("\nDu gissade fel, försök igen!");
                 playerLives--;
                 Console.WriteLine("\nDu har: " + playerLives + " liv kvar");
-                Guess(numberOfGuesses, playerName);
+                Guess();
             }
 
             
         }
 
-        private static void Guess(int numberOfGuesses, string playerName) // Metod för att samla in gissning från spelaren.
+        private static void Guess() // Metod för att samla in gissning från spelaren.
         {
             Console.WriteLine("Du har gissat på:" + guessHistory);
             WordLength();
@@ -219,7 +219,7 @@ namespace Hangman2
         {
             Console.WriteLine("GameLoop");
             GameInterface();
-            Guess(numberOfGuesses, playerName);
+            Guess();
             CompareWord();
             CheckEndGame();
         }
@@ -249,21 +249,21 @@ namespace Hangman2
             Console.WriteLine("Liv: {0}", lives);
         }
 
-        private static void WordGenerator(string playerName) // Metod för att välja ord från ordlistan.
+        private static void WordGenerator() // Metod för att välja ord från ordlistan.
         {
 
             playerLives = 4;
             wordGeneratorWord = "xylofon";
             numberOfGuesses = 0;
             guessHistory = "";
-            Guess(numberOfGuesses, playerName);
+            Guess();
         }
 
         private static void StartGame() // Metod för att starta spelet.
         {
             Console.Clear();
             Console.WriteLine("Spel startat");
-            WordGenerator(playerName);
+            WordGenerator();
             Lives();
             History();
             WordLength();
