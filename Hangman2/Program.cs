@@ -150,7 +150,8 @@ namespace Hangman2
         private static void Guess() // Metod för att samla in gissning från spelaren.
         {
             Console.WriteLine("Guess Word: ");
-            playerGuess = Console.ReadLine();
+            playerGuess = Console.ReadLine().ToLower();
+            CompareWord();
             
             
         }
