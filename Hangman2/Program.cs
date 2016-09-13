@@ -129,7 +129,7 @@ namespace Hangman2
 
 
 
-        private static void WinGame() // Avslutar spelet beroende på hur spelaren presterat.
+        private static void WinGame(int numberOfGuesses) // Avslutar spelet beroende på hur spelaren presterat.
         {
             Console.WriteLine("Grattis. Du är awesome!.");
             Console.ReadLine();
@@ -137,7 +137,7 @@ namespace Hangman2
 
         }
 
-        private static void LoseGame()
+        private static void LoseGame(int numberOfGuesses)
         {
             Console.WriteLine("Du... Dra.");
             Console.ReadLine();
@@ -153,10 +153,10 @@ namespace Hangman2
         {
             if (playerGuess.Equals(wordGeneratorWord))
 
-                WinGame();
+                WinGame(numberOfGuesses);
 
             else if (playerLives == 0)
-                LoseGame();
+                LoseGame(numberOfGuesses);
 
 
 
@@ -166,13 +166,13 @@ namespace Hangman2
                 Console.WriteLine("\nDu gissade fel, försök igen!");
                 playerLives--;
                 Console.WriteLine("\nDu har: " + playerLives + " liv kvar");
-                Guess();
+                Guess(numberOfGuesses);
             }
 
             
         }
 
-        private static void Guess() // Metod för att samla in gissning från spelaren.
+        private static void Guess(int numberOfGuesses) // Metod för att samla in gissning från spelaren.
         {
             Console.WriteLine("Du har gissat på:" + guessHistory);
             WordLength();
@@ -194,7 +194,7 @@ namespace Hangman2
         {
             Console.WriteLine("GameLoop");
             GameInterface();
-            Guess();
+            Guess(numberOfGuesses);
             CompareWord();
             CheckEndGame();
         }
@@ -223,7 +223,7 @@ namespace Hangman2
         private static void WordGenerator() // Metod för att välja ord från ordlistan.
         {
             wordGeneratorWord = "susanna";
-            Guess();
+            Guess(numberOfGuesses);
         }
 
         private static void StartGame() // Metod för att starta spelet.
