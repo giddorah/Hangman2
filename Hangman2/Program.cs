@@ -146,8 +146,8 @@ namespace Hangman2
 
             else
             {
-                Console.Clear();
-                Console.WriteLine("Du gissade fel, försök igen!");
+                
+                Console.WriteLine("\nDu gissade fel, försök igen!");
                 Guess();
             }
 
