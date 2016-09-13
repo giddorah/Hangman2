@@ -14,7 +14,7 @@ namespace Hangman2
         static string wordGeneratorWord;
         static int seconds;
         static int wordLength;
-        static string guessHistory = "";
+        static string guessHistory;
         static int numberOfGuesses = 0;
 
 
@@ -77,6 +77,7 @@ namespace Hangman2
                 switch (mainMenuSwitch) // Initierar en switch-meny med tre olika alternativ.
                 {
                     case 1:
+                        guessHistory = "";
                         WordGenerator(); // Startar spelet om spelaren trycker på 1.
                         menuLoop = 0;
                         break;
