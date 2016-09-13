@@ -137,6 +137,8 @@ namespace Hangman2
         {
             Console.WriteLine("Guess");
             Console.WriteLine("Hej");
+            playerGuess = Console.ReadLine().ToLower();
+
         }
 
         private static void GameInterface() // Visar "gränssnittet" för spelaren.
