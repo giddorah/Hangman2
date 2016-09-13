@@ -120,14 +120,23 @@ namespace Hangman2
             Console.WriteLine("CheckEndGame");
         }
 
-        private static void EndGame() // Avslutar spelet beroende på hur spelaren presterat.
+        private static void WinGame() // Avslutar spelet beroende på hur spelaren presterat.
         {
-            Console.WriteLine("Endgame");
+            Console.WriteLine("Congratulations. You won and you are awesome.");
+            Console.ReadLine();
+
         }
 
+        private static void LoseGame()
+        {
+            Console.WriteLine("Too bad, you lost.");
+            Console.ReadLine();
+            MainMenu(playerName);
+        }
         private static void CompareWord() // Metod för att jämföra Guess med WordGenerator.
         {
             Console.WriteLine("CompareWord");
+            MainMenu(playerName);
             
         }
 
