@@ -130,7 +130,7 @@ namespace Hangman2
         private static void CompareWord() // Metod för att jämföra Guess med WordGenerator.
         {
             Console.WriteLine("CompareWord");
-            wordGeneratorWord = "Johan";
+            
         }
 
         private static void Guess() // Metod för att samla in gissning från spelaren.
@@ -174,6 +174,7 @@ namespace Hangman2
         private static void WordGenerator() // Metod för att välja ord från ordlistan.
         {
             Console.WriteLine("WordGenerator");
+            wordGeneratorWord = "Johan";
             
         }
 
