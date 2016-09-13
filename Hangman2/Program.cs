@@ -8,7 +8,7 @@ namespace Hangman2
 {
     class Program
     {
-        static int playerLives = 10;
+        static int playerLives;
         static string playerName;
         static string playerGuess;
         static string wordGeneratorWord;
@@ -155,17 +155,18 @@ namespace Hangman2
 
                 WinGame();
 
-            else if (playerLives == 0)
+            else if (playerLives == 0 || playerLives<2)
+            {
                 LoseGame();
-
+            }
 
 
             else
             {
 
                 Console.WriteLine("\nDu gissade fel, försök igen!");
-                playerLives--;
-                Console.WriteLine("\nDu har: " + playerLives + " liv kvar");
+
+                Lives();
                 Guess();
             }
 
@@ -216,12 +217,13 @@ namespace Hangman2
 
         private static void Lives() // Metod för att hålla reda på antal liv.
         {
-            int lives = 3;
-            Console.WriteLine("Liv: {0}", lives);
+            playerLives--;
+            Console.WriteLine("Liv: {0}", playerLives);
         }
 
         private static void WordGenerator() // Metod för att välja ord från ordlistan.
         {
+            playerLives = 4;
             wordGeneratorWord = "susanna";
             Guess();
         }
@@ -231,7 +233,7 @@ namespace Hangman2
             Console.Clear();
             Console.WriteLine("Spel startat");
             WordGenerator();
-            Lives();
+            //Lives();
             History();
             WordLength();
             Console.ReadLine();
