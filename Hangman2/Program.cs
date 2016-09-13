@@ -13,8 +13,7 @@ namespace Hangman2
         static string playerName;
         static string playerGuess;
         static int seconds;
-        static string bajs;
-
+        static int kalas;
 
         static void Main(string[] args)
         {
