@@ -98,7 +98,7 @@ namespace Hangman2
             Console.Clear();
             Console.WriteLine("Visa howto..");
             Console.WriteLine("1. Återvänd till MainMenu()");
-            Console.WriteLine("2. StartGame()");
+            Console.WriteLine("2. Guess()");
             int menuSwitchHowTo = int.Parse(Console.ReadLine());
         
             switch (menuSwitchHowTo) // Ytterligare en switchmeny men utan loop eftersom att menyn inte behöver visas igen.
@@ -110,7 +110,7 @@ namespace Hangman2
 
                 case 2:
                     Console.WriteLine("StartGame()");
-                    StartGame();
+                    Guess();
                     break;
             } 
         }
