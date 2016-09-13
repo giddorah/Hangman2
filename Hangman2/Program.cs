@@ -180,7 +180,8 @@ namespace Hangman2
             playerGuess = Console.ReadLine().ToLower();
             History();
             CompareWord();
-            
+
+            numberOfGuesses++;             
             
         }
 
@@ -210,7 +211,7 @@ namespace Hangman2
 
         private static void History() // Metod för att visa historiken över gissade ord.
         {
-            guessHistory += " " + playerGuess;
+            guessHistory += ", " + playerGuess;
         }
 
         private static void Lives() // Metod för att hålla reda på antal liv.
