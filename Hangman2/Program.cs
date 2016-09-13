@@ -174,7 +174,7 @@ namespace Hangman2
         private static void WordGenerator() // Metod för att välja ord från ordlistan.
         {
             Console.WriteLine("WordGenerator");
-            wordGeneratorWord = "Johan";
+            wordGeneratorWord = "johan";
             
         }
 
