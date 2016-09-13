@@ -15,7 +15,7 @@ namespace Hangman2
         static int seconds;
         static int wordLength;
         static string guessHistory;
-        static int numberOfGuesses = 0;
+        static int numberOfGuesses;
 
 
         static void Main(string[] args)
@@ -49,11 +49,11 @@ namespace Hangman2
         {
             Console.WriteLine("Skriv in namn.");
             playerName = Console.ReadLine();
-            MainMenu(playerName);
+            MainMenu(playerName, numberOfGuesses);
         }
 
 
-        private static void MainMenu(string playerName) // Huvudmenyn till spelet.
+        private static void MainMenu(string playerName, int numberOfGuesses) // Huvudmenyn till spelet.
         {
             int menuLoop = 1; // En loop för att huvudmenyn ska finnas tillgänglig så länge spelaren befinner sig utanför spelet.
             while (menuLoop == 1)
@@ -117,7 +117,7 @@ namespace Hangman2
             {
                 case 1:
                     Console.WriteLine("Återvänder till MainMenu()");
-                    MainMenu(playerName); // Låter spelaren återgå till mainmenu utan att ändra stringen för spelarnamn.
+                    MainMenu(playerName, numberOfGuesses); // Låter spelaren återgå till mainmenu utan att ändra stringen för spelarnamn.
                     break;
 
                 case 2:
@@ -133,7 +133,7 @@ namespace Hangman2
         {
             Console.WriteLine("Grattis. Du är awesome!.");
             Console.ReadLine();
-            MainMenu(playerName);
+            MainMenu(playerName, numberOfGuesses);
 
         }
 
@@ -141,7 +141,7 @@ namespace Hangman2
         {
             Console.WriteLine("Du... Dra.");
             Console.ReadLine();
-            MainMenu(playerName);
+            MainMenu(playerName, numberOfGuesses);
         }
 
         private static void CheckEndGame() // Håller reda på om spelaren har gissat rätt ord eller om antal liv är 0.
