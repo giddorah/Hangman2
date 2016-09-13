@@ -120,7 +120,7 @@ namespace Hangman2
 
         private static void WinGame() // Avslutar spelet beroende på hur spelaren presterat.
         {
-            Console.WriteLine("Congratulations. You won and you are awesome.");
+            Console.WriteLine("Grattis. Du är awesome!.");
             Console.ReadLine();
             MainMenu(playerName);
 
@@ -128,7 +128,7 @@ namespace Hangman2
 
         private static void LoseGame()
         {
-            Console.WriteLine("Too bad, you lost.");
+            Console.WriteLine("Du... Dra.");
             Console.ReadLine();
             MainMenu(playerName);
         }
@@ -154,8 +154,8 @@ namespace Hangman2
 
         private static void Guess() // Metod för att samla in gissning från spelaren.
         {
-            Console.WriteLine("Guess Word: ");
             WordLength();
+            Console.WriteLine("Gissa ord: ");
             playerGuess = Console.ReadLine().ToLower();
             CompareWord();
             
@@ -183,7 +183,7 @@ namespace Hangman2
              //Console.WriteLine("WordLength");
 
              int wordLength = wordGeneratorWord.Length;
-             Console.WriteLine("Wordlength is {0} long", wordLength);
+             Console.WriteLine("Ordet är {0} bokstäver långt.", wordLength);
         }
 
         private static void History() // Metod för att visa historiken över gissade ord.
@@ -206,7 +206,7 @@ namespace Hangman2
         private static void StartGame() // Metod för att starta spelet.
         {
             Console.Clear();
-            Console.WriteLine("Game started");
+            Console.WriteLine("Spel startat");
             WordGenerator();
             Lives();
             History();
