@@ -68,7 +68,7 @@ namespace Hangman2
                 switch (mainMenuSwitch) // Initierar en switch-meny med tre olika alternativ.
                 {
                     case 1:
-                        StartGame(); // Startar spelet om spelaren trycker på 1.
+                        Guess(); // Startar spelet om spelaren trycker på 1.
                         menuLoop = 0;
                         break;
 
