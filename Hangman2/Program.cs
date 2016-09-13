@@ -61,10 +61,10 @@ namespace Hangman2
                 Console.Clear(); // Rensar konsollen från tidigare kommandon.
                 Console.WriteLine("--------------------------------------------------");
                 Console.WriteLine("|                                                |");
-                Console.WriteLine("|         Välkommen {0} till Hangr 0.1           |", playerName); // Byter ut {0} mot vad spelaren angivit i TakeName.
+                Console.WriteLine("          Välkommen {0} till Hangr 0.1           ", playerName); // Byter ut {0} mot vad spelaren angivit i TakeName.
                 Console.WriteLine("|                                                |");
                 Console.WriteLine("--------------------------------------------------");
-                Console.WriteLine("|        Föregående spel tog {0} försök.         |", numberOfGuesses);
+                Console.WriteLine("          Föregående spel tog {0} försök.         ", numberOfGuesses);
                 Console.WriteLine("--------------------------------------------------");
                 Console.WriteLine("| Välj något av följande:                        |");
                 Console.WriteLine("| 1. Starta spel.                                |");
