@@ -15,7 +15,7 @@ namespace Hangman2
         static int seconds;
         static int wordLength;
         static string guessHistory;
-        static int numberOfGuesses;
+        static int numberOfGuesses = 0;
 
 
         static void Main(string[] args)
@@ -59,12 +59,18 @@ namespace Hangman2
             while (menuLoop == 1)
             {
                 Console.Clear(); // Rensar konsollen från tidigare kommandon.
-                Console.WriteLine("Välkommen {0} till Hangr 0.1", playerName); // Byter ut {0} mot vad spelaren angivit i TakeName.
-                Console.WriteLine(" ");
-                Console.WriteLine("Välj något av följande:");
-                Console.WriteLine("1. Starta spel.");
-                Console.WriteLine("2. How to.");
-                Console.WriteLine("3. Avsluta spel.");
+                Console.WriteLine("--------------------------------------------------");
+                Console.WriteLine("|                                                |");
+                Console.WriteLine("|         Välkommen {0} till Hangr 0.1           |", playerName); // Byter ut {0} mot vad spelaren angivit i TakeName.
+                Console.WriteLine("|                                                |");
+                Console.WriteLine("--------------------------------------------------");
+                Console.WriteLine("|        Föregående spel tog {0} försök.         |", numberOfGuesses);
+                Console.WriteLine("--------------------------------------------------");
+                Console.WriteLine("| Välj något av följande:                        |");
+                Console.WriteLine("| 1. Starta spel.                                |");
+                Console.WriteLine("| 2. How to.                                     |");
+                Console.WriteLine("| 3. Avsluta spel.                               |");
+                Console.WriteLine("--------------------------------------------------");
 
                 // ------------ Switch-meny. Ska ej användas innan vi gått igenom den. ---------------
                 int mainMenuSwitch = int.Parse(Console.ReadLine()); // En funktion för switch-satsen att samla in knapptryckning.
@@ -81,14 +87,16 @@ namespace Hangman2
                         break;
 
                     case 3:
-                        Console.WriteLine("Avslutar spelet."); // Avslutar spelet om spelaren trycker på 3.
+                        Console.WriteLine("| Avslutar spelet.                               |"); // Avslutar spelet om spelaren trycker på 3.
+                        Console.WriteLine("--------------------------------------------------");
                         Console.Read();
                         menuLoop = 0;
                         break;
 
                     default:
-                        Console.WriteLine("Only use 1, 2 or 3."); // Visas om spelaren trycker på någon annan knapp än tillåtet.
-                        Console.WriteLine("Återvänder till huvudmenyn. Tryck på enter.");
+                        Console.WriteLine("| Använd enbart 1, 2 eller 3.                    |"); // Visas om spelaren trycker på någon annan knapp än tillåtet.
+                        Console.WriteLine("| Återvänder till huvudmenyn.                    |");
+                        Console.WriteLine("--------------------------------------------------");
                         Console.ReadLine();
                         break;    
                 }
@@ -98,9 +106,11 @@ namespace Hangman2
         private static void HowTo(string playerName) // Metod för att visa HowTo'n.
         {
             Console.Clear();
-            Console.WriteLine("Visa howto..");
-            Console.WriteLine("1. Återvänd till MainMenu()");
-            Console.WriteLine("2. StartGame()");
+            Console.WriteLine("--------------------------------------------------");
+            Console.WriteLine("|                   Visa howto.                  |");
+            Console.WriteLine("| 1. Återvänd till MainMenu()                    |");
+            Console.WriteLine("| 2. StartGame()                                 |");
+            Console.WriteLine("--------------------------------------------------");
             int menuSwitchHowTo = int.Parse(Console.ReadLine());
         
             switch (menuSwitchHowTo) // Ytterligare en switchmeny men utan loop eftersom att menyn inte behöver visas igen.
