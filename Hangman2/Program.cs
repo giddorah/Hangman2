@@ -122,6 +122,7 @@ namespace Hangman2
         {
             Console.WriteLine("Congratulations. You won and you are awesome.");
             Console.ReadLine();
+            MainMenu(playerName);
 
         }
 
@@ -182,7 +183,7 @@ namespace Hangman2
              //Console.WriteLine("WordLength");
 
              int wordLength = wordGeneratorWord.Length;
-             Console.WriteLine("Ordets längd är: {0}", wordLength);
+             Console.WriteLine("Wordlength is {0} long", wordLength);
         }
 
         private static void History() // Metod för att visa historiken över gissade ord.
