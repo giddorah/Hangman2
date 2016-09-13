@@ -13,7 +13,8 @@ namespace Hangman2
         static string playerGuess;
         static string wordGeneratorWord;
         static int seconds;
-        int wordLength;
+        static int wordLength;
+        static string guessHistory;
 
 
         static void Main(string[] args)
