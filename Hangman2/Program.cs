@@ -56,7 +56,6 @@ namespace Hangman2
             int menuLoop = 1; // En loop för att huvudmenyn ska finnas tillgänglig så länge spelaren befinner sig utanför spelet.
             while (menuLoop == 1)
             {
-
                 Console.Clear(); // Rensar konsollen från tidigare kommandon.
                 Console.WriteLine("Välkommen {0} till Hangr 0.1", playerName); // Byter ut {0} mot vad spelaren angivit i TakeName.
                 Console.WriteLine(" ");
@@ -89,8 +88,7 @@ namespace Hangman2
                         Console.WriteLine("Only use 1, 2 or 3."); // Visas om spelaren trycker på någon annan knapp än tillåtet.
                         Console.WriteLine("Återvänder till huvudmenyn. Tryck på enter.");
                         Console.ReadLine();
-                        break;
-                        
+                        break;    
                 }
             }
         }
