@@ -55,7 +55,7 @@ namespace Hangman2
             int menuLoop = 1; // En loop för att huvudmenyn ska finnas tillgänglig så länge spelaren befinner sig utanför spelet.
             while (menuLoop == 1)
             {
-
+                // Hejsan
                 Console.Clear(); // Rensar konsollen från tidigare kommandon.
                 Console.WriteLine("Välkommen {0} till Hangr 0.1", playerName); // Byter ut {0} mot vad spelaren angivit i TakeName.
                 Console.WriteLine(" ");
