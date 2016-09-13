@@ -139,10 +139,13 @@ namespace Hangman2
         private static void CompareWord() // Metod för att jämföra Guess med WordGenerator.
         {
             if (playerGuess.Equals(wordGeneratorWord))
-            
+
                 WinGame();
-            
-            else Guess();
+
+            else
+                Console.Clear();
+                Console.WriteLine("Du gissade fel, försök igen!");
+              Guess();
 
             
         }
