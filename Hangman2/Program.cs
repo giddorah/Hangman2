@@ -14,7 +14,7 @@ namespace Hangman2
         static string wordGeneratorWord;
         static int seconds;
         static int wordLength;
-        static string guessHistory;
+        static string guessHistory = "";
         static int numberOfGuesses = 0;
 
 
@@ -211,7 +211,11 @@ namespace Hangman2
 
         private static void History() // Metod för att visa historiken över gissade ord.
         {
-            guessHistory += ", " + playerGuess;
+            if (guessHistory.Equals(""))
+            {
+                guessHistory += " " + playerGuess;
+            }
+            else guessHistory += ", " + playerGuess;
         }
 
         private static void Lives() // Metod för att hålla reda på antal liv.
