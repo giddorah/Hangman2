@@ -251,8 +251,8 @@ namespace Hangman2
 
         private static void WordGenerator(string playerName) // Metod för att välja ord från ordlistan.
         {
+
             playerLives = 4;
-            wordGeneratorWord = "susanna";
             wordGeneratorWord = "xylofon";
             numberOfGuesses = 0;
             guessHistory = "";
