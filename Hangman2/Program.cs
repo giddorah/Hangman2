@@ -23,7 +23,7 @@ namespace Hangman2
 
             //string playerName = "";
             //MainMenu(""); // Metod för att visa startmenyn.
-            TakeName(playerName); // Metod för att hämta in spelarens namn.
+            TakeName(); // Metod för att hämta in spelarens namn.
             /*HowTo(); // Metod för att visa en guide.
             
             StartGame(); // Metod för att starta spelet.
@@ -45,15 +45,15 @@ namespace Hangman2
             //Console.ReadLine();
 
         }
-        private static void TakeName(string playerName) // Metod för att insamla spelarens namn.
+        private static void TakeName() // Metod för att insamla spelarens namn.
         {
             Console.WriteLine("Skriv in namn.");
             playerName = Console.ReadLine();
-            MainMenu(playerName, numberOfGuesses);
+            MainMenu();
         }
 
 
-        private static void MainMenu(string playerName, int numberOfGuesses) // Huvudmenyn till spelet.
+        private static void MainMenu() // Huvudmenyn till spelet.
         {
             int menuLoop = 1; // En loop för att huvudmenyn ska finnas tillgänglig så länge spelaren befinner sig utanför spelet.
             while (menuLoop == 1)
@@ -141,7 +141,7 @@ namespace Hangman2
             {
                 case 1:
                     Console.WriteLine("Återvänder till MainMenu()");
-                    MainMenu(playerName, numberOfGuesses); // Låter spelaren återgå till mainmenu utan att ändra stringen för spelarnamn.
+                    MainMenu(); // Låter spelaren återgå till mainmenu utan att ändra stringen för spelarnamn.
                     break;
 
                 case 2:
@@ -157,7 +157,7 @@ namespace Hangman2
         {
             Console.WriteLine("Grattis. Du är awesome!.");
             Console.ReadLine();
-            MainMenu(playerName, numberOfGuesses);
+            MainMenu();
 
         }
 
@@ -165,7 +165,7 @@ namespace Hangman2
         {
             Console.WriteLine("Du... Dra.");
             Console.ReadLine();
-            MainMenu(playerName, numberOfGuesses);
+            MainMenu();
         }
 
         private static void CheckEndGame() // Håller reda på om spelaren har gissat rätt ord eller om antal liv är 0.
