@@ -77,6 +77,7 @@ namespace Hangman2
                 switch (mainMenuSwitch) // Initierar en switch-meny med tre olika alternativ.
                 {
                     case 1:
+                        guessHistory = "";
                         WordGenerator(); // Startar spelet om spelaren trycker på 1.
                         menuLoop = 0;
                         break;
@@ -211,7 +212,11 @@ namespace Hangman2
 
         private static void History() // Metod för att visa historiken över gissade ord.
         {
-            guessHistory += ", " + playerGuess;
+            if (guessHistory.Equals(""))
+            {
+                guessHistory += " " + playerGuess;
+            }
+            else guessHistory += ", " + playerGuess;
         }
 
         private static void Lives() // Metod för att hålla reda på antal liv.
