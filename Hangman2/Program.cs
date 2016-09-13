@@ -13,6 +13,7 @@ namespace Hangman2
         static string playerGuess;
         static string wordGeneratorWord;
         static int seconds;
+        int wordLength;
 
 
         static void Main(string[] args)
@@ -174,7 +175,10 @@ namespace Hangman2
 
         private static void WordLength() // Metod för att ta reda på nuvarande ords antal bokstäver.
         {
-            Console.WriteLine("WordLength");
+             Console.WriteLine("WordLength");
+
+             int wordLength = wordGeneratorWord.Length;
+
         }
 
         private static void History() // Metod för att visa historiken över gissade ord.
