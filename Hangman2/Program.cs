@@ -129,14 +129,18 @@ namespace Hangman2
 
         private static void CompareWord() // Metod för att jämföra Guess med WordGenerator.
         {
-            Console.WriteLine("CompareWord");
+            if (playerGuess == wordGeneratorWord)
+            
+                WinGame();
+            
+            else Guess();
+
             
         }
 
         private static void Guess() // Metod för att samla in gissning från spelaren.
         {
-            Console.WriteLine("Guess");
-            Console.WriteLine("Hej");
+            
         }
 
         private static void GameInterface() // Visar "gränssnittet" för spelaren.
