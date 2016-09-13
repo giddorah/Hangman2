@@ -230,7 +230,7 @@ namespace Hangman2
         {
              //Console.WriteLine("WordLength");
 
-             int wordLength = wordGeneratorWord.Length;
+             wordLength = wordGeneratorWord.Length;
              Console.WriteLine("Ordet är {0} bokstäver långt.", wordLength);
         }
 
@@ -251,7 +251,7 @@ namespace Hangman2
 
         private static void WordGenerator(string playerName) // Metod för att välja ord från ordlistan.
         {
-            wordGeneratorWord = "susanna";
+            wordGeneratorWord = "xylofon";
             numberOfGuesses = 0;
             guessHistory = "";
             Guess(numberOfGuesses, playerName);
