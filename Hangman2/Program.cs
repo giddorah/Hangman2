@@ -145,9 +145,11 @@ namespace Hangman2
                 WinGame();
 
             else
+            {
                 Console.Clear();
                 Console.WriteLine("Du gissade fel, försök igen!");
-              Guess();
+                Guess();
+            }
 
             
         }
