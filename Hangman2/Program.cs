@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace Hangman2
 {
     class Program
-
     {
         static int playerLives;
         static string playerName;
@@ -63,7 +62,7 @@ namespace Hangman2
                 Console.WriteLine("2. How to.");
                 Console.WriteLine("3. Avsluta spel.");
 
-                /* ------------ Switch-meny. Ska ej användas innan vi gått igenom den. ---------------
+                // ------------ Switch-meny. Ska ej användas innan vi gått igenom den. ---------------
                 int mainMenuSwitch = int.Parse(Console.ReadLine()); // En funktion för switch-satsen att samla in knapptryckning.
                 switch (mainMenuSwitch) // Initierar en switch-meny med tre olika alternativ.
                 {
@@ -89,7 +88,7 @@ namespace Hangman2
                         Console.ReadLine();
                         break;
                         
-                }*/
+                }
             }
         }
 
@@ -100,7 +99,7 @@ namespace Hangman2
             Console.WriteLine("1. Återvänd till MainMenu()");
             Console.WriteLine("2. StartGame()");
             int menuSwitchHowTo = int.Parse(Console.ReadLine());
-        /*
+        
             switch (menuSwitchHowTo) // Ytterligare en switchmeny men utan loop eftersom att menyn inte behöver visas igen.
             {
                 case 1:
@@ -112,7 +111,7 @@ namespace Hangman2
                     Console.WriteLine("StartGame()");
                     StartGame();
                     break;
-            } */
+            } 
         }
         
 
