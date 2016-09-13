@@ -17,7 +17,7 @@ namespace Hangman2
 
         static void Main(string[] args)
         {
-            
+            //test
             //string playerName = "";
             //MainMenu(""); // Metod för att visa startmenyn.
             TakeName(playerName); // Metod för att hämta in spelarens namn.
