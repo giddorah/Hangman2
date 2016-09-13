@@ -167,9 +167,11 @@ namespace Hangman2
 
         private static void Guess() // Metod för att samla in gissning från spelaren.
         {
+            Console.WriteLine("Du har gissat på:" + guessHistory);
             WordLength();
             Console.WriteLine("Gissa ord: ");
             playerGuess = Console.ReadLine().ToLower();
+            History();
             CompareWord();
             
             
@@ -201,7 +203,7 @@ namespace Hangman2
 
         private static void History() // Metod för att visa historiken över gissade ord.
         {
-            Console.WriteLine("History");
+            guessHistory += " " + playerGuess;
         }
 
         private static void Lives() // Metod för att hålla reda på antal liv.
