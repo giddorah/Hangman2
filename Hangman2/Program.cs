@@ -114,12 +114,21 @@ namespace Hangman2
                     break;
             } 
         }
-        
 
 
-        private static void EndGame() // Avslutar spelet beroende på hur spelaren presterat.
+
+        private static void WinGame() // Avslutar spelet beroende på hur spelaren presterat.
         {
-            Console.WriteLine("Endgame");
+            Console.WriteLine("Congratulations. You won and you are awesome.");
+            Console.ReadLine();
+
+        }
+
+        private static void LoseGame()
+        {
+            Console.WriteLine("Too bad, you lost.");
+            Console.ReadLine();
+            MainMenu(playerName);
         }
 
         private static void CheckEndGame() // Håller reda på om spelaren har gissat rätt ord eller om antal liv är 0.
