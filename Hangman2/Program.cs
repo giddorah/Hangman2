@@ -161,7 +161,8 @@ namespace Hangman2
             Console.WriteLine("Gissa ord: ");
             playerGuess = Console.ReadLine().ToLower();
             CompareWord();
-            
+
+            numberOfGuesses++;             
             
         }
 
