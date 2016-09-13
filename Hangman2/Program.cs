@@ -9,22 +9,20 @@ namespace Hangman2
     class Program
 
     {
-        int playerLives;
-        string playerName;
-        string playerGuess;
-        int seconds;
-        int test;
-        int korv;
-        int hejsan;
+        static int playerLives;
+        static string playerName;
+        static string playerGuess;
+        static int seconds;
+
 
 
         static void Main(string[] args)
         {
-
-            /*
-            MainMenu(""); // Metod för att visa startmenyn.
+            
+            //string playerName = "";
+            //MainMenu(""); // Metod för att visa startmenyn.
             TakeName(playerName); // Metod för att hämta in spelarens namn.
-            HowTo(); // Metod för att visa en guide.
+            /*HowTo(); // Metod för att visa en guide.
             
             StartGame(); // Metod för att starta spelet.
             WordGenerator(); // Metod för att generera (Hämta) ord till spelet.
@@ -41,7 +39,7 @@ namespace Hangman2
             EndGame(); // Metod för att avsluta spelet.
             */
 
-            Console.ReadLine();
+            //Console.ReadLine();
 
         }
         private static void TakeName(string playerName) // Metod för att insamla spelarens namn.
@@ -75,7 +73,7 @@ namespace Hangman2
                         break;
 
                     case 2:
-                        HowTo(); // Visar HowTo'n om spelaren trycker på 2.
+                        HowTo(playerName); // Visar HowTo'n om spelaren trycker på 2.
                         menuLoop = 0;
                         break;
 
@@ -83,30 +81,29 @@ namespace Hangman2
                         Console.WriteLine("Avslutar spelet."); // Avslutar spelet om spelaren trycker på 3.
                         Console.Read();
                         menuLoop = 0;
-                        playerName = "Peter";
-
                         break;
 
                     default:
                         Console.WriteLine("Only use 1, 2 or 3."); // Visas om spelaren trycker på någon annan knapp än tillåtet.
+                        Console.WriteLine("Återvänder till huvudmenyn. Tryck på enter.");
                         Console.ReadLine();
                         break;
                 }
             }
         }
 
-        private static void HowTo() // Metod för att visa HowTo'n.
+        private static void HowTo(string playerName) // Metod för att visa HowTo'n.
         {
             Console.Clear();
             Console.WriteLine("Visa howto..");
-            Console.WriteLine("1. Return to MainMenu()");
+            Console.WriteLine("1. Återvänd till MainMenu()");
             Console.WriteLine("2. StartGame()");
             int menuSwitchHowTo = int.Parse(Console.ReadLine());
             switch (menuSwitchHowTo) // Ytterligare en switchmeny men utan loop eftersom att menyn inte behöver visas igen.
             {
                 case 1:
-                    Console.WriteLine("Returning to MainMenu()");
-                    MainMenu(""); // Låter spelaren återgå till mainmenu utan att ändra stringen för spelarnamn.
+                    Console.WriteLine("Återvänder till MainMenu()");
+                    MainMenu(playerName); // Låter spelaren återgå till mainmenu utan att ändra stringen för spelarnamn.
                     break;
 
                 case 2:
@@ -115,10 +112,6 @@ namespace Hangman2
                     break;
             }
         }
-
-
-
-
 
 
 
@@ -189,12 +182,6 @@ namespace Hangman2
             WordLength();
             Console.ReadLine();
         }
-
-        
-
-
-
-        
         }
     }
 
