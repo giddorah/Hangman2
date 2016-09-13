@@ -11,6 +11,7 @@ namespace Hangman2
         static int playerLives;
         static string playerName;
         static string playerGuess;
+        static string wordGeneratorWord;
         static int seconds;
 
 
