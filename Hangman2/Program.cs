@@ -100,7 +100,7 @@ namespace Hangman2
                 {
                     case 1:
                         
-                        WordGenerator(); // Startar spelet om spelaren trycker på 1.
+                        WordGenerator(playerName); // Startar spelet om spelaren trycker på 1.
                         menuLoop = 0;
                         
                         break;
@@ -146,7 +146,7 @@ namespace Hangman2
 
                 case 2:
                     Console.WriteLine("StartGame()");
-                    WordGenerator();
+                    WordGenerator(playerName);
                     break;
             } 
         }
@@ -191,13 +191,13 @@ namespace Hangman2
                 Console.WriteLine("\nDu gissade fel, försök igen!");
                 playerLives--;
                 Console.WriteLine("\nDu har: " + playerLives + " liv kvar");
-                Guess(numberOfGuesses);
+                Guess(numberOfGuesses, playerName);
             }
 
             
         }
 
-        private static void Guess(int numberOfGuesses) // Metod för att samla in gissning från spelaren.
+        private static void Guess(int numberOfGuesses, string playerName) // Metod för att samla in gissning från spelaren.
         {
             Console.WriteLine("Du har gissat på:" + guessHistory);
             WordLength();
@@ -219,7 +219,7 @@ namespace Hangman2
         {
             Console.WriteLine("GameLoop");
             GameInterface();
-            Guess(numberOfGuesses);
+            Guess(numberOfGuesses, playerName);
             CompareWord();
             CheckEndGame();
         }
@@ -249,19 +249,19 @@ namespace Hangman2
             Console.WriteLine("Liv: {0}", lives);
         }
 
-        private static void WordGenerator() // Metod för att välja ord från ordlistan.
+        private static void WordGenerator(string playerName) // Metod för att välja ord från ordlistan.
         {
             wordGeneratorWord = "susanna";
             numberOfGuesses = 0;
             guessHistory = "";
-            Guess(numberOfGuesses);
+            Guess(numberOfGuesses, playerName);
         }
 
         private static void StartGame() // Metod för att starta spelet.
         {
             Console.Clear();
             Console.WriteLine("Spel startat");
-            WordGenerator();
+            WordGenerator(playerName);
             Lives();
             History();
             WordLength();
