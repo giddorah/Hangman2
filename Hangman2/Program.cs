@@ -199,7 +199,7 @@ namespace Hangman2
 
         private static void WordGenerator() // Metod för att välja ord från ordlistan.
         {
-            wordGeneratorWord = "johan";
+            wordGeneratorWord = "Susanna";
             Guess();
         }
 
