@@ -77,9 +77,10 @@ namespace Hangman2
                 switch (mainMenuSwitch) // Initierar en switch-meny med tre olika alternativ.
                 {
                     case 1:
-                        guessHistory = "";
+                        
                         WordGenerator(); // Startar spelet om spelaren trycker på 1.
                         menuLoop = 0;
+                        
                         break;
 
                     case 2:
@@ -152,6 +153,7 @@ namespace Hangman2
 
         private static void CompareWord() // Metod för att jämföra Guess med WordGenerator.
         {
+            numberOfGuesses++;
             if (playerGuess.Equals(wordGeneratorWord))
 
                 WinGame(numberOfGuesses);
@@ -182,7 +184,7 @@ namespace Hangman2
             History();
             CompareWord();
 
-            numberOfGuesses++;             
+             
             
         }
 
@@ -228,6 +230,8 @@ namespace Hangman2
         private static void WordGenerator() // Metod för att välja ord från ordlistan.
         {
             wordGeneratorWord = "susanna";
+            numberOfGuesses = 0;
+            guessHistory = "";
             Guess(numberOfGuesses);
         }
 
