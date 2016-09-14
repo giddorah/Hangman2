@@ -62,7 +62,7 @@ namespace Hangman2
                 switch (mainMenuSwitch) // Initierar en switch-meny med tre olika alternativ.
                 {
                     case 1:
-                        
+
                         WordGenerator(); // Startar spelet om spelaren trycker på 1.
                         menuLoop = false;
                         break;
@@ -82,7 +82,7 @@ namespace Hangman2
                         Console.WriteLine("Använd enbart 1, 2 eller 3."); // Visas om spelaren trycker på någon annan knapp än tillåtet.
                         Console.WriteLine("Återvänder till huvudmenyn.");
                         Console.ReadLine();
-                        break;    
+                        break;
                 }
             }
         }
@@ -91,7 +91,7 @@ namespace Hangman2
         {
             HowToGui(); // Visar gränssnittet för HowTo'n.
             int menuSwitchHowTo = int.Parse(Console.ReadLine());
-        
+
             switch (menuSwitchHowTo) // Ytterligare en switchmeny men utan loop eftersom att menyn inte behöver visas igen.
             {
                 case 1:
@@ -103,7 +103,7 @@ namespace Hangman2
                     Console.WriteLine("StartGame()");
                     WordGenerator();
                     break;
-            } 
+            }
         }
 
         private static void WinGame() // Avslutar spelet beroende på hur spelaren presterat.
@@ -131,7 +131,7 @@ namespace Hangman2
             if (playerGuess.Equals(wordGeneratorWord))
                 WinGame();
 
-            else if (playerLives == 0|| playerLives<2)
+            else if (playerLives == 0 || playerLives < 2)
                 LoseGame();
 
             else
@@ -141,7 +141,7 @@ namespace Hangman2
                 playerLives--;
                 Console.WriteLine("\nDu har: " + playerLives + " liv kvar");
                 Guess();
-            }           
+            }
         }
 
         private static void Guess() // Metod för att samla in gissning från spelaren.
@@ -151,7 +151,7 @@ namespace Hangman2
             Console.WriteLine("Gissa ord: ");
             playerGuess = Console.ReadLine().ToLower();
             History();
-            CompareWord();         
+            CompareWord();
         }
 
         private static void GameInterface() // Visar "gränssnittet" för spelaren.
@@ -170,8 +170,8 @@ namespace Hangman2
 
         private static void WordLength() // Metod för att ta reda på nuvarande ords antal bokstäver.
         {
-             wordLength = wordGeneratorWord.Length;
-             Console.WriteLine("Ordet är {0} bokstäver långt.", wordLength);
+            wordLength = wordGeneratorWord.Length;
+            Console.WriteLine("Ordet är {0} bokstäver långt.", wordLength);
         }
 
         private static void History() // Metod för att visa historiken över gissade ord.
