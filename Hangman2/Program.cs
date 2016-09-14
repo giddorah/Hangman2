@@ -194,6 +194,31 @@ namespace Hangman2
                 Guess();
             }
         }
+        static void Difficulty()
+        {
+            Console.WriteLine("Vill du köra på lätt nivå? Tryck 1:");
+            Console.WriteLine("Vill du köra på medel nivå? Tryck 2:");
+            Console.WriteLine("Vill du köra på svår nivå? Tryck 3:");
+            int input=int.Parse(Console.ReadLine());
+            switch (input)
+            {
+                case 1:
+                    Console.WriteLine("Du valde lätt nivå!");
+                    
+                    break;
+                case 2:
+                    Console.WriteLine("Du valde medel nivå");
+                    
+                    break;
+                case 3:
+                    Console.WriteLine("Du valde svår nivå");
+                    
+                    break;
+                default: 
+                    Console.WriteLine("Var vänlig och skriv in 1,2 eller 3");
+                    break;
+            }
+        }
 
         private static void Guess() // Metod för att samla in gissning från spelaren.
         {
@@ -245,9 +270,10 @@ namespace Hangman2
 
             Console.Clear();
             playerLives = 4;
-            wordGeneratorWordEasy = "kungen".ToLower();
-            wordGeneratorWordNormal = "askungen".ToLower;
-            WordGeneratorWordHard = "kontinental".ToLower;
+            
+            string wordGeneratorWordEasy = "kungen".ToLower();
+            string wordGeneratorWordNormal = "askungen".ToLower;
+            string WordGeneratorWordHard = "kontinental".ToLower;
             numberOfGuesses = 0;
             guessHistory = "";
             Guess();
