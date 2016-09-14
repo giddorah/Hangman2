@@ -132,6 +132,11 @@ namespace Hangman2
             Console.Clear();
             Console.WriteLine("--------------------------------------------------");
             Console.WriteLine("|                   Visa howto.                  |");
+            Console.WriteLine("| För att spela spelet måste du gissa ord. Om du |");
+            Console.WriteLine("| gissar fel så kommer du bli av med liv.        |");
+            Console.WriteLine("--------------------------------------------------");
+            Console.WriteLine("");
+            Console.WriteLine("--------------------------------------------------");
             Console.WriteLine("| 1. Återvänd till MainMenu()                    |");
             Console.WriteLine("| 2. StartGame()                                 |");
             Console.WriteLine("--------------------------------------------------");
