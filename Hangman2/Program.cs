@@ -55,8 +55,21 @@ namespace Hangman2
         {
             Console.WriteLine("Skriv in namn.");
             playerName = Console.ReadLine();
-            MainMenu();
+            if (playerName.Length >= 3 && playerName.Length <= 25)
+            { 
+                Console.WriteLine("välkommen " + playerName);
+                MainMenu();
+            }
+            else
+            {
+                Console.WriteLine("skriv minst 3 bokstäver och inte mer än 25 bokstäver");
+
+                TakeName();
+            }
         }
+           
+
+            
 
         private static void MainMenu() // Huvudmenyn till spelet.
         {
