@@ -114,7 +114,7 @@ namespace Hangman2
                 {
                     case 1:
 
-                        //Difficulty();
+                        Difficulty();
                         //WordGenerator(); // Startar spelet om spelaren trycker på 1.
                         menuLoop = false;
                         break;
@@ -182,7 +182,7 @@ namespace Hangman2
 
                 case 2:
                     Console.WriteLine("StartGame()");
-                    //Difficulty();
+                    Difficulty();
                     break;
             }
         }
