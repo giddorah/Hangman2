@@ -144,6 +144,7 @@ namespace Hangman2
                     Console.WriteLine("Du måste välja 1 eller 2.");
                 }
             }
+            
 
             switch (menuSwitchHowTo) // Ytterligare en switchmeny men utan loop eftersom att menyn inte behöver visas igen.
             {
