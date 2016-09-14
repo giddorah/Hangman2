@@ -74,21 +74,23 @@ namespace Hangman2
         {
             bool menuLoop = true; // En loop för att huvudmenyn ska finnas tillgänglig så länge spelaren befinner sig utanför spelet.
             int mainMenuSwitch;
+            string checkInput;
             while (menuLoop)
             {
                 Console.Clear(); // Rensar konsollen från tidigare kommandon.
                 MainMenuGui(); // Visar gränssnittet för MainMenu.
-                string checkInput = Console.ReadLine();
+                checkInput = Console.ReadLine();
 
-                int inputCheckLength = checkInput.Length;
+                //int inputCheckLength = checkInput.Length;
 
-                if (inputCheckLength == 0)
+                if (!checkInput.Equals("1") || !checkInput.Equals("2") || !checkInput.Equals("3"))
                 {
-                    Console.WriteLine("Du måste göra ett val");
+                    Console.WriteLine("Du kan bara välja 1, 2 eller 3.");
                     mainMenuSwitch = 0;
-                    MainMenu();
+                    
                     Console.ReadLine();
                 }
+
                 else
                 {
                     mainMenuSwitch = int.Parse(checkInput);
