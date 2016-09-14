@@ -88,28 +88,18 @@ namespace Hangman2
                     Console.WriteLine("Du måste göra ett val");
                     mainMenuSwitch = 0;
                     MainMenu();
+                    Console.ReadLine();
                 }
                 else
                 {
                     mainMenuSwitch = int.Parse(checkInput);
                 }
 
-                /*try // Hanterar tom input.
-                {
-                    mainMenuSwitch = int.Parse(Console.ReadLine()); // En funktion för switch-satsen att samla in knapptryckning.
-                }
-                catch (Exception) // Felmeddelande som kastas om spelaren försöker gå vidare utan att välja någonting ifrån menyn.
-                {
-                    Console.WriteLine("Du valde ingenting. Försök igen.");
-                    mainMenuSwitch = 0;
-
-                }*/
                 switch (mainMenuSwitch) // Initierar en switch-meny med tre olika alternativ.
                 {
                     case 1:
 
                         Difficulty();
-                        //WordGenerator(); // Startar spelet om spelaren trycker på 1.
                         menuLoop = false;
                         break;
 
@@ -146,27 +136,13 @@ namespace Hangman2
             {
                 Console.WriteLine("Du måste göra ett val");
                 menuSwitchHowTo = 0;
+                Console.ReadLine();
                 HowTo();
             }
             else
             {
                 menuSwitchHowTo = int.Parse(checkInput);
             }
-
-            
-
-            /*try
-            {
-                menuSwitchHowTo = int.Parse(Console.ReadLine());
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Du har inte gjort något val. Tryck enter för att gå tillbaka och försöka igen.");
-                menuSwitchHowTo = 0;
-                Console.ReadLine();
-                HowTo();
-            }*/
-
 
             switch (menuSwitchHowTo) // Ytterligare en switchmeny men utan loop eftersom att menyn inte behöver visas igen.
             {
