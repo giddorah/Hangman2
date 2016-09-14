@@ -204,7 +204,7 @@ namespace Hangman2
         {
 
             playerLives = 4;
-            wordGeneratorWord = "kungen";
+            wordGeneratorWord = "kungen".ToLower();
             numberOfGuesses = 0;
             guessHistory = "";
             Guess();
