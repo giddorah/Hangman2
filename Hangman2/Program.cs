@@ -16,7 +16,6 @@ namespace Hangman2
         static string wordGeneratorWordEasy;
         static string wordGeneratorWordNormal;
         static string wordGeneratorWordHard;
-        static int seconds; // Ej i bruk än
         static int wordLength; // Lagrar ordets antal bokstäver
         static string guessHistory; // Lagrar tidigare gissningar
         static int numberOfGuesses; // Lagrar hur många gissningar som gjorts
