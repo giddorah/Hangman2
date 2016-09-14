@@ -13,6 +13,9 @@ namespace Hangman2
         static string playerName; // Lagrar spelarens namn
         static string playerGuess; // Lagrar spelaerns gissning
         static string wordGeneratorWord; // Lagrar ordgeneratorns ord
+        static string wordGeneratorWordEasy;
+        static string wordGeneratorWordNormal;
+        static string wordGeneratorWordHard;
         static int seconds; // Ej i bruk än
         static int wordLength; // Lagrar ordets antal bokstäver
         static string guessHistory; // Lagrar tidigare gissningar
@@ -245,6 +248,7 @@ namespace Hangman2
             //wordGeneratorWordEasy = "kungen".ToLower();
             //wordGeneratorWordNormal = "askungen".ToLower;
             //WordGeneratorWordHard = "kontinental".ToLower;
+
             numberOfGuesses = 0;
             guessHistory = "";
             Guess();
