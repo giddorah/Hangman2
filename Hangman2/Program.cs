@@ -243,6 +243,9 @@ namespace Hangman2
             Console.WriteLine("Vill du köra på lätt nivå? Tryck 1:");
             Console.WriteLine("Vill du köra på medel nivå? Tryck 2:");
             Console.WriteLine("Vill du köra på svår nivå? Tryck 3:");
+            wordGeneratorWordEasy = "kungen".ToLower();
+            wordGeneratorWordNormal = "askungen".ToLower();
+            wordGeneratorWordHard = "kontinental".ToLower();
             int input=int.Parse(Console.ReadLine());
             switch (input)
             {
@@ -317,9 +320,6 @@ namespace Hangman2
 
             Console.Clear();
             playerLives = 4;
-            wordGeneratorWordEasy = "kungen".ToLower();
-            wordGeneratorWordNormal = "askungen".ToLower();
-            wordGeneratorWordHard = "kontinental".ToLower();
             numberOfGuesses = 0;
             guessHistory = "";
             Guess();
