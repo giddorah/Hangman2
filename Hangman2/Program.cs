@@ -63,7 +63,7 @@ namespace Hangman2
             }
             else
             {
-                Console.WriteLine("skriv minst 3 bokstäver och inte mer än 25 bokstäver");
+                Console.WriteLine("Skriv minst 3 bokstäver och inte mer än 25 bokstäver");
                 TakeName();
             }
         }
