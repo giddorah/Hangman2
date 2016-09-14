@@ -400,7 +400,21 @@ namespace Hangman2
             Console.WriteLine("            `..`                                               `..+:.           ");
             Console.WriteLine("                                                    	            `-`            ");
         } // Metod för att visa gränssnittet för huvudmenyn
-        
+
+        public static void Timer(double seconds)
+        {
+            {
+                double sec = seconds;
+                var t = Task.Run(async delegate
+                {
+                    await Task.Delay(TimeSpan.FromSeconds(sec));
+                    return;
+                });
+                t.Wait();
+
+            }
+        }
+
     }
 }
 
