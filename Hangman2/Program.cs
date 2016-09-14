@@ -66,8 +66,26 @@ namespace Hangman2
             {
                 Console.Clear(); // Rensar konsollen från tidigare kommandon.
                 MainMenuGui(); // Visar gränssnittet för MainMenu.
+                string checkInput = Console.ReadLine();
 
-                mainMenuSwitch = int.Parse(Console.ReadLine());
+                int inputCheckLength = checkInput.Length;
+
+                if (inputCheckLength == 0)
+                {
+                    Console.WriteLine("Du måste göra ett val");
+                    mainMenuSwitch = 0;
+                }
+                else
+                {
+                    mainMenuSwitch = int.Parse(checkInput);
+                }
+
+                
+                      
+                
+
+
+                
 
                 /*try // Hanterar tom input.
                 {
@@ -113,7 +131,20 @@ namespace Hangman2
             HowToGui(); // Visar gränssnittet för HowTo'n.
             int menuSwitchHowTo;
 
-            menuSwitchHowTo = int.Parse(Console.ReadLine());
+            string checkInput = Console.ReadLine();
+            int inputCheckLength = checkInput.Length;
+
+            if (inputCheckLength == 0)
+            {
+                Console.WriteLine("Du måste göra ett val");
+                menuSwitchHowTo = 0;
+            }
+            else
+            {
+                menuSwitchHowTo = int.Parse(checkInput);
+            }
+
+            
 
             /*try
             {
