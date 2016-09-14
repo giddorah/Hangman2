@@ -8,14 +8,14 @@ namespace Hangman2
 {
     class Program
     {
-        static int playerLives;
-        static string playerName;
-        static string playerGuess;
-        static string wordGeneratorWord;
-        static int seconds;
-        static int wordLength;
-        static string guessHistory;
-        static int numberOfGuesses;
+        static int playerLives; // Lagrar spelarens antal liv
+        static string playerName; // Lagrar spelarens namn
+        static string playerGuess; // Lagrar spelaerns gissning
+        static string wordGeneratorWord; // Lagrar ordgeneratorns ord
+        static int seconds; // Ej i bruk än
+        static int wordLength; // Lagrar ordets antal bokstäver
+        static string guessHistory; // Lagrar tidigare gissningar
+        static int numberOfGuesses; // Lagrar hur många gissningar som gjorts
 
 
         static void Main(string[] args)
