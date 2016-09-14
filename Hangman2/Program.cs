@@ -87,18 +87,12 @@ namespace Hangman2
                 {
                     Console.WriteLine("Du måste göra ett val");
                     mainMenuSwitch = 0;
+                    MainMenu();
                 }
                 else
                 {
                     mainMenuSwitch = int.Parse(checkInput);
                 }
-
-                
-                      
-                
-
-
-                
 
                 /*try // Hanterar tom input.
                 {
@@ -152,6 +146,7 @@ namespace Hangman2
             {
                 Console.WriteLine("Du måste göra ett val");
                 menuSwitchHowTo = 0;
+                HowTo();
             }
             else
             {
@@ -246,7 +241,9 @@ namespace Hangman2
             wordGeneratorWordEasy = "kungen".ToLower();
             wordGeneratorWordNormal = "askungen".ToLower();
             wordGeneratorWordHard = "kontinental".ToLower();
+
             int input=int.Parse(Console.ReadLine());
+
             switch (input)
             {
                 case 1:
