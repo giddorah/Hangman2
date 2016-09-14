@@ -45,6 +45,7 @@ namespace Hangman2
             //Console.ReadLine();
 
         }
+
         private static void TakeName() // Metod för att insamla spelarens namn.
         {
             Console.WriteLine("Skriv in namn.");
