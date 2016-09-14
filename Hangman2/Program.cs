@@ -60,12 +60,23 @@ namespace Hangman2
         private static void MainMenu() // Huvudmenyn till spelet.
         {
             bool menuLoop = true; // En loop för att huvudmenyn ska finnas tillgänglig så länge spelaren befinner sig utanför spelet.
+            int mainMenuSwitch;
             while (menuLoop)
             {
                 Console.Clear(); // Rensar konsollen från tidigare kommandon.
                 MainMenuGui(); // Visar gränssnittet för MainMenu.
 
-                int mainMenuSwitch = int.Parse(Console.ReadLine()); // En funktion för switch-satsen att samla in knapptryckning.
+                
+                try
+                {
+                    mainMenuSwitch = int.Parse(Console.ReadLine()); // En funktion för switch-satsen att samla in knapptryckning.
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Du valde ingenting. Försök igen.");
+                    mainMenuSwitch = 0;
+
+                }
                 switch (mainMenuSwitch) // Initierar en switch-meny med tre olika alternativ.
                 {
                     case 1:
@@ -89,6 +100,7 @@ namespace Hangman2
                         Console.WriteLine("Använd enbart 1, 2 eller 3."); // Visas om spelaren trycker på någon annan knapp än tillåtet.
                         Console.WriteLine("Återvänder till huvudmenyn.");
                         Console.ReadLine();
+                        MainMenu();
                         break;
                 }
             }
