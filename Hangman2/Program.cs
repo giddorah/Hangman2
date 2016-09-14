@@ -102,7 +102,7 @@ namespace Hangman2
                         break;
 
                     case 2:
-                        Difficulty(); // Visar HowTo'n om spelaren trycker på 2.
+                        HowTo(); // Visar HowTo'n om spelaren trycker på 2.
                         menuLoop = false;
                         break;
 
@@ -151,7 +151,7 @@ namespace Hangman2
 
                 case 2:
                     Console.WriteLine("StartGame()");
-                    WordGenerator();
+                    Difficulty();
                     break;
             }
         }
