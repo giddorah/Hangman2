@@ -67,8 +67,9 @@ namespace Hangman2
                 Console.Clear(); // Rensar konsollen från tidigare kommandon.
                 MainMenuGui(); // Visar gränssnittet för MainMenu.
 
-                
-                try // Hanterar tom input.
+                mainMenuSwitch = int.Parse(Console.ReadLine());
+
+                /*try // Hanterar tom input.
                 {
                     mainMenuSwitch = int.Parse(Console.ReadLine()); // En funktion för switch-satsen att samla in knapptryckning.
                 }
@@ -77,7 +78,7 @@ namespace Hangman2
                     Console.WriteLine("Du valde ingenting. Försök igen.");
                     mainMenuSwitch = 0;
 
-                }
+                }*/
                 switch (mainMenuSwitch) // Initierar en switch-meny med tre olika alternativ.
                 {
                     case 1:
@@ -111,7 +112,10 @@ namespace Hangman2
         {
             HowToGui(); // Visar gränssnittet för HowTo'n.
             int menuSwitchHowTo;
-            try
+
+            menuSwitchHowTo = int.Parse(Console.ReadLine());
+
+            /*try
             {
                 menuSwitchHowTo = int.Parse(Console.ReadLine());
             }
@@ -121,8 +125,8 @@ namespace Hangman2
                 menuSwitchHowTo = 0;
                 Console.ReadLine();
                 HowTo();
-            }
-            
+            }*/
+
 
             switch (menuSwitchHowTo) // Ytterligare en switchmeny men utan loop eftersom att menyn inte behöver visas igen.
             {
@@ -331,7 +335,7 @@ namespace Hangman2
             Console.WriteLine("            `..`                                               `..+:.           ");
             Console.WriteLine("                                                    	            `-`            ");
         } // Metod för att visa gränssnittet för huvudmenyn
-
+        
     }
 }
 
