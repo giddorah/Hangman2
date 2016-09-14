@@ -55,8 +55,21 @@ namespace Hangman2
         {
             Console.WriteLine("Skriv in namn.");
             playerName = Console.ReadLine();
-            MainMenu();
+            if (playerName.Length >= 3 && playerName.Length <= 25)
+            { 
+                Console.WriteLine("välkommen " + playerName);
+                MainMenu();
+            }
+            else
+            {
+                Console.WriteLine("skriv minst 3 bokstäver och inte mer än 25 bokstäver");
+
+                TakeName();
+            }
         }
+           
+
+            
 
         private static void MainMenu() // Huvudmenyn till spelet.
         {
@@ -67,8 +80,9 @@ namespace Hangman2
                 Console.Clear(); // Rensar konsollen från tidigare kommandon.
                 MainMenuGui(); // Visar gränssnittet för MainMenu.
 
-                
-                try // Hanterar tom input.
+                mainMenuSwitch = int.Parse(Console.ReadLine());
+
+                /*try // Hanterar tom input.
                 {
                     mainMenuSwitch = int.Parse(Console.ReadLine()); // En funktion för switch-satsen att samla in knapptryckning.
                 }
@@ -77,12 +91,13 @@ namespace Hangman2
                     Console.WriteLine("Du valde ingenting. Försök igen.");
                     mainMenuSwitch = 0;
 
-                }
+                }*/
                 switch (mainMenuSwitch) // Initierar en switch-meny med tre olika alternativ.
                 {
                     case 1:
 
-                        WordGenerator(); // Startar spelet om spelaren trycker på 1.
+                        Difficulty();
+                        //WordGenerator(); // Startar spelet om spelaren trycker på 1.
                         menuLoop = false;
                         break;
 
@@ -111,7 +126,10 @@ namespace Hangman2
         {
             HowToGui(); // Visar gränssnittet för HowTo'n.
             int menuSwitchHowTo;
-            try
+
+            menuSwitchHowTo = int.Parse(Console.ReadLine());
+
+            /*try
             {
                 menuSwitchHowTo = int.Parse(Console.ReadLine());
             }
@@ -121,8 +139,8 @@ namespace Hangman2
                 menuSwitchHowTo = 0;
                 Console.ReadLine();
                 HowTo();
-            }
-            
+            }*/
+
 
             switch (menuSwitchHowTo) // Ytterligare en switchmeny men utan loop eftersom att menyn inte behöver visas igen.
             {
@@ -222,11 +240,14 @@ namespace Hangman2
             Console.WriteLine("Liv: {0}", lives);
         }
 
-        private static void WordGenerator() // Metod för att välja ord från ordlistan.
+        private static void WordGenerator(string difficultyChoice) // Metod för att välja ord från ordlistan.
         {
+
             Console.Clear();
             playerLives = 4;
-            wordGeneratorWord = "kungen".ToLower();
+            wordGeneratorWordEasy = "kungen".ToLower();
+            wordGeneratorWordNormal = "askungen".ToLower;
+            WordGeneratorWordHard = "kontinental".ToLower;
             numberOfGuesses = 0;
             guessHistory = "";
             Guess();
@@ -332,7 +353,7 @@ namespace Hangman2
             Console.WriteLine("            `..`                                               `..+:.           ");
             Console.WriteLine("                                                    	            `-`            ");
         } // Metod för att visa gränssnittet för huvudmenyn
-
+        
     }
 }
 
