@@ -162,6 +162,15 @@ namespace Hangman2
 
         private static void LoseGame() // Förolämpar spelaren om denne inte är så bra.
         {
+            Console.WriteLine(" ________________ ");
+            Console.WriteLine(" |  | ");
+            Console.WriteLine(" | ( ) ");
+            Console.WriteLine(" | /|\\ ");
+            Console.WriteLine(" |  | ");
+            Console.WriteLine(" | / \\ ");
+            Console.WriteLine(" | ");
+            Console.WriteLine(" | ");
+            Console.WriteLine(" |_______ ");
             Console.WriteLine("Du... Dra.");
             Console.ReadLine();
             MainMenu();
