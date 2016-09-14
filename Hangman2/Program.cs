@@ -134,6 +134,7 @@ namespace Hangman2
 
         private static void CompareWord() // Metod för att jämföra Guess med WordGenerator.
         {
+            Console.Clear();
             numberOfGuesses++;
             if (playerGuess.Equals(wordGeneratorWord))
                 WinGame();
@@ -155,7 +156,7 @@ namespace Hangman2
         {
             Console.WriteLine("Du har gissat på:" + guessHistory);
             WordLength();
-            Console.WriteLine("Gissa ord: ");
+            Console.Write("Gissa ord: ");
             playerGuess = Console.ReadLine().ToLower();
             History();
             CompareWord();
@@ -198,7 +199,7 @@ namespace Hangman2
 
         private static void WordGenerator() // Metod för att välja ord från ordlistan.
         {
-
+            Console.Clear();
             playerLives = 4;
             wordGeneratorWord = "kungen".ToLower();
             numberOfGuesses = 0;
