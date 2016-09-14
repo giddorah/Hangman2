@@ -222,7 +222,20 @@ namespace Hangman2
             wordGeneratorWordNormal = "askungen".ToLower();
             wordGeneratorWordHard = "kontinental".ToLower();
 
-            int input=int.Parse(Console.ReadLine());
+            string checkInput = Console.ReadLine();
+            int input;
+            int inputCheckLength = checkInput.Length;
+
+            if (inputCheckLength == 0)
+            {
+                Console.WriteLine("Du måste göra ett val");
+                input = 0;
+                Difficulty();
+            }
+            else
+            {
+                input = int.Parse(checkInput);
+            }
 
             switch (input)
             {
