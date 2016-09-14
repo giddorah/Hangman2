@@ -83,7 +83,8 @@ namespace Hangman2
                 {
                     case 1:
 
-                        WordGenerator(); // Startar spelet om spelaren trycker på 1.
+                        Difficulty();
+                        //WordGenerator(); // Startar spelet om spelaren trycker på 1.
                         menuLoop = false;
                         break;
 
@@ -226,11 +227,14 @@ namespace Hangman2
             Console.WriteLine("Liv: {0}", lives);
         }
 
-        private static void WordGenerator() // Metod för att välja ord från ordlistan.
+        private static void WordGenerator(string difficultyChoice) // Metod för att välja ord från ordlistan.
         {
+
             Console.Clear();
             playerLives = 4;
-            wordGeneratorWord = "kungen".ToLower();
+            wordGeneratorWordEasy = "kungen".ToLower();
+            wordGeneratorWordNormal = "askungen".ToLower;
+            WordGeneratorWordHard = "kontinental".ToLower;
             numberOfGuesses = 0;
             guessHistory = "";
             Guess();
