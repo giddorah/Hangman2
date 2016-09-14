@@ -20,9 +20,16 @@ namespace Hangman2
 
         static void Main(string[] args)
         {
-            //MainMenu(""); // Metod för att visa startmenyn.
             TakeName(); // Metod för att hämta in spelarens namn.
-            /*HowTo(); // Metod för att visa en guide.
+        }
+
+        private static void ForDeveloper()
+        {
+            /*
+            TakeName(); // Metod för att hämta in spelarens namn.
+            MainMenu(""); // Metod för att visa startmenyn.
+
+            HowTo(); // Metod för att visa en guide.
             
             StartGame(); // Metod för att starta spelet.
             WordGenerator(); // Metod för att generera (Hämta) ord till spelet.
@@ -41,7 +48,7 @@ namespace Hangman2
             
             MainMenuGui(); // Metod för att visa gränssnittet för huvudmenyn.
             HowToGui(); // Metod för att visa gränssnittet för how to'n.*/
-        }
+        } // Visar information om vilka metoder vi har att arbeta med.
 
         private static void TakeName() // Metod för att insamla spelarens namn.
         {
