@@ -249,17 +249,17 @@ namespace Hangman2
                 case 1:
                     Console.WriteLine("Du valde lätt nivå!");
                     wordGeneratorWord = wordGeneratorWordEasy;
-                    Difficulty();
+                    WordGenerator();
                     break;
                 case 2:
                     Console.WriteLine("Du valde medel nivå");
                     wordGeneratorWord = wordGeneratorWordNormal;
-                    Difficulty();
+                    WordGenerator();
                     break;
                 case 3:
                     Console.WriteLine("Du valde svår nivå");
                     wordGeneratorWord = wordGeneratorWordHard;
-                    Difficulty();
+                    WordGenerator();
                     break;
                 default: 
                     Console.WriteLine("Var vänlig och skriv in 1,2 eller 3");
