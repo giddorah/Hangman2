@@ -184,7 +184,20 @@ namespace Hangman2
 
             else if (playerLives == 0 || playerLives < 2)
                 LoseGame();
+            else if (playerLives < 4)
+            {
+                Console.WriteLine("\nDu gissade fel, försök igen!");
+                playerLives--;
+                
+                Console.Write("\nDu har: ");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write(playerLives);
+                Console.ResetColor();
+                Console.Write(" liv kvar ");
+                
 
+                Guess();
+            }
             else
             {
 
@@ -197,7 +210,7 @@ namespace Hangman2
 
         private static void Guess() // Metod för att samla in gissning från spelaren.
         {
-            Console.WriteLine("Du har gissat på:" + guessHistory);
+            Console.WriteLine("\nDu har gissat på:" + guessHistory);
             WordLength();
             Console.Write("Gissa ord: ");
             playerGuess = Console.ReadLine().ToLower();
