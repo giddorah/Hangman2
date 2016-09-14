@@ -111,7 +111,7 @@ namespace Hangman2
 
                     case 3:
                         Console.WriteLine("Avslutar spelet."); // Avslutar spelet om spelaren trycker på 3.
-                        Timer(3);
+                        Timer(1);
                         Environment.Exit(0);
                         menuLoop = false;
                         break;
@@ -120,7 +120,7 @@ namespace Hangman2
                         Console.WriteLine("Använd enbart 1, 2 eller 3."); // Visas om spelaren trycker på någon annan knapp än tillåtet.
                         Console.WriteLine("Tryck enter för att gå tillbaka och försöka igen.");
                         Console.ReadLine();
-                        MainMenu();
+                        //MainMenu();
                         break;
                 }
             }
@@ -167,6 +167,15 @@ namespace Hangman2
 
         private static void LoseGame() // Förolämpar spelaren om denne inte är så bra.
         {
+            Console.WriteLine(" ________________ ");
+            Console.WriteLine(" |  | ");
+            Console.WriteLine(" | ( ) ");
+            Console.WriteLine(" | /|\\ ");
+            Console.WriteLine(" |  | ");
+            Console.WriteLine(" | / \\ ");
+            Console.WriteLine(" | ");
+            Console.WriteLine(" | ");
+            Console.WriteLine(" |_______ ");
             Console.WriteLine("Du... Dra.");
             Console.ReadLine();
             MainMenu();
