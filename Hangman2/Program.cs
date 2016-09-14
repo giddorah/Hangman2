@@ -130,7 +130,7 @@ namespace Hangman2
         private static void HowTo() // Metod för att visa HowTo'n.
         {
             Console.Clear();
-            Console.WriteLine("------------------HOW TO--------------------------");
+            Console.WriteLine("----------------------HOW TO----------------------");
             Console.WriteLine("|                                                |");
             Console.WriteLine("| För att spela spelet måste du gissa ord. Om du |");
             Console.WriteLine("| gissar fel så kommer du bli av med liv.        |");
