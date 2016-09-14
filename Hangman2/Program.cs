@@ -84,10 +84,7 @@ namespace Hangman2
 
                 if (inputCheckLength == 0)
                 {
-                    Console.WriteLine("Du måste göra ett val");
                     mainMenuSwitch = 0;
-                    MainMenu();
-                    Console.ReadLine();
                 }
                 else
                 {
@@ -117,7 +114,7 @@ namespace Hangman2
                         Console.WriteLine("Använd enbart 1, 2 eller 3."); // Visas om spelaren trycker på någon annan knapp än tillåtet.
                         Console.WriteLine("Tryck enter för att gå tillbaka och försöka igen.");
                         Console.ReadLine();
-                        MainMenu();
+                        //MainMenu();
                         break;
                 }
             }
