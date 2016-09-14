@@ -102,7 +102,7 @@ namespace Hangman2
                         break;
 
                     case 2:
-                        HowTo(); // Visar HowTo'n om spelaren trycker på 2.
+                        Difficulty(); // Visar HowTo'n om spelaren trycker på 2.
                         menuLoop = false;
                         break;
 
@@ -240,7 +240,7 @@ namespace Hangman2
             Console.WriteLine("Liv: {0}", lives);
         }
 
-        private static void WordGenerator(string difficultyChoice) // Metod för att välja ord från ordlistan.
+        private static void WordGenerator() // Metod för att välja ord från ordlistan.
         {
 
             Console.Clear();
