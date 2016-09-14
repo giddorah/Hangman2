@@ -59,10 +59,11 @@ namespace Hangman2
             while (menuLoop == 1)
             {
                 Console.Clear(); // Rensar konsollen från tidigare kommandon.
-                Console.WriteLine("--------------------------------------------------");
+
+                /*Console.WriteLine("--------------------------------------------------");
                 Console.WriteLine("|                                                |");
                 Console.Write("|");
-                for (int i = 0; i < 10-playerName.Length/2; i++)
+                for (int i = 0; i < 12-playerName.Length/2; i++)
                 {
                     Console.Write(" ");
                 }
@@ -92,7 +93,69 @@ namespace Hangman2
                 Console.WriteLine("| 1. Starta spel.                                |");
                 Console.WriteLine("| 2. How to.                                     |");
                 Console.WriteLine("| 3. Avsluta spel.                               |");
-                Console.WriteLine("--------------------------------------------------");
+                Console.WriteLine("--------------------------------------------------");*/
+
+                Console.WriteLine("             `..`");                                                               
+                Console.WriteLine("            .:::`                                                  `-..         ");
+                Console.WriteLine("           `.:-:`                                                  `//-         ");
+                Console.WriteLine("       `````.:.:`                ````                              `/+.         ");
+                Console.WriteLine("      .-//:/:/+...`````....::::////::---------:::--::..........````-/+-`        ");
+                Console.WriteLine("      `---::/+/:://////:::::::--..:.``````````..---::----::::::-:/+++/::::---`  ");
+                Console.WriteLine("       ``...//+s/-.......................-------------.....``....../+/:::--.-   ");
+                Console.WriteLine("        ``..-.---..````````     ``  `                       ``...``:+:.```      ");
+                Console.WriteLine("        ```.-.-..`                                           `````-/+-`         ");
+                Console.WriteLine("         ```.--.                                                   ++-          ");
+                Console.Write("         ```.-+-`");
+
+                for (int i = 0; i < 12 - playerName.Length / 2; i++)
+                {
+                    Console.Write(" ");
+                }
+                Console.Write("Välkommen {0} till Hangr 0.1", playerName); // Byter ut {0} mot vad spelaren angivit i TakeName.
+                if (playerName.Length % 2 == 0)
+                {
+
+
+                    for (int i = 0; i < 13 - playerName.Length / 2; i++)
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < 13 - playerName.Length / 2 - 1; i++)
+                    {
+                        Console.Write(" ");
+                    }
+                }
+
+
+
+
+
+                Console.WriteLine("//-          ");
+                Console.WriteLine("         `` -/o-`                                                  /::          ");
+                Console.WriteLine("         `  -:o.                                                   /::          ");
+                Console.WriteLine("         `  -/o.                                                  `+:-          ");
+                Console.WriteLine("            ./o.                                                  .o/-          ");
+                Console.WriteLine("            `/o.         Välj något av följande:                  :o/.          ");
+                Console.WriteLine("             /o-         1. Starta spel.                          /o/`          ");
+                Console.WriteLine("             /o-         2. How to.                               ++:`          ");
+                Console.WriteLine("             /o-         3. Avsluta spel.                         +/-           ");
+                Console.WriteLine("         `   :o-                                                 `++-           ");
+                Console.WriteLine("         ``  /o-`                                                .++-           ");
+                Console.WriteLine("             ++-                                               ` .++.           ");
+                Console.WriteLine("            .o+-                                               ``-/+`           ");
+                Console.WriteLine("            -o+-                ``                            ```-/+`           ");
+                Console.WriteLine("      `````./o/:-----------::::://:::::::::::::------......-`....::+-`          ");
+                Console.WriteLine("  `-:::///+oso/:+::::---------...-:..................----::::::::/:---/::--`    ");
+                Console.WriteLine("   -:/o+/::oss/:.```````````````                            ``..-/+o:.-://:`    ");
+                Console.WriteLine("  `-:::/:-.`/o/.````                                        ```.--++.    ``     ");
+                Console.WriteLine("  `..``....`:o:.`                                             `...+/.           ");
+                Console.WriteLine("            `..`                                               `..+:.           ");
+                Console.WriteLine("                                                    	            `-`            ");
+
+
 
                 // ------------ Switch-meny. Ska ej användas innan vi gått igenom den. ---------------
                 int mainMenuSwitch = int.Parse(Console.ReadLine()); // En funktion för switch-satsen att samla in knapptryckning.
@@ -130,16 +193,31 @@ namespace Hangman2
         private static void HowTo() // Metod för att visa HowTo'n.
         {
             Console.Clear();
-            Console.WriteLine("----------------------HOW TO----------------------");
-            Console.WriteLine("|                                                |");
-            Console.WriteLine("| För att spela spelet måste du gissa ord. Om du |");
-            Console.WriteLine("| gissar fel så kommer du bli av med liv.        |");
-            Console.WriteLine("--------------------------------------------------");
-            Console.WriteLine("");
-            Console.WriteLine("--------------------------------------------------");
-            Console.WriteLine("| 1. Återvänd till MainMenu()                    |");
-            Console.WriteLine("| 2. StartGame()                                 |");
-            Console.WriteLine("--------------------------------------------------");
+            Console.WriteLine("             `..`         ");                                                      
+            Console.WriteLine("            .:::`                                                  `-..         ");
+            Console.WriteLine("           `.:-:`                                                  `//-         ");
+            Console.WriteLine("       `````.:.:`                ````                              `/+.         ");
+            Console.WriteLine("      .-//:/:/+...`````....::::////::---------:::--::..........````-/+-`        ");
+            Console.WriteLine("      `---::/+/:://////:::::::--..:.``````````..---::----::::::-:/+++/::::---`  ");
+            Console.WriteLine("       ``...//+s/-.......................-------------.....``....../+/:::--.-   ");
+            Console.WriteLine("        ``..-.---..````````     ``  `                       ``...``:+:.```      ");
+            Console.WriteLine("        ```.-.-..`                                           `````-/+-`         ");
+            Console.WriteLine("         ```.--.      För att spela spelet måste du gissa ord.     ++-          ");
+            Console.WriteLine("         ```.-+-`     Om du gissar fel så kommer du att förlora    //-          ");
+            Console.WriteLine("         `` -/o-`     ett liv.                                     /::          ");
+            Console.WriteLine("             /o-                                                  +/-           ");
+            Console.WriteLine("         `   :o-      Välj ett av följande:                      `++-           ");
+            Console.WriteLine("         ``  /o-`     1. Återvänd till huvudmenyn                .++-           ");
+            Console.WriteLine("             ++-      2. Starta spelet                         ` .++.           ");
+            Console.WriteLine("            .o+-                                               ``-/+`           ");
+            Console.WriteLine("            -o+-                ``                            ```-/+`           ");
+            Console.WriteLine("      `````./o/:-----------::::://:::::::::::::------......-`....::+-`          ");
+            Console.WriteLine("  `-:::///+oso/:+::::---------...-:..................----::::::::/:---/::--`    ");
+            Console.WriteLine("   -:/o+/::oss/:.```````````````                            ``..-/+o:.-://:`    ");
+            Console.WriteLine("  `-:::/:-.`/o/.````                                        ```.--++.    ``     ");
+            Console.WriteLine("  `..``....`:o:.`                                             `...+/.           ");
+            Console.WriteLine("            `..`                                               `..+:.           ");
+            Console.WriteLine("                                                    	            `-`            ");
             int menuSwitchHowTo = int.Parse(Console.ReadLine());
         
             switch (menuSwitchHowTo) // Ytterligare en switchmeny men utan loop eftersom att menyn inte behöver visas igen.
