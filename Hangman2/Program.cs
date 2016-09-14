@@ -231,6 +231,7 @@ namespace Hangman2
             guessHistory = "";
             Guess();
         }
+        
 
         private static void StartGame() // Metod för att starta spelet.
         {
