@@ -47,9 +47,6 @@ namespace Hangman2
 
         }
 
-
-
-
         private static void TakeName() // Metod för att insamla spelarens namn.
         {
             Console.WriteLine("Skriv in namn.");
@@ -81,16 +78,14 @@ namespace Hangman2
                         break;
 
                     case 3:
-                        Console.WriteLine("| Avslutar spelet.                               |"); // Avslutar spelet om spelaren trycker på 3.
-                        Console.WriteLine("--------------------------------------------------");
+                        Console.WriteLine("Avslutar spelet."); // Avslutar spelet om spelaren trycker på 3.
                         Console.Read();
                         menuLoop = 0;
                         break;
 
                     default:
-                        Console.WriteLine("| Använd enbart 1, 2 eller 3.                    |"); // Visas om spelaren trycker på någon annan knapp än tillåtet.
-                        Console.WriteLine("| Återvänder till huvudmenyn.                    |");
-                        Console.WriteLine("--------------------------------------------------");
+                        Console.WriteLine("Använd enbart 1, 2 eller 3."); // Visas om spelaren trycker på någon annan knapp än tillåtet.
+                        Console.WriteLine("Återvänder till huvudmenyn.");
                         Console.ReadLine();
                         break;    
                 }
