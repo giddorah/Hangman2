@@ -220,7 +220,10 @@ namespace Hangman2
                 Console.Write(playerLives);
                 Console.ResetColor();
                 Console.Write(" liv kvar ");
-                
+                Console.Beep();
+                Console.Beep();
+                Console.Beep();
+
 
                 Guess();
             }
