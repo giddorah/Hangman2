@@ -52,7 +52,6 @@ namespace Hangman2
             MainMenu();
         }
 
-
         private static void MainMenu() // Huvudmenyn till spelet.
         {
             int menuLoop = 1; // En loop för att huvudmenyn ska finnas tillgänglig så länge spelaren befinner sig utanför spelet.
@@ -156,14 +155,11 @@ namespace Hangman2
             } 
         }
 
-
-
         private static void WinGame() // Avslutar spelet beroende på hur spelaren presterat.
         {
             Console.WriteLine("Grattis. Du är awesome!.");
             Console.ReadLine();
             MainMenu();
-
         }
 
         private static void LoseGame()
@@ -188,8 +184,6 @@ namespace Hangman2
             else if (playerLives == 0|| playerLives<2)
                 LoseGame();
 
-
-
             else
             {
 
@@ -197,9 +191,7 @@ namespace Hangman2
                 playerLives--;
                 Console.WriteLine("\nDu har: " + playerLives + " liv kvar");
                 Guess();
-            }
-
-            
+            }           
         }
 
         private static void Guess() // Metod för att samla in gissning från spelaren.
@@ -209,10 +201,7 @@ namespace Hangman2
             Console.WriteLine("Gissa ord: ");
             playerGuess = Console.ReadLine().ToLower();
             History();
-            CompareWord();
-
-             
-            
+            CompareWord();         
         }
 
         private static void GameInterface() // Visar "gränssnittet" för spelaren.
@@ -229,12 +218,8 @@ namespace Hangman2
             CheckEndGame();
         }
 
-
-
         private static void WordLength() // Metod för att ta reda på nuvarande ords antal bokstäver.
         {
-             //Console.WriteLine("WordLength");
-
              wordLength = wordGeneratorWord.Length;
              Console.WriteLine("Ordet är {0} bokstäver långt.", wordLength);
         }
