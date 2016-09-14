@@ -134,17 +134,19 @@ namespace Hangman2
             string checkInput = Console.ReadLine();
             int inputCheckLength = checkInput.Length;
 
-            if (inputCheckLength == 0)
-            {
-                Console.WriteLine("Du måste göra ett val");
-                menuSwitchHowTo = 0;
-                Console.ReadLine();
-                HowTo();
-            }
-            else
+            if (checkInput.Equals ("1")|| checkInput.Equals("2"))
             {
                 menuSwitchHowTo = int.Parse(checkInput);
             }
+            else 
+            {
+                Console.WriteLine("Du måste göra ett giltigt val, vänligen 1 eller 2");
+                menuSwitchHowTo = 0;
+                Timer(1.5);
+                
+                HowTo();
+            }
+            
 
             switch (menuSwitchHowTo) // Ytterligare en switchmeny men utan loop eftersom att menyn inte behöver visas igen.
             {
