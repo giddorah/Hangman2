@@ -258,7 +258,7 @@ namespace Hangman2
         {
 
             playerLives = 4;
-            wordGeneratorWord = "xylofon";
+            wordGeneratorWord = "tjockis";
             numberOfGuesses = 0;
             guessHistory = "";
             Guess();
