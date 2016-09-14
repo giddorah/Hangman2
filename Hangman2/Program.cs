@@ -67,11 +67,11 @@ namespace Hangman2
                 MainMenuGui(); // Visar gränssnittet för MainMenu.
 
                 
-                try
+                try // Hanterar tom input.
                 {
                     mainMenuSwitch = int.Parse(Console.ReadLine()); // En funktion för switch-satsen att samla in knapptryckning.
                 }
-                catch (Exception)
+                catch (Exception) // Felmeddelande som kastas om spelaren försöker gå vidare utan att välja någonting ifrån menyn.
                 {
                     Console.WriteLine("Du valde ingenting. Försök igen.");
                     mainMenuSwitch = 0;
@@ -98,7 +98,7 @@ namespace Hangman2
 
                     default:
                         Console.WriteLine("Använd enbart 1, 2 eller 3."); // Visas om spelaren trycker på någon annan knapp än tillåtet.
-                        Console.WriteLine("Återvänder till huvudmenyn.");
+                        Console.WriteLine("Tryck enter för att gå tillbaka och försöka igen.");
                         Console.ReadLine();
                         MainMenu();
                         break;
@@ -109,7 +109,19 @@ namespace Hangman2
         private static void HowTo() // Metod för att visa HowTo'n.
         {
             HowToGui(); // Visar gränssnittet för HowTo'n.
-            int menuSwitchHowTo = int.Parse(Console.ReadLine());
+            int menuSwitchHowTo;
+            try
+            {
+                menuSwitchHowTo = int.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Du har inte gjort något val. Tryck enter för att gå tillbaka och försöka igen.");
+                menuSwitchHowTo = 0;
+                Console.ReadLine();
+                HowTo();
+            }
+            
 
             switch (menuSwitchHowTo) // Ytterligare en switchmeny men utan loop eftersom att menyn inte behöver visas igen.
             {
