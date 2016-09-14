@@ -244,7 +244,7 @@ namespace Hangman2
         {
 
             playerLives = 4;
-            wordGeneratorWord = "Kungen";
+            wordGeneratorWord = "kungen";
             numberOfGuesses = 0;
             guessHistory = "";
             Guess();
