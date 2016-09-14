@@ -267,7 +267,7 @@ namespace Hangman2
                 return true;
             }
 
-            if (playerLives == 3)
+            if (playerLives < 4)
             {
                 Console.WriteLine("\nDu gissade fel, försök igen!");
                 
@@ -423,13 +423,13 @@ namespace Hangman2
             Console.WriteLine("         `  -:o.                                                   /::          ");
             Console.WriteLine("         `  -/o.                                                  `+:-          ");
             Console.WriteLine("            ./o.                                                  .o/-          ");
-            Console.WriteLine("            `/o.         Välj något av följande:                  :o/.          ");
-            Console.WriteLine("             /o-         1. Starta spel.                          /o/`          ");
-            Console.WriteLine("             /o-         2. How to.                               ++:`          ");
-            Console.WriteLine("             /o-         3. Avsluta spel.                         +/-           ");
+            Console.WriteLine("            `/o.             Välj något av följande:              :o/.          ");
+            Console.WriteLine("             /o-             1. Starta spel.                      /o/`          ");
+            Console.WriteLine("             /o-             2. How to.                           ++:`          ");
+            Console.WriteLine("             /o-             3. Avsluta spel.                     +/-           ");
             Console.WriteLine("         `   :o-                                                 `++-           ");
             Console.WriteLine("         ``  /o-`                                                .++-           ");
-            Console.WriteLine("             ++-                                               ` .++.           ");
+            Console.WriteLine("             ++-           förra spelet tog {0} gissningar       ` .++.           ", numberOfGuesses);
             Console.WriteLine("            .o+-                                               ``-/+`           ");
             Console.WriteLine("            -o+-                ``                            ```-/+`           ");
             Console.WriteLine("      `````./o/:-----------::::://:::::::::::::------......-`....::+-`          ");
