@@ -235,11 +235,6 @@ namespace Hangman2
                 input = int.Parse(checkInput);
             }
 
-            
-
-
-            int input=int.Parse(Console.ReadLine());
-
             switch (input)
             {
                 case 1:
