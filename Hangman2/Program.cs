@@ -82,18 +82,18 @@ namespace Hangman2
                 checkInput = Console.ReadLine();
 
                 //int inputCheckLength = checkInput.Length;
-
-                if (!checkInput.Equals("1") || !checkInput.Equals("2") || !checkInput.Equals("3"))
+                Console.WriteLine(checkInput);
+                if (checkInput.Equals("1") || checkInput.Equals("2") || checkInput.Equals("3"))
                 {
-                    Console.WriteLine("Du kan bara välja 1, 2 eller 3.");
-                    mainMenuSwitch = 0;
-                    
-                    Console.ReadLine();
+                   
+                    mainMenuSwitch = int.Parse(checkInput);
+
                 }
 
                 else
                 {
-                    mainMenuSwitch = int.Parse(checkInput);
+                    mainMenuSwitch = 0;
+                    
                 }
 
                 switch (mainMenuSwitch) // Initierar en switch-meny med tre olika alternativ.
