@@ -221,6 +221,7 @@ namespace Hangman2
                 Guess();
             }
         }
+
         static void Difficulty()
         {
             Console.WriteLine("Svårighetsgrad");
