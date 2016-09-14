@@ -163,7 +163,7 @@ namespace Hangman2
             MainMenu();
         }
 
-        private static void LoseGame()
+        private static void LoseGame() // Förolämpar spelaren om denne inte är så bra.
         {
             Console.WriteLine("Du... Dra.");
             Console.ReadLine();
