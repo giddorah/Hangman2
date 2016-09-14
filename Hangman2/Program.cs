@@ -55,6 +55,7 @@ namespace Hangman2
         {
             Console.WriteLine("Skriv in namn.");
             playerName = Console.ReadLine();
+
             if (playerName.Length >= 3 && playerName.Length <= 25)
             { 
                 Console.WriteLine("välkommen " + playerName);
@@ -63,13 +64,9 @@ namespace Hangman2
             else
             {
                 Console.WriteLine("skriv minst 3 bokstäver och inte mer än 25 bokstäver");
-
                 TakeName();
             }
         }
-           
-
-            
 
         private static void MainMenu() // Huvudmenyn till spelet.
         {
@@ -96,7 +93,7 @@ namespace Hangman2
                 {
                     case 1:
 
-                        Difficulty();
+                        //Difficulty();
                         //WordGenerator(); // Startar spelet om spelaren trycker på 1.
                         menuLoop = false;
                         break;
@@ -151,7 +148,7 @@ namespace Hangman2
 
                 case 2:
                     Console.WriteLine("StartGame()");
-                    Difficulty();
+                    //Difficulty();
                     break;
             }
         }
@@ -245,9 +242,9 @@ namespace Hangman2
 
             Console.Clear();
             playerLives = 4;
-            wordGeneratorWordEasy = "kungen".ToLower();
-            wordGeneratorWordNormal = "askungen".ToLower;
-            WordGeneratorWordHard = "kontinental".ToLower;
+            //wordGeneratorWordEasy = "kungen".ToLower();
+            //wordGeneratorWordNormal = "askungen".ToLower;
+            //WordGeneratorWordHard = "kontinental".ToLower;
             numberOfGuesses = 0;
             guessHistory = "";
             Guess();
