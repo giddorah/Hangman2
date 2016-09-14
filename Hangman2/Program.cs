@@ -109,7 +109,8 @@ namespace Hangman2
 
                     case 3:
                         Console.WriteLine("Avslutar spelet."); // Avslutar spelet om spelaren trycker på 3.
-                        Console.Read();
+                        Timer(3);
+                        Environment.Exit(0);
                         menuLoop = false;
                         break;
 
@@ -146,12 +147,10 @@ namespace Hangman2
             switch (menuSwitchHowTo) // Ytterligare en switchmeny men utan loop eftersom att menyn inte behöver visas igen.
             {
                 case 1:
-                    Console.WriteLine("Återvänder till MainMenu()");
                     MainMenu(); // Låter spelaren återgå till mainmenu utan att ändra stringen för spelarnamn.
                     break;
 
                 case 2:
-                    Console.WriteLine("StartGame()");
                     Difficulty();
                     break;
             }
@@ -213,6 +212,7 @@ namespace Hangman2
         }
         static void Difficulty()
         {
+            Console.WriteLine("Svårighetsgrad");
             Console.WriteLine("Vill du köra på lätt nivå? Tryck 1:");
             Console.WriteLine("Vill du köra på medel nivå? Tryck 2:");
             Console.WriteLine("Vill du köra på svår nivå? Tryck 3:");
