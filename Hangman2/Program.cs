@@ -20,8 +20,6 @@ namespace Hangman2
 
         static void Main(string[] args)
         {
-
-            //string playerName = "";
             //MainMenu(""); // Metod för att visa startmenyn.
             TakeName(); // Metod för att hämta in spelarens namn.
             /*HowTo(); // Metod för att visa en guide.
@@ -42,9 +40,7 @@ namespace Hangman2
             LoseGame(); // Metod om man förlorar spelet.
             
             MainMenuGui(); // Metod för att visa gränssnittet för huvudmenyn.
-            HowToGui(); // Metod för att visa gränssnittet för how to'n.
-            Console.ReadLine();*/
-
+            HowToGui(); // Metod för att visa gränssnittet för how to'n.*/
         }
 
         private static void TakeName() // Metod för att insamla spelarens namn.
@@ -56,8 +52,8 @@ namespace Hangman2
 
         private static void MainMenu() // Huvudmenyn till spelet.
         {
-            int menuLoop = 1; // En loop för att huvudmenyn ska finnas tillgänglig så länge spelaren befinner sig utanför spelet.
-            while (menuLoop == 1)
+            bool menuLoop = true; // En loop för att huvudmenyn ska finnas tillgänglig så länge spelaren befinner sig utanför spelet.
+            while (menuLoop)
             {
                 Console.Clear(); // Rensar konsollen från tidigare kommandon.
                 MainMenuGui(); // Visar gränssnittet för MainMenu.
@@ -68,19 +64,18 @@ namespace Hangman2
                     case 1:
                         
                         WordGenerator(); // Startar spelet om spelaren trycker på 1.
-                        menuLoop = 0;
-                        
+                        menuLoop = false;
                         break;
 
                     case 2:
                         HowTo(); // Visar HowTo'n om spelaren trycker på 2.
-                        menuLoop = 0;
+                        menuLoop = false;
                         break;
 
                     case 3:
                         Console.WriteLine("Avslutar spelet."); // Avslutar spelet om spelaren trycker på 3.
                         Console.Read();
-                        menuLoop = 0;
+                        menuLoop = false;
                         break;
 
                     default:
@@ -134,7 +129,6 @@ namespace Hangman2
         {
             numberOfGuesses++;
             if (playerGuess.Equals(wordGeneratorWord))
-
                 WinGame();
 
             else if (playerLives == 0|| playerLives<2)
