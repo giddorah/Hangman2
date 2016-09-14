@@ -146,12 +146,10 @@ namespace Hangman2
             switch (menuSwitchHowTo) // Ytterligare en switchmeny men utan loop eftersom att menyn inte behöver visas igen.
             {
                 case 1:
-                    Console.WriteLine("Återvänder till MainMenu()");
                     MainMenu(); // Låter spelaren återgå till mainmenu utan att ändra stringen för spelarnamn.
                     break;
 
                 case 2:
-                    Console.WriteLine("StartGame()");
                     Difficulty();
                     break;
             }
