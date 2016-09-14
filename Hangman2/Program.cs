@@ -191,8 +191,8 @@ namespace Hangman2
                 Guess();
                 History();
 
-                if (CheckEndGame()) return;
-                CompareWord();
+                if (CompareWord()) return;
+              
             }
         }
 
@@ -224,24 +224,6 @@ namespace Hangman2
             else guessHistory += ", " + playerGuess;
         }
 
-        private static bool CheckEndGame() // Håller reda på om spelaren har gissat rätt ord eller om antal liv är 0.
-        {
-            Console.Clear();
-            numberOfGuesses++;
-            if (playerGuess.Equals(wordGeneratorWord))
-            {
-                WinGame();
-                return true;
-            }
-
-            else if (playerLives == 0 || playerLives < 2)
-            {
-                LoseGame();
-                return true;
-            }
-            return false;
-        }
-
         private static void WinGame() // Avslutar spelet beroende på hur spelaren presterat.
         {
             Console.WriteLine("Grattis. Du är awesome!.");
@@ -265,13 +247,30 @@ namespace Hangman2
 
         }
 
-        private static void CompareWord() // Metod för att jämföra Guess med WordGenerator.
+        private static bool CompareWord() // Metod för att jämföra Guess med WordGenerator.
         {
+             
 
-            if (playerLives < 4)
+            Console.Clear();
+            numberOfGuesses++;
+            if (playerGuess.Equals(wordGeneratorWord))
+            {
+                WinGame();
+                return true;
+            }
+
+            playerLives--;
+
+            if (playerLives == 0)
+            {
+                LoseGame();
+                return true;
+            }
+
+            if (playerLives == 3)
             {
                 Console.WriteLine("\nDu gissade fel, försök igen!");
-                playerLives--;
+                
 
                 Console.Write("\nDu har: ");
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -287,10 +286,11 @@ namespace Hangman2
             {
 
                 Console.WriteLine("\nDu gissade fel, försök igen!");
-                playerLives--;
                 Console.WriteLine("\nDu har: " + playerLives + " liv kvar");
 
             }
+
+            return false;
         }
 
         private static void HowTo() // Metod för att visa HowTo'n.
@@ -344,6 +344,12 @@ namespace Hangman2
         {
             int lives = 3;
             Console.WriteLine("Liv: {0}", lives);
+        }
+
+        //används aldrig
+        private static void CheckEndGame() // Håller reda på om spelaren har gissat rätt ord eller om antal liv är 0.
+        {
+
         }
 
         private static void HowToGui()
