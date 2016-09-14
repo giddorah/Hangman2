@@ -322,7 +322,7 @@ namespace Hangman2
         {
 
             playerLives = 4;
-            wordGeneratorWord = "xylofon";
+            wordGeneratorWord = "kungen";
             numberOfGuesses = 0;
             guessHistory = "";
             Guess();
