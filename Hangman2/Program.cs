@@ -179,7 +179,7 @@ namespace Hangman2
             Console.WriteLine(" | / \\ ");
             Console.WriteLine(" | ");
             Console.WriteLine(" | ");
-            Console.WriteLine(" |_______ ");
+            Console.WriteLine(" | ______________ ");
             Console.WriteLine("Du... Dra.");
             Console.ReadLine();
             MainMenu();
