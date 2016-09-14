@@ -20,7 +20,7 @@ namespace Hangman2
 
         static void Main(string[] args)
         {
-            TakeName(); // Metod för att hämta in spelarens namn.
+            TakeName(); // Metod för att hämta in spelarens namn!.
         }
 
         private static void ForDeveloper()
