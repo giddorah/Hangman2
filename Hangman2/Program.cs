@@ -109,7 +109,7 @@ namespace Hangman2
 
                     case 3:
                         Console.WriteLine("Avslutar spelet."); // Avslutar spelet om spelaren trycker på 3.
-                        Timer(3);
+                        Timer(1);
                         Environment.Exit(0);
                         menuLoop = false;
                         break;
