@@ -19,6 +19,7 @@ namespace Hangman2
         static int wordLength; // Lagrar ordets antal bokstäver
         static string guessHistory; // Lagrar tidigare gissningar
         static int numberOfGuesses; // Lagrar hur många gissningar som gjorts
+        static int menuSwitchHowTo;
         #endregion
 
         static void Main(string[] args)
@@ -81,25 +82,20 @@ namespace Hangman2
                 MainMenuGui(); // Visar gränssnittet för MainMenu.
                 checkInput = Console.ReadLine();
 
-                //int inputCheckLength = checkInput.Length;
                 Console.WriteLine(checkInput);
                 if (checkInput.Equals("1") || checkInput.Equals("2") || checkInput.Equals("3"))
                 {
-                   
                     mainMenuSwitch = int.Parse(checkInput);
-
                 }
 
                 else
                 {
                     mainMenuSwitch = 0;
-                    
                 }
 
                 switch (mainMenuSwitch) // Initierar en switch-meny med tre olika alternativ.
                 {
                     case 1:
-
                         Difficulty();
                         menuLoop = false;
                         break;
@@ -120,7 +116,6 @@ namespace Hangman2
                         Console.WriteLine("Använd enbart 1, 2 eller 3."); // Visas om spelaren trycker på någon annan knapp än tillåtet.
                         Console.WriteLine("Tryck enter för att gå tillbaka och försöka igen.");
                         Console.ReadLine();
-                        //MainMenu();
                         break;
                 }
             }
@@ -129,21 +124,25 @@ namespace Hangman2
         private static void HowTo() // Metod för att visa HowTo'n.
         {
             HowToGui(); // Visar gränssnittet för HowTo'n.
-            int menuSwitchHowTo;
 
-            string checkInput = Console.ReadLine();
-            int inputCheckLength = checkInput.Length;
+            bool guiErrorLoop = true;
+            while (guiErrorLoop)
+            {
+                string checkInput = Console.ReadLine();
 
-            if (inputCheckLength == 0)
-            {
-                Console.WriteLine("Du måste göra ett val");
-                menuSwitchHowTo = 0;
-                Console.ReadLine();
-                HowTo();
-            }
-            else
-            {
-                menuSwitchHowTo = int.Parse(checkInput);
+                Console.WriteLine(checkInput);
+            
+                if (checkInput.Equals("1") || checkInput.Equals("2") || checkInput.Equals("3"))
+                {
+
+                    menuSwitchHowTo = int.Parse(checkInput);
+                    guiErrorLoop = false;
+                }
+
+                else
+                {
+                    Console.WriteLine("Du måste välja 1 eller 2.");
+                }
             }
 
             switch (menuSwitchHowTo) // Ytterligare en switchmeny men utan loop eftersom att menyn inte behöver visas igen.
@@ -154,6 +153,10 @@ namespace Hangman2
 
                 case 2:
                     Difficulty();
+                    break;
+
+                default:
+                    Console.WriteLine("Du kan enbart använda alternativ 1 eller 2. Försök igen.");
                     break;
             }
         }
@@ -317,7 +320,6 @@ namespace Hangman2
 
         private static void WordGenerator() // Metod för att välja ord från ordlistan.
         {
-
             Console.Clear();
             playerLives = 4;
             numberOfGuesses = 0;
@@ -388,7 +390,6 @@ namespace Hangman2
             Console.Write("Välkommen {0} till Hangr 0.1", playerName); // Byter ut {0} mot vad spelaren angivit i TakeName.
             if (playerName.Length % 2 == 0)
             {
-
 
                 for (int i = 0; i < 13 - playerName.Length / 2; i++)
                 {
