@@ -81,8 +81,6 @@ namespace Hangman2
                 MainMenuGui(); // Visar gränssnittet för MainMenu.
                 checkInput = Console.ReadLine();
 
-                //int inputCheckLength = checkInput.Length;
-
                 if (checkInput.Equals("1") || checkInput.Equals("2") || checkInput.Equals("3"))
                 {
                    
@@ -118,7 +116,6 @@ namespace Hangman2
                         Console.WriteLine("Använd enbart 1, 2 eller 3."); // Visas om spelaren trycker på någon annan knapp än tillåtet.
                         Console.WriteLine("Tryck enter för att gå tillbaka och försöka igen.");
                         Console.ReadLine();
-                        //MainMenu();
                         break;
                 }
             }
@@ -191,8 +188,11 @@ namespace Hangman2
                 Guess();
                 History();
 
-                if (CompareWord()) return;
-              
+
+                //metoden CompareWord Anropas och om den är sann och då går man ur loopen.
+                //den är sann om man har vunnit eller förlorat som kollas i metoden
+                if (CompareWord()) return;  
+                
             }
         }
 
@@ -222,30 +222,7 @@ namespace Hangman2
                 guessHistory += " " + playerGuess;
             }
             else guessHistory += ", " + playerGuess;
-        }
-
-        private static void WinGame() // Avslutar spelet beroende på hur spelaren presterat.
-        {
-            Console.WriteLine("Grattis. Du är awesome!.");
-            Console.ReadLine();
-
-        }
-
-        private static void LoseGame() // Förolämpar spelaren om denne inte är så bra.
-        {
-            Console.WriteLine(" ________________ ");
-            Console.WriteLine(" |  | ");
-            Console.WriteLine(" | ( ) ");
-            Console.WriteLine(" | /|\\ ");
-            Console.WriteLine(" |  | ");
-            Console.WriteLine(" | / \\ ");
-            Console.WriteLine(" | ");
-            Console.WriteLine(" | ");
-            Console.WriteLine(" |_______ ");
-            Console.WriteLine("Du... Dra.");
-            Console.ReadLine();
-
-        }
+        }     
 
         private static bool CompareWord() // Metod för att jämföra Guess med WordGenerator.
         {
@@ -293,6 +270,29 @@ namespace Hangman2
             return false;
         }
 
+        private static void WinGame() // Avslutar spelet beroende på hur spelaren presterat.
+        {
+            Console.WriteLine("Grattis. Du är awesome!.");
+            Console.ReadLine();
+
+        }
+
+        private static void LoseGame() // Förolämpar spelaren om denne inte är så bra.
+        {
+            Console.WriteLine(" ________________ ");
+            Console.WriteLine(" |  | ");
+            Console.WriteLine(" | ( ) ");
+            Console.WriteLine(" | /|\\ ");
+            Console.WriteLine(" |  | ");
+            Console.WriteLine(" | / \\ ");
+            Console.WriteLine(" | ");
+            Console.WriteLine(" | ");
+            Console.WriteLine(" |_______ ");
+            Console.WriteLine("Du... Dra.");
+            Console.ReadLine();
+
+        }
+
         private static void HowTo() // Metod för att visa HowTo'n.
         {
             HowToGui(); // Visar gränssnittet för HowTo'n.
@@ -316,8 +316,9 @@ namespace Hangman2
             switch (menuSwitchHowTo) // Ytterligare en switchmeny men utan loop eftersom att menyn inte behöver visas igen.
             {
                 case 1:
-                    //MainMenu(); // Låter spelaren återgå till mainmenu utan att ändra stringen för spelarnamn.
-                    break;
+                    // Låter spelaren återgå till mainmenu utan att ändra stringen för spelarnamn.
+                    return;
+                    
 
                 case 2:
                     Difficulty();
