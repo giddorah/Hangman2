@@ -17,6 +17,7 @@ namespace Hangman2
         static string guessHistory; // Lagrar tidigare gissningar
         static int numberOfGuesses; // Lagrar hur många gissningar som gjorts
         static int menuSwitchHowTo;
+        static char[] maskedWord;
         #endregion
 
         static void Main(string[] args)
@@ -217,11 +218,13 @@ namespace Hangman2
         private static void WordLength() // Metod för att ta reda på nuvarande ords antal bokstäver.
         {
             wordLength = wordGeneratorWord.Length;
+            maskedWord = new char[wordLength];
             Console.Write("Ordet är: ");
             for (int i = 0; i < wordLength; i++)
                
             {
                 Console.Write("_ ");
+                maskedWord[i] = '_';
 
             }
 
