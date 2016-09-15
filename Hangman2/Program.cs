@@ -196,7 +196,7 @@ namespace Hangman2
 
             {
                 
-                maskedWord[i] = '_ ';
+                maskedWord[i] = '_';
 
             }
             GameLoop();
@@ -232,7 +232,7 @@ namespace Hangman2
             for (int i = 0; i < wordLength; i++)
                
             {
-                Console.Write(maskedWord[i]);
+                Console.Write(maskedWord[i] + " ");
 
             }
 
