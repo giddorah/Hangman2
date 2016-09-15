@@ -249,7 +249,21 @@ namespace Hangman2
 
         private static bool CompareWord() // Metod för att jämföra Guess med WordGenerator.
         {
-             
+            bool changeMade = false;
+
+            for (int i = 0; i < wordLength; i++)
+            {
+                if (playerGuess[0].Equals(wordGeneratorWord[i]))
+                {
+                    maskedWord[i] = playerGuess[0];
+                    changeMade = true;
+                }
+                
+            }
+            if (changeMade == false)
+            {
+                playerLives--;
+            }
 
             Console.Clear();
             numberOfGuesses++;
