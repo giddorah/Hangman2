@@ -55,19 +55,24 @@ namespace Hangman2
 
         private static void TakeName() // Metod för att insamla spelarens namn.
         {
-            Console.WriteLine("Skriv in namn.");
-            playerName = Console.ReadLine();
-
-            if (playerName.Length >= 3 && playerName.Length <= 25)
-            { 
-                Console.WriteLine("välkommen " + playerName);
-                MainMenu();
-            }
-            else
+            do
             {
-                Console.WriteLine("Skriv minst 3 bokstäver och inte mer än 25 bokstäver");
-                TakeName();
-            }
+
+                Console.WriteLine("Skriv in namn.");
+                playerName = Console.ReadLine();
+
+                if (playerName.Length >= 3 && playerName.Length <= 25)
+                {
+                    Console.WriteLine("välkommen " + playerName);
+                    MainMenu();
+                    return;
+                }
+                else
+                {
+                    Console.WriteLine("Skriv minst 3 bokstäver och inte mer än 25 bokstäver");
+                   
+                } 
+            } while (true);
         }
 
         private static void MainMenu() // Huvudmenyn till spelet.
@@ -124,49 +129,56 @@ namespace Hangman2
 
         private static void Difficulty()
         {
-            Console.WriteLine("Svårighetsgrad");
-            Console.WriteLine("Vill du köra på lätt nivå? Tryck 1:");
-            Console.WriteLine("Vill du köra på medel nivå? Tryck 2:");
-            Console.WriteLine("Vill du köra på svår nivå? Tryck 3:");
-            wordGeneratorWordEasy = "kungen".ToLower();
-            wordGeneratorWordNormal = "askungen".ToLower();
-            wordGeneratorWordHard = "kontinental".ToLower();
-
-            string checkInput = Console.ReadLine();
-            int input;
-            int inputCheckLength = checkInput.Length;
-
-            if (inputCheckLength == 0)
+            while (true)
             {
-                Console.WriteLine("Du måste göra ett val");
-                input = 0;
-                Difficulty();
-            }
-            else
-            {
-                input = int.Parse(checkInput);
-            }
+                int difficultySwitch;
 
-            switch (input)
-            {
-                case 1:
-                    Console.WriteLine("Du valde lätt nivå!");
-                    wordGeneratorWord = wordGeneratorWordEasy;
-                    WordGenerator();
-                    break;
-                case 2:
-                    Console.WriteLine("Du valde medel nivå");
-                    wordGeneratorWord = wordGeneratorWordNormal;
-                    WordGenerator();
-                    break;
-                case 3:
-                    Console.WriteLine("Du valde svår nivå");
-                    wordGeneratorWord = wordGeneratorWordHard;
-                    WordGenerator();
-                    break;
-                default:
-                    Console.WriteLine("Var vänlig och skriv in 1,2 eller 3");
-                    break;
+                Console.WriteLine("Svårighetsgrad");
+                Console.WriteLine("Vill du köra på lätt nivå? Tryck 1:");
+                Console.WriteLine("Vill du köra på medel nivå? Tryck 2:");
+                Console.WriteLine("Vill du köra på svår nivå? Tryck 3:");
+                wordGeneratorWordEasy = "kungen".ToLower();
+                wordGeneratorWordNormal = "askungen".ToLower();
+                wordGeneratorWordHard = "kontinental".ToLower();
+
+                string checkInput = Console.ReadLine();
+                int inputCheckLength = checkInput.Length;
+
+                if (checkInput.Equals("1") || checkInput.Equals("2") || checkInput.Equals("3"))
+                {
+
+                    difficultySwitch = int.Parse(checkInput);
+
+                }
+
+                else
+                {
+                    difficultySwitch = 0;
+
+                }
+
+                switch (difficultySwitch)
+                {
+                    case 1:
+                        Console.WriteLine("Du valde lätt nivå!");
+                        wordGeneratorWord = wordGeneratorWordEasy;
+                        WordGenerator();
+                       
+                        return;
+                    case 2:
+                        Console.WriteLine("Du valde medel nivå");
+                        wordGeneratorWord = wordGeneratorWordNormal;
+                        WordGenerator();
+                        return;
+                    case 3:
+                        Console.WriteLine("Du valde svår nivå");
+                        wordGeneratorWord = wordGeneratorWordHard;
+                        WordGenerator();
+                        return;
+                    default:
+                        Console.WriteLine("Var vänlig och skriv in 1,2 eller 3");
+                        break;
+                }
             }
         }
 
@@ -296,34 +308,39 @@ namespace Hangman2
 
         private static void HowTo() // Metod för att visa HowTo'n.
         {
-            HowToGui(); // Visar gränssnittet för HowTo'n.
-            int menuSwitchHowTo;
-
-            string checkInput = Console.ReadLine();
-            int inputCheckLength = checkInput.Length;
-
-            if (inputCheckLength == 0)
+            while (true)
             {
-                Console.WriteLine("Du måste göra ett val");
-                menuSwitchHowTo = 0;
-                Console.ReadLine();
-                HowTo();
-            }
-            else
-            {
-                menuSwitchHowTo = int.Parse(checkInput);
-            }
+                HowToGui(); // Visar gränssnittet för HowTo'n.
+                Console.WriteLine("Var vänlig och skriv in 1 eller 2");
+                int menuSwitchHowTo;
 
-            switch (menuSwitchHowTo) // Ytterligare en switchmeny men utan loop eftersom att menyn inte behöver visas igen.
-            {
-                case 1:
-                    // Låter spelaren återgå till mainmenu utan att ändra stringen för spelarnamn.
-                    return;
-                    
+                string checkInput = Console.ReadLine();
+                int inputCheckLength = checkInput.Length;
 
-                case 2:
-                    Difficulty();
-                    break;
+                if (checkInput.Equals("1") || checkInput.Equals("2"))
+                {
+
+                    menuSwitchHowTo = int.Parse(checkInput);
+
+                }
+
+                else
+                {
+                    menuSwitchHowTo = 0;
+
+                }
+
+                switch (menuSwitchHowTo) // Ytterligare en switchmeny men utan loop eftersom att menyn inte behöver visas igen.
+                {
+                    case 1:
+                        // Låter spelaren återgå till mainmenu utan att ändra stringen för spelarnamn.
+                        return;
+
+
+                    case 2:
+                        Difficulty();
+                        return;
+                }
             }
         }
 
