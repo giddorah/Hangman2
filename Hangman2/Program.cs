@@ -353,7 +353,7 @@ namespace Hangman2
 
         }
 
-        private static void HowToGui()
+        private static void HowToGui() // Metod för att visa gränssnittet för How To'n
         {
             Console.Clear();
             Console.WriteLine("             `..`         ");
@@ -381,9 +381,9 @@ namespace Hangman2
             Console.WriteLine("  `..``....`:o:.`                                             `...+/.           ");
             Console.WriteLine("            `..`                                               `..+:.           ");
             Console.WriteLine("                                                    	            `-`            ");
-        } // Metod för att visa gränssnittet för How To'n
+        } 
 
-        private static void MainMenuGui()
+        private static void MainMenuGui() // Metod för att visa gränssnittet för huvudmenyn
         {
             Console.WriteLine("             `..`");
             Console.WriteLine("            .:::`                                                  `-..         ");
@@ -440,7 +440,7 @@ namespace Hangman2
             Console.WriteLine("  `..``....`:o:.`                                             `...+/.           ");
             Console.WriteLine("            `..`                                               `..+:.           ");
             Console.WriteLine("                                                    	            `-`            ");
-        } // Metod för att visa gränssnittet för huvudmenyn
+        } 
 
         public static void Timer(double seconds)
         {
