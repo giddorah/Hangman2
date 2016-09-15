@@ -56,33 +56,37 @@ namespace Hangman2
 
         private static void TakeName() // Metod för att insamla spelarens namn.
         {
-            Console.WriteLine("Skriv in namn.");
-            playerName = Console.ReadLine();
-
-            if (playerName.Length >= 3 && playerName.Length <= 25)
-            { 
-                Console.WriteLine("välkommen " + playerName);
-                MainMenu();
-            }
-            else
+            do
             {
-                Console.WriteLine("Skriv minst 3 bokstäver och inte mer än 25 bokstäver");
-                TakeName();
-            }
+
+                Console.WriteLine("Skriv in namn.");
+                playerName = Console.ReadLine();
+
+                if (playerName.Length >= 3 && playerName.Length <= 25)
+                {
+                    Console.WriteLine("välkommen " + playerName);
+                    MainMenu();
+                    return;
+                }
+                else
+                {
+                    Console.WriteLine("Skriv minst 3 bokstäver och inte mer än 25 bokstäver");
+                   
+                } 
+            } while (true);
         }
 
         private static void MainMenu() // Huvudmenyn till spelet.
         {
-            bool menuLoop = true; // En loop för att huvudmenyn ska finnas tillgänglig så länge spelaren befinner sig utanför spelet.
+            //bool menuLoop = true; // En loop för att huvudmenyn ska finnas tillgänglig så länge spelaren befinner sig utanför spelet.
             int mainMenuSwitch;
             string checkInput;
-            while (menuLoop)
+            while (true)
             {
                 Console.Clear(); // Rensar konsollen från tidigare kommandon.
                 MainMenuGui(); // Visar gränssnittet för MainMenu.
                 checkInput = Console.ReadLine();
 
-                Console.WriteLine(checkInput);
                 if (checkInput.Equals("1") || checkInput.Equals("2") || checkInput.Equals("3"))
                 {
                     mainMenuSwitch = int.Parse(checkInput);
@@ -97,20 +101,19 @@ namespace Hangman2
                 {
                     case 1:
                         Difficulty();
-                        menuLoop = false;
                         break;
 
                     case 2:
                         HowTo(); // Visar HowTo'n om spelaren trycker på 2.
-                        menuLoop = false;
                         break;
 
                     case 3:
                         Console.WriteLine("Avslutar spelet."); // Avslutar spelet om spelaren trycker på 3.
                         Timer(1);
-                        Environment.Exit(0);
-                        menuLoop = false;
-                        break;
+                        //Environment.Exit(0);
+                        //menuLoop = false;
+                        return;
+                        //break;
 
                     default:
                         Console.WriteLine("Använd enbart 1, 2 eller 3."); // Visas om spelaren trycker på någon annan knapp än tillåtet.
@@ -121,52 +124,167 @@ namespace Hangman2
             }
         }
 
-        private static void HowTo() // Metod för att visa HowTo'n.
+        private static void Difficulty()
         {
-            HowToGui(); // Visar gränssnittet för HowTo'n.
-
-            bool guiErrorLoop = true;
-            while (guiErrorLoop)
+            while (true)
             {
-                string checkInput = Console.ReadLine();
+                int difficultySwitch;
 
-                Console.WriteLine(checkInput);
-            
+                Console.WriteLine("Svårighetsgrad");
+                Console.WriteLine("Vill du köra på lätt nivå? Tryck 1:");
+                Console.WriteLine("Vill du köra på medel nivå? Tryck 2:");
+                Console.WriteLine("Vill du köra på svår nivå? Tryck 3:");
+                wordGeneratorWordEasy = "kungen".ToLower();
+                wordGeneratorWordNormal = "askungen".ToLower();
+                wordGeneratorWordHard = "kontinental".ToLower();
+
+                string checkInput = Console.ReadLine();
+                int inputCheckLength = checkInput.Length;
+
                 if (checkInput.Equals("1") || checkInput.Equals("2") || checkInput.Equals("3"))
                 {
 
-                    menuSwitchHowTo = int.Parse(checkInput);
-                    guiErrorLoop = false;
+                    difficultySwitch = int.Parse(checkInput);
+
                 }
 
                 else
                 {
-                    Console.WriteLine("Du måste välja 1 eller 2.");
+                    difficultySwitch = 0;
+
+                }
+
+                switch (difficultySwitch)
+                {
+                    case 1:
+                        Console.WriteLine("Du valde lätt nivå!");
+                        wordGeneratorWord = wordGeneratorWordEasy;
+                        WordGenerator();
+                       
+                        return;
+                    case 2:
+                        Console.WriteLine("Du valde medel nivå");
+                        wordGeneratorWord = wordGeneratorWordNormal;
+                        WordGenerator();
+                        return;
+                    case 3:
+                        Console.WriteLine("Du valde svår nivå");
+                        wordGeneratorWord = wordGeneratorWordHard;
+                        WordGenerator();
+                        return;
+                    default:
+                        Console.WriteLine("Var vänlig och skriv in 1,2 eller 3");
+                        break;
                 }
             }
-            
+        }
 
-            switch (menuSwitchHowTo) // Ytterligare en switchmeny men utan loop eftersom att menyn inte behöver visas igen.
+        private static void WordGenerator() // Metod för att välja ord från ordlistan.
+        {
+
+            Console.Clear();
+            playerLives = 4;
+            numberOfGuesses = 0;
+            guessHistory = "";
+            GameLoop();
+        }
+
+        private static void GameLoop() // Loopen som spelet körs inom. Startar om efter varje gissning och uppdaterar andra metoder.
+        {
+            while (true)
             {
-                case 1:
-                    MainMenu(); // Låter spelaren återgå till mainmenu utan att ändra stringen för spelarnamn.
-                    break;
 
-                case 2:
-                    Difficulty();
-                    break;
+                GameInterface();
+                Guess();
+                History();
 
-                default:
-                    Console.WriteLine("Du kan enbart använda alternativ 1 eller 2. Försök igen.");
-                    break;
+
+                //metoden CompareWord Anropas och om den är sann och då går man ur loopen.
+                //den är sann om man har vunnit eller förlorat som kollas i metoden
+                if (CompareWord()) return;  
+                
             }
+        }
+
+        private static void GameInterface() // Visar "gränssnittet" för spelaren.
+        {
+            Console.WriteLine("\nDu har gissat på:" + guessHistory);
+            WordLength();
+        }
+
+        private static void WordLength() // Metod för att ta reda på nuvarande ords antal bokstäver.
+        {
+            wordLength = wordGeneratorWord.Length;
+            Console.WriteLine("Ordet är {0} bokstäver långt.", wordLength);
+        }
+
+        private static void Guess() // Metod för att samla in gissning från spelaren.
+        {
+
+            Console.Write("Gissa ord: ");
+            playerGuess = Console.ReadLine().ToLower();
+        }
+
+        private static void History() // Metod för att visa historiken över gissade ord.
+        {
+            if (guessHistory.Equals(""))
+            {
+                guessHistory += " " + playerGuess;
+            }
+            else guessHistory += ", " + playerGuess;
+        }     
+
+        private static bool CompareWord() // Metod för att jämföra Guess med WordGenerator.
+        {
+             
+
+            Console.Clear();
+            numberOfGuesses++;
+            if (playerGuess.Equals(wordGeneratorWord))
+            {
+                WinGame();
+                return true;
+            }
+
+            playerLives--;
+
+            if (playerLives == 0)
+            {
+                LoseGame();
+                return true;
+            }
+
+            if (playerLives < 4)
+            {
+                Console.WriteLine("\nDu gissade fel, försök igen!");
+                
+
+                Console.Write("\nDu har: ");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write(playerLives);
+                Console.ResetColor();
+                Console.Write(" liv kvar ");
+                Console.Beep();
+                Console.Beep();
+                Console.Beep();
+
+            }
+            else
+            {
+
+                Console.WriteLine("\nDu gissade fel, försök igen!");
+                Console.WriteLine("\nDu har: " + playerLives + " liv kvar");
+
+            }
+
+            return false;
         }
 
         private static void WinGame() // Avslutar spelet beroende på hur spelaren presterat.
         {
             Console.WriteLine("Grattis. Du är awesome!.");
             Console.ReadLine();
-            MainMenu();
+
         }
 
         private static void LoseGame() // Förolämpar spelaren om denne inte är så bra.
@@ -179,156 +297,51 @@ namespace Hangman2
             Console.WriteLine(" | / \\ ");
             Console.WriteLine(" | ");
             Console.WriteLine(" | ");
-            Console.WriteLine(" | ______________ ");
+            Console.WriteLine(" |_______ ");
             Console.WriteLine("Du... Dra.");
             Console.ReadLine();
-            MainMenu();
+
         }
 
-        private static void CheckEndGame() // Håller reda på om spelaren har gissat rätt ord eller om antal liv är 0.
+        private static void HowTo() // Metod för att visa HowTo'n.
         {
-            Console.WriteLine("CheckEndGame");
-        }
-
-        private static void CompareWord() // Metod för att jämföra Guess med WordGenerator.
-        {
-            Console.Clear();
-            numberOfGuesses++;
-            if (playerGuess.Equals(wordGeneratorWord))
-                WinGame();
-
-            else if (playerLives == 0 || playerLives < 2)
-                LoseGame();
-            else if (playerLives < 4)
+            while (true)
             {
-                Console.WriteLine("\nDu gissade fel, försök igen!");
-                playerLives--;
-                
-                Console.Write("\nDu har: ");
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write(playerLives);
-                Console.ResetColor();
-                Console.Write(" liv kvar ");
-                Console.Beep();
-                Console.Beep();
-                Console.Beep();
+                HowToGui(); // Visar gränssnittet för HowTo'n.
+                Console.WriteLine("Var vänlig och skriv in 1 eller 2");
+                int menuSwitchHowTo;
+
+                string checkInput = Console.ReadLine();
+                int inputCheckLength = checkInput.Length;
+
+                if (checkInput.Equals("1") || checkInput.Equals("2"))
+                {
+
+                    menuSwitchHowTo = int.Parse(checkInput);
+
+                }
+
+                else
+                {
+                    menuSwitchHowTo = 0;
+
+                }
+
+                switch (menuSwitchHowTo) // Ytterligare en switchmeny men utan loop eftersom att menyn inte behöver visas igen.
+                {
+                    case 1:
+                        // Låter spelaren återgå till mainmenu utan att ändra stringen för spelarnamn.
+                        return;
 
 
-                Guess();
-            }
-            else
-            {
-
-                Console.WriteLine("\nDu gissade fel, försök igen!");
-                playerLives--;
-                Console.WriteLine("\nDu har: " + playerLives + " liv kvar");
-                Guess();
+                    case 2:
+                        Difficulty();
+                        return;
+                }
             }
         }
 
-        static void Difficulty()
-        {
-            Console.WriteLine("Svårighetsgrad");
-            Console.WriteLine("Vill du köra på lätt nivå? Tryck 1:");
-            Console.WriteLine("Vill du köra på medel nivå? Tryck 2:");
-            Console.WriteLine("Vill du köra på svår nivå? Tryck 3:");
-            wordGeneratorWordEasy = "kungen".ToLower();
-            wordGeneratorWordNormal = "askungen".ToLower();
-            wordGeneratorWordHard = "kontinental".ToLower();
-
-            string checkInput = Console.ReadLine();
-            int input;
-            int inputCheckLength = checkInput.Length;
-
-            if (inputCheckLength == 0)
-            {
-                Console.WriteLine("Du måste göra ett val");
-                input = 0;
-                Difficulty();
-            }
-            else
-            {
-                input = int.Parse(checkInput);
-            }
-
-            switch (input)
-            {
-                case 1:
-                    Console.WriteLine("Du valde lätt nivå!");
-                    wordGeneratorWord = wordGeneratorWordEasy;
-                    WordGenerator();
-                    break;
-                case 2:
-                    Console.WriteLine("Du valde medel nivå");
-                    wordGeneratorWord = wordGeneratorWordNormal;
-                    WordGenerator();
-                    break;
-                case 3:
-                    Console.WriteLine("Du valde svår nivå");
-                    wordGeneratorWord = wordGeneratorWordHard;
-                    WordGenerator();
-                    break;
-                default: 
-                    Console.WriteLine("Var vänlig och skriv in 1,2 eller 3");
-                    break;
-            }
-        }
-
-        private static void Guess() // Metod för att samla in gissning från spelaren.
-        {
-            Console.WriteLine("\nDu har gissat på:" + guessHistory);
-            WordLength();
-            Console.Write("Gissa ord: ");
-            playerGuess = Console.ReadLine().ToLower();
-            History();
-            CompareWord();
-        }
-
-        private static void GameInterface() // Visar "gränssnittet" för spelaren.
-        {
-            Console.WriteLine("GameInterface");
-        }
-
-        private static void GameLoop() // Loopen som spelet körs inom. Startar om efter varje gissning och uppdaterar andra metoder.
-        {
-            Console.WriteLine("GameLoop");
-            GameInterface();
-            Guess();
-            CompareWord();
-            CheckEndGame();
-        }
-
-        private static void WordLength() // Metod för att ta reda på nuvarande ords antal bokstäver.
-        {
-            wordLength = wordGeneratorWord.Length;
-            Console.WriteLine("Ordet är {0} bokstäver långt.", wordLength);
-        }
-
-        private static void History() // Metod för att visa historiken över gissade ord.
-        {
-            if (guessHistory.Equals(""))
-            {
-                guessHistory += " " + playerGuess;
-            }
-            else guessHistory += ", " + playerGuess;
-        }
-
-        private static void Lives() // Metod för att hålla reda på antal liv.
-        {
-            int lives = 3;
-            Console.WriteLine("Liv: {0}", lives);
-        }
-
-        private static void WordGenerator() // Metod för att välja ord från ordlistan.
-        {
-            Console.Clear();
-            playerLives = 4;
-            numberOfGuesses = 0;
-            guessHistory = "";
-            Guess();
-        }
-        
-
+        //Anropas aldrig
         private static void StartGame() // Metod för att starta spelet.
         {
             Console.Clear();
@@ -338,9 +351,24 @@ namespace Hangman2
             History();
             WordLength();
             Console.ReadLine();
+
+
+        }
+        
+        //anropas aldrig
+        private static void Lives() // Metod för att hålla reda på antal liv.
+        {
+            int lives = 3;
+            Console.WriteLine("Liv: {0}", lives);
         }
 
-        private static void HowToGui()
+        //används aldrig
+        private static void CheckEndGame() // Håller reda på om spelaren har gissat rätt ord eller om antal liv är 0.
+        {
+
+        }
+
+        private static void HowToGui() // Metod för att visa gränssnittet för How To'n
         {
             Console.Clear();
             Console.WriteLine("             `..`         ");
@@ -368,9 +396,9 @@ namespace Hangman2
             Console.WriteLine("  `..``....`:o:.`                                             `...+/.           ");
             Console.WriteLine("            `..`                                               `..+:.           ");
             Console.WriteLine("                                                    	            `-`            ");
-        } // Metod för att visa gränssnittet för How To'n
+        } 
 
-        private static void MainMenuGui()
+        private static void MainMenuGui() // Metod för att visa gränssnittet för huvudmenyn
         {
             Console.WriteLine("             `..`");
             Console.WriteLine("            .:::`                                                  `-..         ");
@@ -410,13 +438,13 @@ namespace Hangman2
             Console.WriteLine("         `  -:o.                                                   /::          ");
             Console.WriteLine("         `  -/o.                                                  `+:-          ");
             Console.WriteLine("            ./o.                                                  .o/-          ");
-            Console.WriteLine("            `/o.         Välj något av följande:                  :o/.          ");
-            Console.WriteLine("             /o-         1. Starta spel.                          /o/`          ");
-            Console.WriteLine("             /o-         2. How to.                               ++:`          ");
-            Console.WriteLine("             /o-         3. Avsluta spel.                         +/-           ");
+            Console.WriteLine("            `/o.             Välj något av följande:              :o/.          ");
+            Console.WriteLine("             /o-             1. Starta spel.                      /o/`          ");
+            Console.WriteLine("             /o-             2. How to.                           ++:`          ");
+            Console.WriteLine("             /o-             3. Avsluta spel.                     +/-           ");
             Console.WriteLine("         `   :o-                                                 `++-           ");
             Console.WriteLine("         ``  /o-`                                                .++-           ");
-            Console.WriteLine("             ++-                                               ` .++.           ");
+            Console.WriteLine("             ++-           förra spelet tog {0} gissningar       ` .++.           ", numberOfGuesses);
             Console.WriteLine("            .o+-                                               ``-/+`           ");
             Console.WriteLine("            -o+-                ``                            ```-/+`           ");
             Console.WriteLine("      `````./o/:-----------::::://:::::::::::::------......-`....::+-`          ");
@@ -426,7 +454,7 @@ namespace Hangman2
             Console.WriteLine("  `..``....`:o:.`                                             `...+/.           ");
             Console.WriteLine("            `..`                                               `..+:.           ");
             Console.WriteLine("                                                    	            `-`            ");
-        } // Metod för att visa gränssnittet för huvudmenyn
+        } 
 
         public static void Timer(double seconds)
         {
