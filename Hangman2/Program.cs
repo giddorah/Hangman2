@@ -196,7 +196,7 @@ namespace Hangman2
 
             {
                 
-                maskedWord[i] = '_';
+                maskedWord[i] = '_ ';
 
             }
             GameLoop();
