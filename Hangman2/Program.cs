@@ -13,9 +13,6 @@ namespace Hangman2
         static string playerName; // Lagrar spelarens namn
         static string playerGuess; // Lagrar spelaerns gissning
         static string wordGeneratorWord; // Lagrar ordgeneratorns ord
-        static string wordGeneratorWordEasy;
-        static string wordGeneratorWordNormal;
-        static string wordGeneratorWordHard;
         static int wordLength; // Lagrar ordets antal bokstäver
         static string guessHistory; // Lagrar tidigare gissningar
         static int numberOfGuesses; // Lagrar hur många gissningar som gjorts
@@ -134,9 +131,6 @@ namespace Hangman2
                 Console.WriteLine("Vill du köra på lätt nivå? Tryck 1:");
                 Console.WriteLine("Vill du köra på medel nivå? Tryck 2:");
                 Console.WriteLine("Vill du köra på svår nivå? Tryck 3:");
-                wordGeneratorWordEasy = "kungen".ToLower();
-                wordGeneratorWordNormal = "askungen".ToLower();
-                wordGeneratorWordHard = "kontinental".ToLower();
 
                 string[] easy = new string[1];
                 string[] medium = new string[1];
