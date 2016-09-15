@@ -281,7 +281,7 @@ namespace Hangman2
             {
                 //här skrivs bokstäverna maskedWord ut i början kommer det att bara vara understreck
                 //men senare kommer det att bytas ut mot bokstäver
-                Console.Write(maskedWord[i]);  
+                Console.Write(maskedWord[i] + " ");  
 
             }
 
@@ -358,7 +358,6 @@ namespace Hangman2
             //kollar om antingen spelarens gissning är samma som ordet eller om isEqual är sann vilket innebär att
             //spelaren har gissat all bokstäver i ordet
             //om något av dessa är sann så vinner man
-            Console.WriteLine(theWord);
             if (playerGuess.Equals(theWord) || isEqual)
             {
                 WinGame();
@@ -384,6 +383,7 @@ namespace Hangman2
         private static void WinGame() // anropas om spelaren har vunnit 
         {
             Console.WriteLine("Grattis. Du är awesome!.");
+            Console.WriteLine("Ordet var : {0}", theWord);
             Console.ReadLine();
 
         }
