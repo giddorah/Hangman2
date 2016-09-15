@@ -189,6 +189,16 @@ namespace Hangman2
             playerLives = 4;
             numberOfGuesses = 0;
             guessHistory = "";
+            wordLength = wordGeneratorWord.Length;
+            maskedWord = new char[wordLength];
+            
+            for (int i = 0; i < wordLength; i++)
+
+            {
+                
+                maskedWord[i] = '_';
+
+            }
             GameLoop();
         }
 
@@ -218,13 +228,11 @@ namespace Hangman2
         private static void WordLength() // Metod för att ta reda på nuvarande ords antal bokstäver.
         {
             wordLength = wordGeneratorWord.Length;
-            maskedWord = new char[wordLength];
             Console.Write("Ordet är: ");
             for (int i = 0; i < wordLength; i++)
                
             {
                 Console.Write("_ ");
-                maskedWord[i] = '_';
 
             }
 
