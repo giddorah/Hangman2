@@ -217,7 +217,15 @@ namespace Hangman2
         private static void WordLength() // Metod för att ta reda på nuvarande ords antal bokstäver.
         {
             wordLength = wordGeneratorWord.Length;
-            Console.WriteLine("Ordet är {0} bokstäver långt.", wordLength);
+            Console.Write("Ordet är: ");
+            for (int i = 0; i < wordLength; i++)
+               
+            {
+                Console.Write("_");
+
+            }
+
+            Console.WriteLine("");
         }
 
         private static void Guess() // Metod för att samla in gissning från spelaren.
