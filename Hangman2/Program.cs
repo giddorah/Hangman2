@@ -221,7 +221,7 @@ namespace Hangman2
             for (int i = 0; i < wordLength; i++)
                
             {
-                Console.Write("_");
+                Console.Write("_ ");
 
             }
 
