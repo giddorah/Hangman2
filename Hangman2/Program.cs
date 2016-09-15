@@ -138,6 +138,14 @@ namespace Hangman2
                 wordGeneratorWordNormal = "askungen".ToLower();
                 wordGeneratorWordHard = "kontinental".ToLower();
 
+                string[] easy = new string[1];
+                string[] medium = new string[1];
+                string[] hard = new string[1];
+
+                easy[0] = "kungen";
+                medium[0] = "askungen";
+                hard[0] = "kontinental";
+
                 string checkInput = Console.ReadLine();
                 int inputCheckLength = checkInput.Length;
 
