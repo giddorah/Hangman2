@@ -166,18 +166,18 @@ namespace Hangman2
                 {
                     case 1:
                         Console.WriteLine("Du valde lätt nivå!");
-                        wordGeneratorWord = wordGeneratorWordEasy;
+                        wordGeneratorWord = easy[0];
                         WordGenerator();
                        
                         return;
                     case 2:
                         Console.WriteLine("Du valde medel nivå");
-                        wordGeneratorWord = wordGeneratorWordNormal;
+                        wordGeneratorWord = medium[0];
                         WordGenerator();
                         return;
                     case 3:
                         Console.WriteLine("Du valde svår nivå");
-                        wordGeneratorWord = wordGeneratorWordHard;
+                        wordGeneratorWord = hard[0];
                         WordGenerator();
                         return;
                     default:
