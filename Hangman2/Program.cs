@@ -16,7 +16,6 @@ namespace Hangman2
         static int wordLength; // Lagrar ordets antal bokstäver
         static string guessHistory; // Lagrar tidigare gissningar
         static int numberOfGuesses; // Lagrar hur många gissningar som gjorts
-        //static int menuSwitchHowTo;
         static char[] maskedWord;
         #endregion
 
@@ -209,9 +208,9 @@ namespace Hangman2
             while (true)
             {
 
-                GameInterface();
-                Guess();
-                History();
+                GameInterface(); // Kör metoden för att visa ett spelgränssnitt.
+                Guess(); // Kör metoden för att ta emot gissning från spelaren.
+                History(); // Kör metoden för att visa historiska gissningar.
 
 
                 //metoden CompareWord Anropas och om den är sann och då går man ur loopen.
@@ -225,7 +224,7 @@ namespace Hangman2
         {
             Console.WriteLine("\nDu har gissat på:" + guessHistory);
             Console.Write("Ordet är: ");
-            for (int i = 0; i < wordLength; i++)
+            for (int i = 0; i < wordLength; i++) // Lägger till mellanslag i maskedWord.
 
             {
                 Console.Write(maskedWord[i] + " ");
@@ -237,17 +236,17 @@ namespace Hangman2
 
         private static void Guess() // Metod för att samla in gissning från spelaren.
         {
-            bool playerGuessLoop = true;
+            bool playerGuessLoop = true; // Gör en bool till en loop för att kontrollera så att användaren skriver något.
             Console.Write("Gissa bokstav/ord: ");
-            while (playerGuessLoop)
+            while (playerGuessLoop) // En loop för att kontrollera användarens input.
             {
-                playerGuess = Console.ReadLine().ToLower();
-                if (playerGuess.Length == 0)
+                playerGuess = Console.ReadLine().ToLower(); // Gör om spelarens gissning till liten bokstav.
+                if (playerGuess.Length == 0) // Om spelarens input inte innehåller någonting.
                 {
                     Console.WriteLine("Du måste skriva in en gissning.");
                     Console.Write("Ange gissning: ");
                 }
-                else
+                else // Annars avslutas kontrolloopen.
                 {
                     playerGuessLoop = false;
                 }
@@ -266,62 +265,62 @@ namespace Hangman2
 
         private static bool CompareWord() // Metod för att jämföra Guess med WordGenerator.
         {
-            bool changeMade = false;
+            bool changeMade = false; // Ändras till sant om en ändring sker i maskedword.
 
-            for (int i = 0; i < wordLength; i++)
+            for (int i = 0; i < wordLength; i++) // En loop för att kolla igenom playerGuess och wordGeneratorword.
             {
-                if (playerGuess[0] == wordGeneratorWord[i])
+                if (playerGuess[0] == wordGeneratorWord[i]) // Om första bokstaven i användarens gissning är samma som wordgeneratorword på plats i.
                 {
-                    maskedWord[i] = playerGuess[0];
-                    changeMade = true;
+                    maskedWord[i] = playerGuess[0]; // Så sätts maskedword position i till spelarens gissning.
+                    changeMade = true; // Gör så att changemade sätts till true.
                 }
 
             }
-            if (changeMade == false)
+            if (changeMade == false) // Om changemade inte är sant och inget gissat ord är rätt.
             {
-                playerLives--;
+                playerLives--; // Så spelaren ett liv.
             }
-            Console.Clear();
+            Console.Clear(); // Rensar konsollen från text.
 
-            if (changeMade == true)
+            if (changeMade == true) // Om changemade är sant
             {
-                Console.WriteLine("Du gissade rätt bokstav, fortsätt så!");
-                Console.WriteLine("\nDu har: " + playerLives + " liv kvar");
+                Console.WriteLine("Du gissade rätt bokstav, fortsätt så!"); // Lite uppmuntring skrivs ut.
+                Console.WriteLine("\nDu har: " + playerLives + " liv kvar"); // Information om hur många liv som finns kvar visas.
             }
 
-            int ifEqualsToWordLengthPlayerWins = 0;
+            int ifEqualsToWordLengthPlayerWins = 0; // Gör en integer för att lagra antal rätt gissade bokstäver.
             for (int i = 0; i < wordLength; i++)
             {
                 
-                if (maskedWord[i] == wordGeneratorWord[i])
+                if (maskedWord[i] == wordGeneratorWord[i]) // Varje gång en bokstav i wordgeneratorword matchar ett ord i maskedword så får spelaren ett poäng.
                 {
                     ifEqualsToWordLengthPlayerWins++;
                 }
             }
-            numberOfGuesses++;
-            if (ifEqualsToWordLengthPlayerWins == wordLength || playerGuess == wordGeneratorWord)
+            numberOfGuesses++; // Antal gissningar ifrån spelaren går upp
+            if (ifEqualsToWordLengthPlayerWins == wordLength || playerGuess == wordGeneratorWord) // Om integern är lika stor som wordlength eller om spelaren gissar på rätt ord direkt så vinner spelaren.
                 {
-                WinGame();
-                return true;
+                WinGame(); // Vinstskärm.
+                return true; // Avslutar metoden med ett truevärde.
                 }
 
-            if (playerLives == 0)
+            if (playerLives == 0) // Om spelarliv är 0
             {
-                LoseGame();
-                return true;
+                LoseGame(); // Förlustskärm.
+                return true; // Avslutar metoden med ett truevärde.
             }
 
-            if (playerLives < 4 && changeMade == false)
+            if (playerLives < 4 && changeMade == false) // Om spelarens liv är mindre än 4 och changemade är falsk
             {
                 Console.WriteLine("\nDu gissade fel, försök igen!");
 
                 Console.Write("\nDu har: ");
-                Console.ForegroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.Red; // Texten blir röd.
                 Console.Write(playerLives);
                 Console.ResetColor();
                 Console.Write(" liv kvar ");
             }
-            else if (playerLives >= 4 && changeMade == false)
+            else if (playerLives >= 4 && changeMade == false) // Om spelarens liv är 4 eller över.
             {
 
                 Console.WriteLine("\nDu gissade fel, försök igen!");
@@ -344,12 +343,12 @@ namespace Hangman2
             Console.WriteLine(" ________________ ");
             Console.WriteLine(" |  | ");
             Console.WriteLine(" | ( ) ");
-            Console.WriteLine(" | /|\\ ");
-            Console.WriteLine(" |  | ");
-            Console.WriteLine(" | / \\ ");
+            Console.WriteLine(" | /|\\");
+            Console.WriteLine(" |  |  ");
+            Console.WriteLine(" | / \\");
             Console.WriteLine(" | ");
             Console.WriteLine(" | ");
-            Console.WriteLine(" |_______ ");
+            Console.WriteLine(" |_______________ ");
             Console.WriteLine("Du... Dra.");
             Console.ReadLine();
 
@@ -366,7 +365,7 @@ namespace Hangman2
                 string checkInput = Console.ReadLine();
                 int inputCheckLength = checkInput.Length;
 
-                if (checkInput == "1" || checkInput == "2")
+                if (checkInput == "1" || checkInput == "2") // Kontrollfunktion för checkInput.
                 {
 
                     menuSwitchHowTo = int.Parse(checkInput);
@@ -389,7 +388,10 @@ namespace Hangman2
                         Difficulty();
                         return;
 
-                    default: Console.WriteLine("Du måste ange 1 eller 2."); Console.ReadLine(); break;
+                    default:
+                        Console.WriteLine("Du måste ange 1 eller 2.");
+                        Console.ReadLine();
+                        break;
 
                 }
             }
