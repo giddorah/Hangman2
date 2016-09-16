@@ -237,9 +237,22 @@ namespace Hangman2
 
         private static void Guess() // Metod för att samla in gissning från spelaren.
         {
-
+            bool playerGuessLoop = true;
             Console.Write("Gissa bokstav/ord: ");
-            playerGuess = Console.ReadLine().ToLower();
+            while (playerGuessLoop)
+            {
+                playerGuess = Console.ReadLine().ToLower();
+                if (playerGuess.Length == 0)
+                {
+                    Console.WriteLine("Du måste skriva in en gissning.");
+                    Console.Write("Ange gissning: ");
+                }
+                else
+                {
+                    playerGuessLoop = false;
+                }
+            }
+
         }
 
         private static void History() // Metod för att visa historiken över gissade ord.
