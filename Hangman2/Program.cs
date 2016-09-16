@@ -321,7 +321,7 @@ namespace Hangman2
             //text som ska synas så det måste vara med i nästa gameloop
             Console.Clear();
 
-            //variabel skapas för att för att kolla om man hade rätt
+            //variabel skapas för att för att kolla om man hade rätt.
             bool changeMade = false;
 
             //en for-loop som går igenom ordet bokstav för bokstav och om ett stämmer så kommer motsvarande plats i maskedWord 
@@ -339,7 +339,7 @@ namespace Hangman2
 
             }
             
-            //om changeMade är falsk så innebär det att ingen ändring har hänt och då minskas ens liv 
+             
 
 
             //variabel skapas for att se om maskedWord är samma som wordGeneratorWord
@@ -371,6 +371,7 @@ namespace Hangman2
                 return true;
             }
 
+            //om changeMade är falsk så innebär det att ingen ändring har hänt och då minskas ens liv
             if (changeMade == false)
             {
                 Console.WriteLine("\nDu gissade fel, försök igen!");
