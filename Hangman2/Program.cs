@@ -285,18 +285,12 @@ namespace Hangman2
                     ifEqualsToWordLengthPlayerWins++;
                 }
             }
-            if (ifEqualsToWordLengthPlayerWins == wordLength)
+            numberOfGuesses++;
+            if (ifEqualsToWordLengthPlayerWins == wordLength || playerGuess == wordGeneratorWord)
                 {
                 WinGame();
                 return true;
                 }
-
-            numberOfGuesses++;
-            if (playerGuess == wordGeneratorWord)
-            {
-                WinGame();
-                return true;
-            }
 
             if (playerLives == 0)
             {
