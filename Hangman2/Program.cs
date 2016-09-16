@@ -268,8 +268,29 @@ namespace Hangman2
             {
                 playerLives--;
             }
-            
             Console.Clear();
+
+            if (changeMade == true)
+            {
+                Console.WriteLine("Du gissade rätt bokstav, fortsätt så!");
+                Console.WriteLine("\nDu har: " + playerLives + " liv kvar");
+            }
+
+            int ifEqualsToWordLengthPlayerWins = 0;
+            for (int i = 0; i < wordLength; i++)
+            {
+                
+                if (maskedWord[i] == wordGeneratorWord[i])
+                {
+                    ifEqualsToWordLengthPlayerWins++;
+                }
+            }
+            if (ifEqualsToWordLengthPlayerWins == wordLength)
+                {
+                WinGame();
+                return true;
+                }
+
             numberOfGuesses++;
             if (playerGuess == wordGeneratorWord)
             {
