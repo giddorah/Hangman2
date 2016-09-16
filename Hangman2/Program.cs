@@ -279,8 +279,8 @@ namespace Hangman2
             for (int i = 0; i < wordLength; i++) 
 
             {
-                //här skrivs bokstäverna maskedWord ut i början kommer det att bara vara understreck
-                //men senare kommer det att bytas ut mot bokstäver
+                //här skrivs bokstäverna maskedWord ut i början kommer det att bara vara understreck och mellanrum
+                //men senare under spelet kommer det att bytas ut mot bokstäver.
                 Console.Write(maskedWord[i] + " ");  
 
             }
@@ -441,33 +441,6 @@ namespace Hangman2
                         return;
                 }
             }
-        }
-
-        //Anropas aldrig
-        private static void StartGame() // Metod för att starta spelet.
-        {
-            Console.Clear();
-            Console.WriteLine("Spel startat");
-            WordGenerator();
-            Lives();
-            History();
-            WordLength();
-            Console.ReadLine();
-
-
-        }
-
-        //anropas aldrig
-        private static void Lives() // Metod för att hålla reda på antal liv.
-        {
-            int lives = 3;
-            Console.WriteLine("Liv: {0}", lives);
-        }
-
-        //används aldrig
-        private static void CheckEndGame() // Håller reda på om spelaren har gissat rätt ord eller om antal liv är 0.
-        {
-
         }
 
         private static void HowToGui() // Metod för att visa gränssnittet för How To'n
