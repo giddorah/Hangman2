@@ -9,21 +9,25 @@ namespace Hangman2
     class Program
     {
         #region Klassvariabler
-        static int playerLives; // Lagrar spelarens antal liv
+        public static int playerLives; // Lagrar spelarens antal liv
         static string playerGuess; // Lagrar spelaerns gissning
         static string wordGeneratorWord; // Lagrar ordgeneratorns ord
         static int wordLength; // Lagrar ordets antal bokstäver
         static string guessHistory; // Lagrar tidigare gissningar
+        static bool mainMenuLoop;
+        static bool takeNameLoop = true;
         public static int numberOfGuesses; // Lagrar hur många gissningar som gjorts
         static char[] maskedWord;
-
         public static Player player;
 
         #endregion
 
         static void Main(string[] args)
         {
-            TakeName(); // Metod för att hämta in spelarens namn!.
+            while (true)
+            {
+                TakeName(); // Metod för att hämta in spelarens namn!.
+            } 
         }
 
         private static void ForDeveloper()
@@ -55,35 +59,37 @@ namespace Hangman2
 
         private static void TakeName() // Metod för att insamla spelarens namn.
         {
-            do
+            Console.Clear();
+            
+            while (true)
             {
                 Console.WriteLine("Skriv in namn.");
                 string input = Console.ReadLine();
                 player = new Player(input); 
 
-                //player.name = Console.ReadLine();
 
                 if (player.name.Length >= 3 && player.name.Length <= 25)
                 {
                     Console.WriteLine("välkommen " + player.name);
                     MainMenu();
                     return;
-
                 }
+
                 else
                 {
                     Console.WriteLine("Skriv minst 3 bokstäver och inte mer än 25 bokstäver");
-
                 }
-            } while (true);
+
+            }
         }
 
         private static void MainMenu() // Huvudmenyn till spelet.
         {
             //bool menuLoop = true; // En loop för att huvudmenyn ska finnas tillgänglig så länge spelaren befinner sig utanför spelet.
+            mainMenuLoop = true;
             int mainMenuSwitch;
             string checkInput;
-            while (true)
+            while (mainMenuLoop)
             {
                 Console.Clear(); // Rensar konsollen från tidigare kommandon.
                 GUI.MainMenu(); // Visar gränssnittet för MainMenu.
@@ -337,8 +343,41 @@ namespace Hangman2
         private static void WinGame() // Avslutar spelet beroende på hur spelaren presterat.
         {
             Console.WriteLine("Grattis. Du är awesome!.");
-            Console.ReadLine();
+            EndGameChoices();
+        }
 
+        private static void EndGameChoices() // Om spelaren vunnit eller förlorat körs denna metod.
+        {
+            Console.WriteLine("Åh, du är så fin. Vad skulle du önska att du fick göra nu?");
+            bool korvLoopen = true;
+            while (korvLoopen)
+            {
+                Console.WriteLine("Vill du:");
+                Console.WriteLine("1. Spela igen.");
+                Console.WriteLine("2. Byta spelare.");
+                Console.WriteLine("3. Avsluta spelet.");
+                string input = Console.ReadLine();
+
+                if (input == "1")
+                {
+                    return;
+                }
+                else if (input == "2")
+                {
+                    mainMenuLoop = false;
+                    takeNameLoop = true;
+                    return;
+                }
+                else if (input == "3")
+                {
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("Fy");
+                }
+            }
         }
 
         private static void LoseGame() // Förolämpar spelaren om denne inte är så bra.
@@ -353,8 +392,7 @@ namespace Hangman2
             Console.WriteLine(" | ");
             Console.WriteLine(" |_______________ ");
             Console.WriteLine("Du... Dra.");
-            Console.ReadLine();
-
+            EndGameChoices();
         }
 
         private static void HowTo() // Metod för att visa HowTo'n.
