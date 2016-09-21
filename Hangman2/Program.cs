@@ -158,7 +158,6 @@ namespace Hangman2
 
                     difficultySwitch = int.Parse(checkInput);
                 }
-
                 else
                 {
                     difficultySwitch = 0;
@@ -203,7 +202,6 @@ namespace Hangman2
             maskedWord = new char[wordLength];
 
             for (int i = 0; i < wordLength; i++)
-            
             {
 
                 maskedWord[i] = '_';
@@ -234,7 +232,6 @@ namespace Hangman2
             Console.WriteLine("\nDu har gissat på:" + guessHistory);
             Console.Write("Ordet är: ");
             for (int i = 0; i < wordLength; i++) // Lägger till mellanslag i maskedWord.
-
             {
                 Console.Write(maskedWord[i] + " ");
 
@@ -309,8 +306,8 @@ namespace Hangman2
             numberOfGuesses++; // Antal gissningar ifrån spelaren går upp
             if (ifEqualsToWordLengthPlayerWins == wordLength || playerGuess == wordGeneratorWord) // Om integern är lika stor som wordlength eller om spelaren gissar på rätt ord direkt så vinner spelaren.
                 {
-                WinGame(); // Vinstskärm.
-                return true; // Avslutar metoden med ett truevärde.
+                    WinGame(); // Vinstskärm.
+                    return true; // Avslutar metoden med ett truevärde.
                 }
 
             if (playerLives == 0) // Om spelarliv är 0
