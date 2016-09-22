@@ -142,13 +142,25 @@ namespace Hangman2
                 Console.WriteLine("Vill du köra på medel nivå? Tryck 2:");
                 Console.WriteLine("Vill du köra på svår nivå? Tryck 3:");
 
-                string[] easy = new string[1];
-                string[] medium = new string[1];
-                string[] hard = new string[1];
+                string[] easy = new string[5];
+                string[] medium = new string[5];
+                string[] hard = new string[5];
 
                 easy[0] = "kungen";
+                easy[1] = "banan";
+                easy[2] = "drottning";
+                easy[3] = "princessan";
+                easy[4] = "prinsen";
                 medium[0] = "askungen";
+                medium[1] = "Bahamas";
+                medium[2] = "danmark";
+                medium[3] = "sverige";
+                medium[4] = "finland";
                 hard[0] = "kontinental";
+                hard[1] = "sundbyberg";
+                hard[2] = "ibrahimovic";
+                hard[3] = "korvstroganoff";
+                hard[4] = "pax";
 
                 string checkInput = Console.ReadLine();
                 int inputCheckLength = checkInput.Length;
