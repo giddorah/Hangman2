@@ -17,8 +17,6 @@ namespace Hangman2
             Menus.MainMenu();
         
         }
-        
-       
 
         public static void Timer(double seconds)
         {

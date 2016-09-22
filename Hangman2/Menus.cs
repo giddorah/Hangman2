@@ -16,7 +16,6 @@ namespace Hangman2
             set { mainMenuLoop = value; }
         }
 
-
         public static void MainMenu() // Huvudmenyn till spelet. - MAIN 
         {
             //bool menuLoop = true; // En loop för att huvudmenyn ska finnas tillgänglig så länge spelaren befinner sig utanför spelet.
@@ -108,7 +107,6 @@ namespace Hangman2
                 }
             }
         }
-
 
     }
 }

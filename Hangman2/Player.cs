@@ -31,12 +31,5 @@ namespace Hangman2
                 }
         }
 
-       
-        
-
-        
-        
-
-
     }
 }

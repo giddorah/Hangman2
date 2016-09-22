@@ -46,10 +46,6 @@ namespace Hangman2
             private set { guessHistory = value; }
         }
 
-
-
-
-
         public static void Difficulty() // En metod för att välja svårighetsgrad. - GAME
         {
             while (true)
@@ -158,7 +154,6 @@ namespace Hangman2
             }
         }
 
-
         static void Guess() // Metod för att samla in gissning från spelaren. - GAME
         {
             bool playerGuessLoop = true; // Gör en bool till en loop för att kontrollera så att användaren skriver något.
@@ -255,8 +250,6 @@ namespace Hangman2
 
             return false;
         }
-
-        
 
         public static void EndGameChoices() // Om spelaren vunnit eller förlorat körs denna metod. - GAME
         {
