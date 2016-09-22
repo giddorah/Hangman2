@@ -78,9 +78,12 @@ namespace Hangman2
             Console.WriteLine("       ``...//+s/-.......................-------------.....``....../+/:::--.-   ");
             Console.WriteLine("        ``..-.---..````````     ``  `                       ``...``:+:.```      ");
             Console.WriteLine("        ```.-.-..`                                           `````-/+-`         ");
-            Console.WriteLine("         ```.--.      För att spela spelet måste du                ++-          ");
-            Console.WriteLine("         ```.-+-`    gissa ett ord. Om du gissar fel så            //-          ");
-            Console.WriteLine("         `` -/o-`     kommer du att förlora ett liv                /::          ");
+            Console.WriteLine("         ```.--.        För att spela spelet ska du                ++-          ");
+            Console.WriteLine("         ```.-+-`     gissa antingen på ord eller bokstav          //-          ");
+            Console.WriteLine("         `` -/o-`     om du gissar fel blir du av med ett liv      /::          ");
+            Console.WriteLine("             /o-      men om du gissar rätt så behåller du liv.   +/-           ");
+            Console.WriteLine("             /o-      Antal liv bestäms genom villken             +/-           ");
+            Console.WriteLine("             /o-      svårighetsgrad som man väljer               +/-           ");
             Console.WriteLine("             /o-                                                  +/-           ");
             Console.WriteLine("         `   :o-      Välj ett av följande:                      `++-           ");
             Console.WriteLine("         ``  /o-`     1. Återvänd till huvudmenyn                .++-           ");
