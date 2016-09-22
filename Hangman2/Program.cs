@@ -55,9 +55,9 @@ namespace Hangman2
             
             MainMenuGui(); // Metod för att visa gränssnittet för huvudmenyn.
             HowToGui(); // Metod för att visa gränssnittet för how to'n.*/
-        } // Visar information om vilka metoder vi har att arbeta med.
+        } // Visar information om vilka metoder vi har att arbeta med. - MAIN
 
-        private static void TakeName() // Metod för att insamla spelarens namn.
+        private static void TakeName() // Metod för att insamla spelarens namn. - PLAYER 
         {
             Console.Clear();
             
@@ -83,7 +83,7 @@ namespace Hangman2
             }
         }
 
-        private static void MainMenu() // Huvudmenyn till spelet.
+        private static void MainMenu() // Huvudmenyn till spelet. - MAIN 
         {
             //bool menuLoop = true; // En loop för att huvudmenyn ska finnas tillgänglig så länge spelaren befinner sig utanför spelet.
             mainMenuLoop = true;
@@ -131,7 +131,7 @@ namespace Hangman2
             }
         }
 
-        private static void Difficulty() // En metod för att välja svårighetsgrad.
+        private static void Difficulty() // En metod för att välja svårighetsgrad. - GAME
         {
             while (true)
             {
@@ -193,7 +193,7 @@ namespace Hangman2
 
                     case 3:
                         Console.WriteLine("Du valde svår nivå!");
-                        wordGeneratorWord = hard[0];
+                        wordGeneratorWord = hard[3];
                         playerLives = 2;
                         WordGenerator();
                         return;
@@ -205,7 +205,7 @@ namespace Hangman2
             }
         }
 
-        private static void WordGenerator() // Metod för att välja ord från ordlistan.
+        private static void WordGenerator() // Metod för att välja ord från ordlistan. - GAME (WORD?)
         {
             Console.Clear();
             numberOfGuesses = 0;
@@ -222,7 +222,7 @@ namespace Hangman2
             GameLoop();
         }
 
-        private static void GameLoop() // Loopen som spelet körs inom. Startar om efter varje gissning och uppdaterar andra metoder.
+        private static void GameLoop() // Loopen som spelet körs inom. Startar om efter varje gissning och uppdaterar andra metoder. - GAME
         {
             while (true)
             {
@@ -239,7 +239,7 @@ namespace Hangman2
             }
         }
 
-        private static void GameInterface() // Visar "gränssnittet" för spelaren.
+        private static void GameInterface() // Visar "gränssnittet" för spelaren. - GAME
         {
             Console.WriteLine("\nDu har gissat på:" + guessHistory);
             Console.Write("Ordet är: ");
@@ -252,7 +252,7 @@ namespace Hangman2
             Console.WriteLine("");
         }
 
-        private static void Guess() // Metod för att samla in gissning från spelaren.
+        private static void Guess() // Metod för att samla in gissning från spelaren. - GAME
         {
             bool playerGuessLoop = true; // Gör en bool till en loop för att kontrollera så att användaren skriver något.
             Console.Write("Gissa bokstav/ord: ");
@@ -272,7 +272,7 @@ namespace Hangman2
 
         }
 
-        private static void History() // Metod för att visa historiken över gissade ord.
+        private static void History() // Metod för att visa historiken över gissade ord. - GAME
         {
             if (guessHistory == "")
             {
@@ -281,7 +281,7 @@ namespace Hangman2
             else guessHistory += ", " + playerGuess;
         }
 
-        private static bool CompareWord() // Metod för att jämföra Guess med WordGenerator.
+        private static bool CompareWord() // Metod för att jämföra Guess med WordGenerator. - GAME (WORD?) 
         {
             bool changeMade = false; // Ändras till sant om en ändring sker i maskedword.
 
@@ -349,13 +349,13 @@ namespace Hangman2
             return false;
         }
 
-        private static void WinGame() // Avslutar spelet beroende på hur spelaren presterat.
+        private static void WinGame() // Avslutar spelet beroende på hur spelaren presterat. - GAME
         {
             Console.WriteLine("Grattis. Du är awesome!.");
             EndGameChoices();
         }
 
-        private static void EndGameChoices() // Om spelaren vunnit eller förlorat körs denna metod.
+        private static void EndGameChoices() // Om spelaren vunnit eller förlorat körs denna metod. - GAME
         {
             Console.WriteLine("Åh, du är så fin. Vad skulle du önska att du fick göra nu?");
             bool korvLoopen = true;
@@ -389,7 +389,7 @@ namespace Hangman2
             }
         }
 
-        private static void LoseGame() // Förolämpar spelaren om denne inte är så bra.
+        private static void LoseGame() // Förolämpar spelaren om denne inte är så bra. - GAME
         {
             Console.WriteLine(" ________________ ");
             Console.WriteLine(" |  | ");
@@ -404,7 +404,7 @@ namespace Hangman2
             EndGameChoices();
         }
 
-        private static void HowTo() // Metod för att visa HowTo'n.
+        private static void HowTo() // Metod för att visa HowTo'n. - GUI 
         {
             while (true)
             {
