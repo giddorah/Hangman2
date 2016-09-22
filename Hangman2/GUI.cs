@@ -22,22 +22,22 @@ namespace Hangman2
             Console.WriteLine("         ```.--.                                                   ++-          ");
             Console.Write("         ```.-+-`");
 
-            for (int i = 0; i < 12 - Program.player.name.Length / 2; i++)
+            for (int i = 0; i < 12 - Player.Name.Length / 2; i++)
             {
                 Console.Write(" ");
             }
-            Console.Write("Välkommen {0} till Hangr 0.1", Program.player.name); // Byter ut {0} mot vad spelaren angivit i TakeName.
-            if (Program.player.name.Length % 2 == 0)
+            Console.Write("Välkommen {0} till Hangr 0.1", Player.Name); // Byter ut {0} mot vad spelaren angivit i TakeName.
+            if (Player.Name.Length % 2 == 0)
             {
 
-                for (int i = 0; i < 13 - Program.player.name.Length / 2; i++)
+                for (int i = 0; i < 13 - Player.Name.Length / 2; i++)
                 {
                     Console.Write(" ");
                 }
             }
             else
             {
-                for (int i = 0; i < 13 - Program.player.name.Length / 2 - 1; i++)
+                for (int i = 0; i < 13 - Player.Name.Length / 2 - 1; i++)
                 {
                     Console.Write(" ");
                 }
@@ -54,7 +54,7 @@ namespace Hangman2
             Console.WriteLine("             /o-             3. Avsluta spel.                     +/-           ");
             Console.WriteLine("         `   :o-                                                 `++-           ");
             Console.WriteLine("         ``  /o-`                                                .++-           ");
-            Console.WriteLine("             ++-           förra spelet tog {0} gissningar       ` .++.           ", Program.numberOfGuesses);
+            Console.WriteLine("             ++-           förra spelet tog {0} gissningar       ` .++.           ", Game.NumberOfGuesses);
             Console.WriteLine("            .o+-                                               ``-/+`           ");
             Console.WriteLine("            -o+-                ``                            ```-/+`           ");
             Console.WriteLine("      `````./o/:-----------::::://:::::::::::::------......-`....::+-`          ");
@@ -99,6 +99,40 @@ namespace Hangman2
             Console.WriteLine("                                                    	            `-`            ");
             return;
 
+        }
+
+        public static void GameInterface() // Visar "gränssnittet" för spelaren. - GAME
+        {
+            Console.WriteLine("\nDu har gissat på:" + Game.GuessHistory);
+            Console.Write("Ordet är: ");
+            for (int i = 0; i < Game.WordLength; i++) // Lägger till mellanslag i maskedWord.
+            {
+                Console.Write(Game.MaskedWord[i] + " ");
+
+            }
+
+            Console.WriteLine("");
+        }
+
+        public static void WinGame() // Avslutar spelet beroende på hur spelaren presterat. - GAME
+        {
+            Console.WriteLine("Grattis. Du är awesome!.");
+            Game.EndGameChoices();
+        }
+
+        public static void LoseGame() // Förolämpar spelaren om denne inte är så bra. - GUI
+        {
+            Console.WriteLine(" ________________ ");
+            Console.WriteLine(" |  | ");
+            Console.WriteLine(" | ( ) ");
+            Console.WriteLine(" | /|\\");
+            Console.WriteLine(" |  |  ");
+            Console.WriteLine(" | / \\");
+            Console.WriteLine(" | ");
+            Console.WriteLine(" | ");
+            Console.WriteLine(" |_______________ ");
+            Console.WriteLine("Du... Dra.");
+            Game.EndGameChoices();
         }
     }
 }

@@ -8,11 +8,35 @@ namespace Hangman2
 {
     class Player
     {
-        public string name;
+        private static string name;
 
-        public Player(string name)
+        public static string Name
         {
-            this.name = name;
+            get { return name; }
+            set {
+                do
+                {
+                    if (value.Length >= 3 && value.Length < 25)
+                    {
+                        name = value;
+                        return;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Namnet måste vara mellan 3 och 25 bokstäver.");
+                        value = Console.ReadLine();
+                    }
+                } while (true);
+                
+                }
         }
+
+       
+        
+
+        
+        
+
+
     }
 }
