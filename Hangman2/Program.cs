@@ -389,7 +389,7 @@ namespace Hangman2
             }
         }
 
-        private static void LoseGame() // Förolämpar spelaren om denne inte är så bra. - GAME
+        private static void LoseGame() // Förolämpar spelaren om denne inte är så bra. - GUI
         {
             Console.WriteLine(" ________________ ");
             Console.WriteLine(" |  | ");
