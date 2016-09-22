@@ -276,6 +276,7 @@ namespace Hangman2
                 }
                 else if (input == "2")
                 {
+                    Console.Clear();
                     Console.WriteLine("Skriv in namn.");
                     Player.Name = Console.ReadLine();
                     return;
