@@ -78,7 +78,7 @@ namespace Hangman2
             Console.WriteLine("       ``...//+s/-.......................-------------.....``....../+/:::--.-   ");
             Console.WriteLine("        ``..-.---..````````     ``  `                       ``...``:+:.```      ");
             Console.WriteLine("        ```.-.-..`                                           `````-/+-`         ");
-            Console.WriteLine("         ```.--.        För att spela spelet ska du                ++-          ");
+            Console.WriteLine("         ```.--.      För att spela spelet ska du                  ++-          ");
             Console.WriteLine("         ```.-+-`     gissa antingen på ord eller bokstav          //-          ");
             Console.WriteLine("         `` -/o-`     om du gissar fel blir du av med ett liv      /::          ");
             Console.WriteLine("             /o-      men om du gissar rätt så behåller du liv.   +/-           ");
