@@ -8,6 +8,7 @@ namespace Hangman2
 {
     class GUI
     {
+
         public static void MainMenu() // Metod för att visa gränssnittet för huvudmenyn
         {
             Console.WriteLine("             `..`");
