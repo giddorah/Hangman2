@@ -17,7 +17,7 @@ namespace Hangman2
                 if (value.Length >= 3 && value.Length < 25)
                 {
                     name = value;
-                    
+
                 }
 
             }
@@ -40,51 +40,92 @@ namespace Hangman2
             } while (true);
         }
 
-        static int scores;
+        static int score;
 
-        public static int Scores
+        public static int Score
         {
-            get { return scores; }
-            set { scores = value; }
+            get { return score; }
+            set { score = value; }
         }
 
         public static void HighScore()
         {
-            string[] highScore = FilesGenerator.HighScoreCreator();
-            string[] names = new string[10];
-            int[] score = new int[10];
+            string highScoreName = Name;
+            string[] namesList; // kommer att användas för att spara alla namn i highscore inclusive det nya på rätt plats. storlek bestämms senare
+            int[] scoreList;    // kommer att användas för att spara alla scores i highscore inclusive det nya på rätt plats. storlek bestämms senare
+            string[] highScoreList = FilesGenerator.HighScoreCreator(); // skapar en string array över alla tidigare highscores
 
-            for (int i = 0; i < highScore.Length; i++)
+            if (highScoreList.Length < 20) // om listan är mindre än 20, dvs 10 namn och 10 scores, så kommer listorna
             {
-                if (i % 2 == 1)
+                namesList = new string[highScoreList.Length / 2 + 1];
+                scoreList = new int[highScoreList.Length / 2 + 1];
+            }
+            else
+            {
+                namesList = new string[highScoreList.Length / 2];
+                scoreList = new int[highScoreList.Length / 2];
+            }
+
+            for (int i = 0; i < scoreList.Length * 2; i++)
+            {
+                if (highScoreList.Length > i)
                 {
-                    score[i - 1] = int.Parse(highScore[i]);
+                    if (i % 2 == 1)
+                    {
+                        scoreList[i / 2] = int.Parse(highScoreList[i]);
+                    }
+
+                    else
+                    {
+                        namesList[i / 2] = highScoreList[i];
+                    }
                 }
-                else if (i == 0)
-                {
-                    names[i] = highScore[i];
-                }
+
                 else
                 {
-                    names[i - 1] = highScore[i];
+                    if (i % 2 == 1)
+                    {
+                        scoreList[i / 2] = 0;
+                    }
+
+                    else
+                    {
+                        namesList[i / 2] = "";
+                    }
                 }
             }
 
-            string highScoreName = Name;
-
-            for (int i = 0; i < names.Length; i++)
+            for (int i = 0; i < scoreList.Length; i++)
             {
-                if (Scores > score[i])
+
+                if (Score > scoreList[i])
                 {
-                    int tempScore = score[i];
-                    score[i] = Scores;
-                    Scores = tempScore;
-                    string tempName = names[i];
-                    names[i] = highScoreName;
+                    int tempScore = scoreList[i];
+                    scoreList[i] = Score;
+                    Score = tempScore;
+                    string tempName = namesList[i];
+                    namesList[i] = highScoreName;
                     highScoreName = tempName;
 
                 }
+
             }
+
+            highScoreList = new string[scoreList.Length * 2];
+            for (int i = 0; i < scoreList.Length * 2; i++)
+            {
+                if (i % 2 == 1)
+                {
+                    highScoreList[i] = "" + scoreList[i / 2];
+                }
+
+                else
+                {
+                    highScoreList[i] = namesList[i / 2];
+                }
+            }
+
+            FilesGenerator.SaveHighScore(highScoreList);
         }
     }
 }

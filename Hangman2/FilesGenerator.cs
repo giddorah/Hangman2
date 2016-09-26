@@ -10,7 +10,7 @@ namespace Hangman2
     class FilesGenerator
     {
 
-        public static string[] HighScore { get ; set; }
+        public static string[] HighScore { get; set; }
 
         public static void FilesCreator()
         {
@@ -24,8 +24,8 @@ namespace Hangman2
                 "danskjävel" + Environment.NewLine +
                 "johan" + Environment.NewLine +
                 "Ludwig";
-            File.WriteAllText(@"c:\users\public\easy.txt",easy);
-                
+            File.WriteAllText(@"c:\users\public\easy.txt", easy);
+
 
             string normal = "ibrahimovic" + Environment.NewLine +
                 "bananskal" + Environment.NewLine +
@@ -64,16 +64,16 @@ namespace Hangman2
             }
             catch (FileNotFoundException)
             {
-                File.WriteAllText(@"c:\users\public\highscore.txt","");
+                File.WriteAllText(@"c:\users\public\highscore.txt", "");
                 HighScore = File.ReadAllLines(@"c:\users\public\highscore.txt");
             }
 
             return HighScore;
         }
 
-        public static void SaveHighScore()
+        public static void SaveHighScore(string[] highScoreList)
         {
-
+            File.WriteAllLines(@"c:\users\public\highscore.txt", highScoreList);
         }
     }
 }

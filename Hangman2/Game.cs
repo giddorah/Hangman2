@@ -42,7 +42,7 @@ namespace Hangman2
         public int PlayerLives
         {
             get { return playerLives; }
-           private set { playerLives = value; }
+            private set { playerLives = value; }
         }
 
         public static int WordLength
@@ -231,7 +231,7 @@ namespace Hangman2
             numberOfGuesses++; // Antal gissningar ifrån spelaren går upp
             if (ifEqualsToWordLengthPlayerWins == wordLength || playerGuess == wordGeneratorWord) // Om integern är lika stor som wordlength eller om spelaren gissar på rätt ord direkt så vinner spelaren.
             {
-                Player.Scores = levelPoint + (lifePoint * playerLives);
+                Player.Score = levelPoint + (lifePoint * playerLives);
                 GUI.WinGame(); // Vinstskärm.
                 return true; // Avslutar metoden med ett truevärde.
             }
@@ -266,6 +266,7 @@ namespace Hangman2
 
         public static void EndGameChoices() // Om spelaren vunnit eller förlorat körs denna metod. - GAME
         {
+            Player.HighScore();
             Console.WriteLine("Åh, du är så fin. Vad skulle du önska att du fick göra nu?");
             bool korvLoopen = true;
             while (korvLoopen)
