@@ -32,6 +32,7 @@ namespace Hangman2
                 "besserwisser" + Environment.NewLine +
                 "underbarn" + Environment.NewLine +
                 "sjung" + Environment.NewLine +
+                "zlatan" + Environment.NewLine +
                 "susanna" + Environment.NewLine +
                 "hyperneuroakustiskadiafragmakontravibrationer";
             File.WriteAllText(@"c:\users\public\normal.txt", normal);
@@ -45,6 +46,8 @@ namespace Hangman2
            "ger" + Environment.NewLine +
            "etsa" + Environment.NewLine +
            "lina" + Environment.NewLine +
+           "lira" + Environment.NewLine +
+           "yr" + Environment.NewLine +
            "yxa";
             File.WriteAllText(@"c:\users\public\hard.txt", hard);
         }
