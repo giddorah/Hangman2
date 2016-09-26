@@ -117,7 +117,7 @@ namespace Hangman2
 
         public static void WinGame() // Avslutar spelet beroende på hur spelaren presterat. - GAME
         {
-            Console.WriteLine("Grattis. Du är awesome!.");
+            Console.WriteLine("Grattis. Du är awesome! Dina poäng är " + Player.Scores);
             Game.EndGameChoices();
         }
 

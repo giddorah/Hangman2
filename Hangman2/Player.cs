@@ -9,7 +9,6 @@ namespace Hangman2
     class Player
     {
         private static string name;
-
         public static string Name
         {
             get { return name; }
@@ -39,6 +38,13 @@ namespace Hangman2
                     input = Console.ReadLine();
                 }
             } while (true);
+        }
+        static int scores;
+
+        public static int Scores
+        {
+            get { return scores; }
+            set { scores = value; }
         }
 
     }

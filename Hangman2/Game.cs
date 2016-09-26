@@ -16,6 +16,22 @@ namespace Hangman2
         static string guessHistory; // Lagrar tidigare gissningar
         static int numberOfGuesses; // Lagrar hur många gissningar som gjorts
         static char[] maskedWord;
+        static int levelPoint;
+        static int lifePoint;
+
+        public int LevelPoint
+        {
+            get { return levelPoint; }
+            set { levelPoint = value; }
+        }
+
+        public int LifePoint
+        {
+            get { return lifePoint; }
+            set { lifePoint = value; }
+        }
+
+
 
         public static char[] MaskedWord
         {
@@ -82,6 +98,8 @@ namespace Hangman2
                         dictionary = File.ReadAllLines(@"c:\users\public\easy.txt");
                         wordGeneratorWord = dictionary[random.Next(dictionary.Length)].ToLower();
                         playerLives = 10;
+                        levelPoint = 100;
+                        lifePoint = 40;
                         WordGenerator();
 
 
@@ -91,6 +109,8 @@ namespace Hangman2
                         dictionary = File.ReadAllLines(@"c:\users\public\normal.txt");
                         wordGeneratorWord = dictionary[random.Next(dictionary.Length)].ToLower();
                         playerLives = 5;
+                        levelPoint = 200;
+                        lifePoint = 100;
                         WordGenerator();
                         return;
 
@@ -99,6 +119,8 @@ namespace Hangman2
                         dictionary = File.ReadAllLines(@"c:\users\public\hard.txt");
                         wordGeneratorWord = dictionary[random.Next(dictionary.Length)].ToLower();
                         playerLives = 2;
+                        levelPoint = 400;
+                        lifePoint = 200;
                         WordGenerator();
                         return;
 
@@ -209,6 +231,7 @@ namespace Hangman2
             numberOfGuesses++; // Antal gissningar ifrån spelaren går upp
             if (ifEqualsToWordLengthPlayerWins == wordLength || playerGuess == wordGeneratorWord) // Om integern är lika stor som wordlength eller om spelaren gissar på rätt ord direkt så vinner spelaren.
             {
+                Player.Scores = levelPoint + (lifePoint * playerLives);
                 GUI.WinGame(); // Vinstskärm.
                 return true; // Avslutar metoden med ett truevärde.
             }
