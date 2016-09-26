@@ -15,21 +15,30 @@ namespace Hangman2
             get { return name; }
             set
             {
-                do
+                if (value.Length >= 3 && value.Length < 25)
                 {
-                    if (value.Length >= 3 && value.Length < 25)
-                    {
-                        name = value;
-                        return;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Namnet måste vara mellan 3 och 25 bokstäver.");
-                        value = Console.ReadLine();
-                    }
-                } while (true);
+                    name = value;
+                    
+                }
 
             }
+        }
+
+        public static void NameLengthController(string input)
+        {
+            do
+            {
+                if (input.Length >= 3 && input.Length < 25)
+                {
+                    Name = input;
+                    return;
+                }
+                else
+                {
+                    Console.WriteLine("Namnet måste vara mellan 3 och 25 bokstäver.");
+                    input = Console.ReadLine();
+                }
+            } while (true);
         }
 
     }

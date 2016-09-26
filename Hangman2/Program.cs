@@ -14,7 +14,8 @@ namespace Hangman2
         static void Main(string[] args)
         {
             FilesGenerator.FilesCreator();
-            Player.Name = Console.ReadLine();
+            Console.WriteLine("Skriv in namn:");
+            Player.NameLengthController(Console.ReadLine());
             Menus.MainMenu();
         
         }
