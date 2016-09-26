@@ -57,15 +57,21 @@ namespace Hangman2
                 Console.WriteLine("Vill du köra på medel nivå? Tryck 2:");
                 Console.WriteLine("Vill du köra på svår nivå? Tryck 3:");
 
-                string[] easy = new string[5];
-                string[] medium = new string[5];
-                string[] hard = new string[5];
+                string[] easy = new string[11];
+                string[] medium = new string[11];
+                string[] hard = new string[11];
 
                 easy[0] = "kungen";
                 easy[1] = "banan";
                 easy[2] = "drottning";
                 easy[3] = "princessan";
                 easy[4] = "prinsen";
+                easy[5] = "estland";
+                easy[6] = "lettland";
+                easy[7] = "litauen";
+                easy[8] = "Niklas";
+                easy[9] = "Johan";
+                easy[10] = "Ludwig";
                 medium[0] = "askungen";
                 medium[1] = "Bahamas";
                 medium[2] = "danmark";
@@ -94,21 +100,21 @@ namespace Hangman2
                 {
                     case 1:
                         Console.WriteLine("Du valde lätt nivå!");
-                        wordGeneratorWord = easy[0];
+                        wordGeneratorWord = easy[2];
                         playerLives = 10;
                         WordGenerator();
 
                         return;
                     case 2:
                         Console.WriteLine("Du valde medel nivå!");
-                        wordGeneratorWord = medium[0];
+                        wordGeneratorWord = medium[2];
                         playerLives = 5;
                         WordGenerator();
                         return;
 
                     case 3:
                         Console.WriteLine("Du valde svår nivå!");
-                        wordGeneratorWord = hard[3];
+                        wordGeneratorWord = hard[2];
                         playerLives = 2;
                         WordGenerator();
                         return;
