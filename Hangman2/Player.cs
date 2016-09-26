@@ -13,7 +13,8 @@ namespace Hangman2
         public static string Name
         {
             get { return name; }
-            set {
+            set
+            {
                 do
                 {
                     if (value.Length >= 3 && value.Length < 25)
@@ -27,8 +28,8 @@ namespace Hangman2
                         value = Console.ReadLine();
                     }
                 } while (true);
-                
-                }
+
+            }
         }
 
     }
