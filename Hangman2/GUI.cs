@@ -21,41 +21,40 @@ namespace Hangman2
             Console.WriteLine("        ``..-.---..````````     ``  `                       ``...``:+:.```      ");
             Console.WriteLine("        ```.-.-..`                                           `````-/+-`         ");
             Console.WriteLine("         ```.--.                                                   ++-          ");
+
             Console.Write("         ```.-+-`");
-
-            for (int i = 0; i < 12 - Player.Name.Length / 2; i++)
-            {
-                Console.Write(" ");
-            }
-            Console.Write("{0} {1} {2}", Language.Languages[1], Player.Name, Language.Languages[2]); // Byter ut {0} mot vad spelaren angivit i TakeName.
-            if (Player.Name.Length % 2 == 0)
-            {
-
-                for (int i = 0; i < 13 - Player.Name.Length / 2; i++)
-                {
-                    Console.Write(" ");
-                }
-            }
-            else
-            {
-                for (int i = 0; i < 13 - Player.Name.Length / 2 - 1; i++)
-                {
-                    Console.Write(" ");
-                }
-            }
-
+            SpacesHandler(50, Language.Languages[1], Player.Name, Language.Languages[2]);
             Console.WriteLine("//-          ");
+
             Console.WriteLine("         `` -/o-`                                                  /::          ");
             Console.WriteLine("         `  -:o.                                                   /::          ");
             Console.WriteLine("         `  -/o.                                                  `+:-          ");
             Console.WriteLine("            ./o.                                                  .o/-          ");
-            Console.WriteLine("            `/o.             {0}              :o/.          ", Language.Languages[3]);
-            Console.WriteLine("             /o-             {0}                      /o/`          ", Language.Languages[4]);
-            Console.WriteLine("             /o-             {0}                           ++:`          ", Language.Languages[5]);
-            Console.WriteLine("             /o-             {0}                     +/-           ", Language.Languages[6]);
+
+            Console.Write("            `/o.");
+            SpacesHandler(50, Language.Languages[3]);
+            Console.WriteLine(":o/.          ");
+
+            Console.Write("             /o-");
+            SpacesHandler(50, Language.Languages[4]);
+            Console.WriteLine("/o/`          ");
+
+            Console.Write("             /o-");
+            SpacesHandler(50, Language.Languages[5]);
+            Console.WriteLine("++:`          ");
+
+
+            Console.Write("             /o-");
+            SpacesHandler(50, Language.Languages[6]);
+            Console.WriteLine("+/-           ");
+
             Console.WriteLine("         `   :o-                                                 `++-           ");
             Console.WriteLine("         ``  /o-`                                                .++-           ");
-            Console.WriteLine("             ++-           {0} {1} {2}       ` .++.           ", Language.Languages[7], Game.NumberOfGuesses, Language.Languages[8]);
+
+            Console.Write("             ++-");
+            SpacesHandler(47, Language.Languages[7], ""+Game.NumberOfGuesses, Language.Languages[8]);
+            Console.WriteLine("` .++.           ");
+
             Console.WriteLine("            .o+-                                               ``-/+`           ");
             Console.WriteLine("            -o+-                ``                            ```-/+`           ");
             Console.WriteLine("      `````./o/:-----------::::://:::::::::::::------......-`....::+-`          ");
@@ -66,7 +65,7 @@ namespace Hangman2
             Console.WriteLine("            `..`                                               `..+:.           ");
             Console.WriteLine("                                                    	            `-`            ");
         }
-
+        
         public static void HowTo() // Metod för att visa gränssnittet för How To'n
         {
             Console.Clear();
@@ -135,6 +134,38 @@ namespace Hangman2
             Console.WriteLine(" |_______________ ");
             Console.WriteLine(Language.Languages[37]);
             Game.EndGameChoices();
+
+
+
+        }
+
+        private static void SpacesHandler(int numberOfSpaces, params string[] args)
+        {
+            string text = "";
+            for (int i = 0; i < args.Length; i++)
+            {
+                text += args[i];
+                if (i + 1 < args.Length) text += " ";
+            }
+
+            for (int i = 0; i < numberOfSpaces / 2 - (text.Length)
+                / 2 - (text.Length) % 2; i++)
+            {
+                Console.Write(" ");
+            }
+
+            if (numberOfSpaces % 2 == 1)
+            {
+                Console.Write(" ");
+            }
+
+            Console.Write(text);
+
+            for (int i = 0; i < numberOfSpaces / 2 - (text.Length)
+                / 2 - 2 * (text.Length) % 2; i++)
+            {
+                Console.Write(" ");
+            }
         }
     }
 }

@@ -73,16 +73,16 @@ namespace Hangman2
 "2. Va?" + Environment.NewLine +
 "3. Lägg utåa." + Environment.NewLine +
 "Sist'å" + Environment.NewLine +
-"fisök    " + Environment.NewLine +
-"Fö å lira så lä ru        " + Environment.NewLine +
-"gissa ordä elle boksta'n.         " + Environment.NewLine +
-"Gissaru fel så ta vi liv å gissaru    " + Environment.NewLine +
-"rätt fåru behålla skit'n.               " + Environment.NewLine +
-"Liv'n fåru av svårihet'n.     " + Environment.NewLine +
-"Kö nu!                      " + Environment.NewLine +
-"Ta' en:             " + Environment.NewLine +
-"1. Första menyn           " + Environment.NewLine +
-"2. Ba kö.      " + Environment.NewLine +
+"fisök" + Environment.NewLine +
+"Fö å lira så lä ru" + Environment.NewLine +
+"gissa ordä elle boksta'n." + Environment.NewLine +
+"Gissaru fel så ta vi liv å gissaru" + Environment.NewLine +
+"rätt fåru behålla skit'n." + Environment.NewLine +
+"Liv'n fåru av svårihet'n." + Environment.NewLine +
+"Kö nu!" + Environment.NewLine +
+"Ta' en:" + Environment.NewLine +
+"1. Första menyn" + Environment.NewLine +
+"2. Ba kö." + Environment.NewLine +
 "Ta 1 elle 2." + Environment.NewLine +
 "Hörru tjåggis, ta 1 elle 2." + Environment.NewLine +
 "Ta ba 1, 2 elle 3." + Environment.NewLine +
