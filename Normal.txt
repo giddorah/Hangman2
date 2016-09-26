@@ -1,15 +1,15 @@
-Skriv in namn:
-Välkommen 
-till Hangr 0.1
-Välj något av följande:
-1. Starta spel.
-2. How to.
-3. Avsluta spel.
-förra spelet tog 
-gissningar
-För att spela spelet ska du
-gissa antingen på ord eller bokstav
-om du gissar fel blir du av med ett liv
+Skriv in namn:  + Environment.NewLine +
+Välkommen  + Environment.NewLine +
+till Hangr 0.1  + Environment.NewLine +
+Välj något av följande:  + Environment.NewLine +
+1. Starta spel.  + Environment.NewLine +
+2. How to.  + Environment.NewLine +
+3. Avsluta spel.  + Environment.NewLine +
+förra spelet tog   + Environment.NewLine +
+gissningar  + Environment.NewLine +
+För att spela spelet ska du  + Environment.NewLine +
+gissa antingen på ord eller bokstav  + Environment.NewLine +
+om du gissar fel blir du av med ett liv 
 men om du gissar rätt så behåller du liv.
 Antal liv bestäms genom villken
 svårighetsgrad som man väljer
