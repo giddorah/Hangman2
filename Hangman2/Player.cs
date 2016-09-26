@@ -39,6 +39,7 @@ namespace Hangman2
                 }
             } while (true);
         }
+
         static int scores;
 
         public static int Scores
@@ -47,5 +48,43 @@ namespace Hangman2
             set { scores = value; }
         }
 
+        public static void HighScore()
+        {
+            string[] highScore = FilesGenerator.HighScoreCreator();
+            string[] names = new string[10];
+            int[] score = new int[10];
+
+            for (int i = 0; i < highScore.Length; i++)
+            {
+                if (i % 2 == 1)
+                {
+                    score[i - 1] = int.Parse(highScore[i]);
+                }
+                else if (i == 0)
+                {
+                    names[i] = highScore[i];
+                }
+                else
+                {
+                    names[i - 1] = highScore[i];
+                }
+            }
+
+            string highScoreName = Name;
+
+            for (int i = 0; i < names.Length; i++)
+            {
+                if (Scores > score[i])
+                {
+                    int tempScore = score[i];
+                    score[i] = Scores;
+                    Scores = tempScore;
+                    string tempName = names[i];
+                    names[i] = highScoreName;
+                    highScoreName = tempName;
+
+                }
+            }
+        }
     }
 }

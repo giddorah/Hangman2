@@ -9,6 +9,9 @@ namespace Hangman2
 {
     class FilesGenerator
     {
+
+        public static string[] HighScore { get ; set; }
+
         public static void FilesCreator()
         {
             string easy = "Bo" + Environment.NewLine +
@@ -50,6 +53,27 @@ namespace Hangman2
            "yr" + Environment.NewLine +
            "yxa";
             File.WriteAllText(@"c:\users\public\hard.txt", hard);
+        }
+
+        public static string[] HighScoreCreator()
+        {
+
+            try
+            {
+                HighScore = File.ReadAllLines(@"c:\users\public\highscore.txt");
+            }
+            catch (FileNotFoundException)
+            {
+                File.WriteAllText(@"c:\users\public\highscore.txt","");
+                HighScore = File.ReadAllLines(@"c:\users\public\highscore.txt");
+            }
+
+            return HighScore;
+        }
+
+        public static void SaveHighScore()
+        {
+
         }
     }
 }
