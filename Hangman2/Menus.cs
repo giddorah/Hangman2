@@ -123,9 +123,9 @@ namespace Hangman2
 
                 switch (languageSelectionMenu)
                 {
-                    case 1: Language.Languages = File.ReadAllLines(@"c:\users\public\english.txt", Encoding.GetEncoding("iso-8859-1")); return;
-                    case 2: Language.Languages = File.ReadAllLines(@"c:\users\public\northlandish.txt", Encoding.GetEncoding("iso-8859-1")); return;
-                    case 3: Language.Languages = File.ReadAllLines(@"c:\users\public\swedish.txt", Encoding.GetEncoding("iso-8859-1")); return;
+                    case 1: Language.Languages = File.ReadAllLines(@"c:\users\public\hangmandata\english.txt", Encoding.GetEncoding("iso-8859-1")); return;
+                    case 2: Language.Languages = File.ReadAllLines(@"c:\users\public\hangmandata\northlandish.txt", Encoding.GetEncoding("iso-8859-1")); return;
+                    case 3: Language.Languages = File.ReadAllLines(@"c:\users\public\hangmandata\swedish.txt", Encoding.GetEncoding("iso-8859-1")); return;
 
                     default: break;
                 }
