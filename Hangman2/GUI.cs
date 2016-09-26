@@ -8,6 +8,7 @@ namespace Hangman2
 {
     class GUI
     {
+
         public static void MainMenu() // Metod för att visa gränssnittet för huvudmenyn
         {
             Console.WriteLine("             `..`");
@@ -122,6 +123,7 @@ namespace Hangman2
 
         public static void LoseGame() // Förolämpar spelaren om denne inte är så bra. - GUI
         {
+            
             Console.WriteLine(" ________________ ");
             Console.WriteLine(" |  | ");
             Console.WriteLine(" | ( ) ");

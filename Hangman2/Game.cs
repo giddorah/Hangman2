@@ -215,6 +215,7 @@ namespace Hangman2
 
             if (playerLives == 0) // Om spelarliv är 0
             {
+                Console.WriteLine("Ordet du sökte var {0}", wordGeneratorWord);
                 GUI.LoseGame(); // Förlustskärm.
                 return true; // Avslutar metoden med ett truevärde.
             }
