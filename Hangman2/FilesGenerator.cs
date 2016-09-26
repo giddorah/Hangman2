@@ -61,7 +61,7 @@ namespace Hangman2
 "Du valde medel nivå!" + Environment.NewLine +
 "Du valde svår nivå!" + Environment.NewLine +
 "Avslutar spelet.";
-            File.WriteAllText(@"c:\users\public\swedish.txt", swedish);
+            File.WriteAllText(@"c:\users\public\swedish.txt", swedish, Encoding.GetEncoding("iso-8859-1"));
 
             string northlandish = "Va e namnä: " + Environment.NewLine +
 "Tjäna " + Environment.NewLine +
@@ -113,7 +113,7 @@ namespace Hangman2
 "Du to grön kobärs!" + Environment.NewLine +
 "Du e ju dum du!" + Environment.NewLine +
 "Slut å' kö!";
-            File.WriteAllText(@"c:\users\public\northlandish.txt", northlandish);
+            File.WriteAllText(@"c:\users\public\northlandish.txt", northlandish, Encoding.GetEncoding("iso-8859-1"));
 
             string english = "Enter name: " + Environment.NewLine +
 "Welcome " + Environment.NewLine +
@@ -165,7 +165,7 @@ namespace Hangman2
 "You picked medium level!" + Environment.NewLine +
 "You picked hard level!" + Environment.NewLine +
 "Quitting game.";
-            File.WriteAllText(@"c:\users\public\english.txt", english);
+            File.WriteAllText(@"c:\users\public\english.txt", english, Encoding.GetEncoding("iso-8859-1"));
 
             string easy = "Bo" + Environment.NewLine +
                 "jesus" + Environment.NewLine +
