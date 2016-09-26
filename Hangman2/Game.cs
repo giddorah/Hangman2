@@ -69,10 +69,10 @@ namespace Hangman2
             {
                 int difficultySwitch;
 
-                Console.WriteLine("Svårighetsgrad");
-                Console.WriteLine("Vill du köra på lätt nivå? Tryck 1:");
-                Console.WriteLine("Vill du köra på medel nivå? Tryck 2:");
-                Console.WriteLine("Vill du köra på svår nivå? Tryck 3:");
+                Console.WriteLine(Language.Languages[22]);
+                Console.WriteLine(Language.Languages[23]);
+                Console.WriteLine(Language.Languages[24]);
+                Console.WriteLine(Language.Languages[25]);
 
                 Random random = new Random();
                 string[] dictionary;
@@ -94,7 +94,7 @@ namespace Hangman2
                 switch (difficultySwitch)
                 {
                     case 1:
-                        Console.WriteLine("Du valde lätt nivå!");
+                        Console.WriteLine(Language.Languages[46]);
                         dictionary = File.ReadAllLines(@"c:\users\public\easy.txt");
                         wordGeneratorWord = dictionary[random.Next(dictionary.Length)].ToLower();
                         playerLives = 10;
@@ -105,7 +105,7 @@ namespace Hangman2
 
                         return;
                     case 2:
-                        Console.WriteLine("Du valde medel nivå!");
+                        Console.WriteLine(Language.Languages[47]);
                         dictionary = File.ReadAllLines(@"c:\users\public\normal.txt");
                         wordGeneratorWord = dictionary[random.Next(dictionary.Length)].ToLower();
                         playerLives = 5;
@@ -115,7 +115,7 @@ namespace Hangman2
                         return;
 
                     case 3:
-                        Console.WriteLine("Du valde svår nivå!");
+                        Console.WriteLine(Language.Languages[48]);
                         dictionary = File.ReadAllLines(@"c:\users\public\hard.txt");
                         wordGeneratorWord = dictionary[random.Next(dictionary.Length)].ToLower();
                         playerLives = 2;
@@ -125,7 +125,7 @@ namespace Hangman2
                         return;
 
                     default:
-                        Console.WriteLine("Var vänlig och skriv in 1,2 eller 3");
+                        Console.WriteLine(Language.Languages[18]);
                         break;
                 }
             }
@@ -168,14 +168,14 @@ namespace Hangman2
         static void Guess() // Metod för att samla in gissning från spelaren. - GAME
         {
             bool playerGuessLoop = true; // Gör en bool till en loop för att kontrollera så att användaren skriver något.
-            Console.Write("Gissa bokstav/ord: ");
+            Console.Write(Language.Languages[29]);
             while (playerGuessLoop) // En loop för att kontrollera användarens input.
             {
                 playerGuess = Console.ReadLine().ToLower(); // Gör om spelarens gissning till liten bokstav.
                 if (playerGuess.Length == 0) // Om spelarens input inte innehåller någonting.
                 {
-                    Console.WriteLine("Du måste skriva in en gissning.");
-                    Console.Write("Ange gissning: ");
+                    Console.WriteLine(Language.Languages[30]);
+                    Console.Write(Language.Languages[31]);
                 }
                 else // Annars avslutas kontrolloopen.
                 {
@@ -215,8 +215,8 @@ namespace Hangman2
 
             if (changeMade == true) // Om changemade är sant
             {
-                Console.WriteLine("Du gissade rätt bokstav, fortsätt så!"); // Lite uppmuntring skrivs ut.
-                Console.WriteLine("\nDu har: " + playerLives + " liv kvar"); // Information om hur många liv som finns kvar visas.
+                Console.WriteLine(Language.Languages[35]); // Lite uppmuntring skrivs ut.
+                Console.WriteLine("{0} {1} {2}", Language.Languages[33], playerLives, Language.Languages[34]); // Information om hur många liv som finns kvar visas.
             }
 
             int ifEqualsToWordLengthPlayerWins = 0; // Gör en integer för att lagra antal rätt gissade bokstäver.
@@ -238,26 +238,26 @@ namespace Hangman2
 
             if (playerLives == 0) // Om spelarliv är 0
             {
-                Console.WriteLine("Ordet du sökte var {0}", wordGeneratorWord);
+                Console.WriteLine("{0} {1}", Language.Languages[36], wordGeneratorWord);
                 GUI.LoseGame(); // Förlustskärm.
                 return true; // Avslutar metoden med ett truevärde.
             }
 
             if (playerLives < 4 && changeMade == false) // Om spelarens liv är mindre än 4 och changemade är falsk
             {
-                Console.WriteLine("\nDu gissade fel, försök igen!");
+                Console.WriteLine(Language.Languages[32]);
 
-                Console.Write("\nDu har: ");
+                Console.Write(Language.Languages[33]);
                 Console.ForegroundColor = ConsoleColor.Red; // Texten blir röd.
                 Console.Write(playerLives);
                 Console.ResetColor();
-                Console.Write(" liv kvar ");
+                Console.WriteLine(Language.Languages[34]);
             }
             else if (playerLives >= 4 && changeMade == false) // Om spelarens liv är 4 eller över.
             {
 
-                Console.WriteLine("\nDu gissade fel, försök igen!");
-                Console.WriteLine("\nDu har: " + playerLives + " liv kvar");
+                Console.WriteLine(Language.Languages[32]);
+                Console.WriteLine("{0} {1} {2}", Language.Languages[33], playerLives, Language.Languages[34]);
 
             }
 
@@ -266,14 +266,14 @@ namespace Hangman2
 
         public static void EndGameChoices() // Om spelaren vunnit eller förlorat körs denna metod. - GAME
         {
-            Console.WriteLine("Åh, du är så fin. Vad skulle du önska att du fick göra nu?");
+            Console.WriteLine(Language.Languages[38]);
             bool korvLoopen = true;
             while (korvLoopen)
             {
-                Console.WriteLine("Vill du:");
-                Console.WriteLine("1. Spela igen.");
-                Console.WriteLine("2. Byta spelare.");
-                Console.WriteLine("3. Avsluta spelet.");
+                Console.WriteLine(Language.Languages[39]);
+                Console.WriteLine(Language.Languages[40]);
+                Console.WriteLine(Language.Languages[41]);
+                Console.WriteLine(Language.Languages[42]);
                 string input = Console.ReadLine();
 
                 if (input == "1")
@@ -283,7 +283,7 @@ namespace Hangman2
                 else if (input == "2")
                 {
                     Console.Clear();
-                    Console.WriteLine("Skriv in namn.");
+                    Console.WriteLine(Language.Languages[0]);
                     Player.Name = Console.ReadLine();
                     return;
                 }
@@ -294,7 +294,7 @@ namespace Hangman2
                 else
                 {
                     Console.Clear();
-                    Console.WriteLine("Fy");
+                    Console.WriteLine(Language.Languages[43]);
                 }
             }
         }

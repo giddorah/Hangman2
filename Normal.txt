@@ -1,0 +1,50 @@
+Skriv in namn:
+Välkommen 
+till Hangr 0.1
+Välj något av följande:
+1. Starta spel.
+2. How to.
+3. Avsluta spel.
+förra spelet tog 
+gissningar
+För att spela spelet ska du
+gissa antingen på ord eller bokstav
+om du gissar fel blir du av med ett liv
+men om du gissar rätt så behåller du liv.
+Antal liv bestäms genom villken
+svårighetsgrad som man väljer
+Välj ett av följande:
+1. Återvänd till huvudmenyn
+2. Starta spelet
+Var vänlig och skriv in 1 eller 2
+Du måste ange 1 eller 2.
+Använd enbart 1, 2 eller 3.
+Tryck enter för att gå tillbaka och försöka igen.
+Svårighetsgrad
+Vill du köra på lätt nivå? Tryck 1:
+Vill du köra på medel nivå? Tryck 2:
+Vill du köra på svår nivå? Tryck 3:
+Var vänlig och skriv in 1,2 eller 3
+\nDu har gissat på: 
+Ordet är:  
+Gissa bokstav/ord: 
+Du måste skriva in en gissning.
+Ange gissning: 
+\nDu gissade fel, försök igen!
+\nDu har: 
+ liv kvar. 
+Du gissade rätt bokstav, fortsätt så!
+Ordet du sökte var 
+Du... Dra.
+Åh, du är så fin. Vad skulle du önska att du fick göra nu?
+Vill du:
+1. Spela igen.
+2. Byta spelare.
+3. Avsluta spelet.
+Fy
+Grattis. Du är awesome! Dina poäng är 
+Namnet måste vara mellan 3 och 25 bokstäver.
+Du valde lätt nivå!
+Du valde medel nivå!
+Du valde svår nivå!
+Avslutar spelet.
