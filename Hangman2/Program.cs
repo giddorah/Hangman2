@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,8 @@ namespace Hangman2
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Skriv in namn.");
+            var test = File.ReadAllText(@"C:\Users\michl\Source\Repos\Hangman2\test.txt");
+            Console.WriteLine(test);
             Player.Name = Console.ReadLine();
             Menus.MainMenu();
         
