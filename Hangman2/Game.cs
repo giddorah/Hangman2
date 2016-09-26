@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Hangman2
 {
@@ -57,31 +58,9 @@ namespace Hangman2
                 Console.WriteLine("Vill du köra på medel nivå? Tryck 2:");
                 Console.WriteLine("Vill du köra på svår nivå? Tryck 3:");
 
-                string[] easy = new string[11];
-                string[] medium = new string[11];
-                string[] hard = new string[11];
+                Random random = new Random();
+                string[] dictionary;
 
-                easy[0] = "kungen";
-                easy[1] = "banan";
-                easy[2] = "drottning";
-                easy[3] = "princessan";
-                easy[4] = "prinsen";
-                easy[5] = "estland";
-                easy[6] = "lettland";
-                easy[7] = "litauen";
-                easy[8] = "Niklas";
-                easy[9] = "Johan";
-                easy[10] = "Ludwig";
-                medium[0] = "askungen";
-                medium[1] = "Bahamas";
-                medium[2] = "danmark";
-                medium[3] = "sverige";
-                medium[4] = "finland";
-                hard[0] = "kontinental";
-                hard[1] = "sundbyberg";
-                hard[2] = "ibrahimovic";
-                hard[3] = "korvstroganoff";
-                hard[4] = "pax";
 
                 string checkInput = Console.ReadLine();
                 int inputCheckLength = checkInput.Length;
@@ -100,21 +79,25 @@ namespace Hangman2
                 {
                     case 1:
                         Console.WriteLine("Du valde lätt nivå!");
-                        wordGeneratorWord = easy[2];
+                        dictionary = File.ReadAllLines(@"c:\users\public\easy.txt");
+                        wordGeneratorWord = dictionary[random.Next(dictionary.Length)].ToLower();
                         playerLives = 10;
                         WordGenerator();
+
 
                         return;
                     case 2:
                         Console.WriteLine("Du valde medel nivå!");
-                        wordGeneratorWord = medium[2];
+                        dictionary = File.ReadAllLines(@"c:\users\public\normal.txt");
+                        wordGeneratorWord = dictionary[random.Next(dictionary.Length)].ToLower();
                         playerLives = 5;
                         WordGenerator();
                         return;
 
                     case 3:
                         Console.WriteLine("Du valde svår nivå!");
-                        wordGeneratorWord = hard[2];
+                        dictionary = File.ReadAllLines(@"c:\users\public\hard.txt");
+                        wordGeneratorWord = dictionary[random.Next(dictionary.Length)].ToLower();
                         playerLives = 2;
                         WordGenerator();
                         return;

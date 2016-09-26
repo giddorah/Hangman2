@@ -13,8 +13,7 @@ namespace Hangman2
 
         static void Main(string[] args)
         {
-            var test = File.ReadAllText(@"Easy.txt");
-            Console.WriteLine(test);
+            FilesGenerator.FilesCreator();
             Player.Name = Console.ReadLine();
             Menus.MainMenu();
         
