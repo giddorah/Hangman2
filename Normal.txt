@@ -1,5 +1,5 @@
 Skriv in namn: 
-Välkommen  
+Välkommen
 till Hangr 0.1  
 Välj något av följande:  
 1. Starta spel.  
