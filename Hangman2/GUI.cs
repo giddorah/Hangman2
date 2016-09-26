@@ -122,6 +122,7 @@ namespace Hangman2
 
         public static void LoseGame() // Förolämpar spelaren om denne inte är så bra. - GUI
         {
+            
             Console.WriteLine(" ________________ ");
             Console.WriteLine(" |  | ");
             Console.WriteLine(" | ( ) ");
