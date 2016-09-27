@@ -123,22 +123,22 @@ namespace Hangman2
         {
             string english ="Enter name:" + Environment.NewLine +
             "Welcome" + Environment.NewLine +
-            "to Hangr 0.1   " + Environment.NewLine +
+            "to Hangr 0.1" + Environment.NewLine +
             "Select one of the following:" + Environment.NewLine +
             "1. Start game." + Environment.NewLine +
             "2. How to." + Environment.NewLine +
-            "3. Quit game.  " + Environment.NewLine +
+            "3. Quit game." + Environment.NewLine +
             "Last game took" + Environment.NewLine +
-            "guesses    " + Environment.NewLine +
-            "To play the game you      " + Environment.NewLine +
+            "guesses" + Environment.NewLine +
+            "To play the game you" + Environment.NewLine +
             "have to guess either the word or letter." + Environment.NewLine +
             "If you guess wrong you will lose a life" + Environment.NewLine +
-            "and if you guess correct you keep them.  " + Environment.NewLine +
+            "and if you guess correct you keep them." + Environment.NewLine +
             "Number of lives are decided through choice" + Environment.NewLine +
-            "of difficulty.              " + Environment.NewLine +
+            "of difficulty." + Environment.NewLine +
             "Select one of the following:" + Environment.NewLine +
-            "1. Return to main menu    " + Environment.NewLine +
-            "2. Start game  " + Environment.NewLine +
+            "1. Return to main menu" + Environment.NewLine +
+            "2. Start game" + Environment.NewLine +
             "Please select 1 or 2" + Environment.NewLine +
             "You have to select 1 or 2." + Environment.NewLine +
             "Only use 1, 2 or 3." + Environment.NewLine +
