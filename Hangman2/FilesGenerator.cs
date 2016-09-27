@@ -31,7 +31,7 @@ namespace Hangman2
                 "bananskal" + Environment.NewLine +
                 "vatten" + Environment.NewLine +
                 "betlehem" + Environment.NewLine +
-                "andeluvisk" + Environment.NewLine +
+                "antedeluviansk" + Environment.NewLine +
                 "besserwisser" + Environment.NewLine +
                 "underbarn" + Environment.NewLine +
                 "sjung" + Environment.NewLine +
