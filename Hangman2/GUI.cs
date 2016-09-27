@@ -23,7 +23,7 @@ namespace Hangman2
             Console.WriteLine("         ```.--.                                                   ++-          ");
 
             Console.Write("         ```.-+-`");
-            SpacesHandlerCentered(50, Language.Languages[1] + " " + Player.Name + " " + Language.Languages[2]);
+            SpacesHandlerCentered(50, Language.Languages[1] + " " + Player.Name + " " + Language.Languages[2], 0, 0);
             Console.WriteLine("//-          ");
 
             Console.WriteLine("         `` -/o-`                                                  /::          ");
@@ -32,27 +32,27 @@ namespace Hangman2
             Console.WriteLine("            ./o.                                                  .o/-          ");
 
             Console.Write("            `/o.");
-            SpacesHandlerCentered(50, Language.Languages[3]);
+            SpacesHandlerCentered(50, Language.Languages[3], 0, 0);
             Console.WriteLine(":o/.          ");
 
             Console.Write("             /o-");
-            SpacesHandlerLeftAligned(Language.Languages[4], Language.Languages[3], 50, 0, 0);
+            SpacesHandlerLeftAligned(Language.Languages[4], Language.Languages[3], 50, 0, 0, 0, 0);
             Console.WriteLine("/o/`          ");
 
             Console.Write("             /o-");
-            SpacesHandlerLeftAligned(Language.Languages[5], Language.Languages[3], 50, 0, 0);
+            SpacesHandlerLeftAligned(Language.Languages[5], Language.Languages[3], 50, 0, 0, 0, 0);
             Console.WriteLine("++:`          ");
 
 
             Console.Write("             /o-");
-            SpacesHandlerLeftAligned(Language.Languages[6], Language.Languages[3], 50, 0, 0);
+            SpacesHandlerLeftAligned(Language.Languages[6], Language.Languages[3], 50, 0, 0, 0, 0);
             Console.WriteLine("+/-           ");
 
             Console.WriteLine("         `   :o-                                                 `++-           ");
             Console.WriteLine("         ``  /o-`                                                .++-           ");
 
             Console.Write("             ++-");
-            SpacesHandlerCentered(47, Language.Languages[7] + " " + Game.NumberOfGuesses + " " + Language.Languages[8]);
+            SpacesHandlerCentered(47, Language.Languages[7] + " " + Game.NumberOfGuesses + " " + Language.Languages[8], 0, 3);
             Console.WriteLine("` .++.           ");
 
             Console.WriteLine("            .o+-                                               ``-/+`           ");
@@ -80,41 +80,41 @@ namespace Hangman2
             Console.WriteLine("        ```.-.-..`                                           `````-/+-`         ");
 
             Console.Write("         ```.--.");
-            SpacesHandlerLeftAligned(Language.Languages[9], Language.Languages[12], 50, 0, 1);   
+            SpacesHandlerLeftAligned(Language.Languages[9], Language.Languages[12], 50, 0, 1, 0, 2);   
             Console.WriteLine("++-          ");
 
             Console.Write("         ```.-+-`");
-            SpacesHandlerLeftAligned(Language.Languages[10], Language.Languages[12], 50, 1, 1);
+            SpacesHandlerLeftAligned(Language.Languages[10], Language.Languages[12], 50, 1, 1, 0, 2);
             Console.WriteLine("/-          "); 
 
             Console.Write("         `` -/o-`");
-            SpacesHandlerLeftAligned(Language.Languages[11], Language.Languages[12], 50, 1, 1);
+            SpacesHandlerLeftAligned(Language.Languages[11], Language.Languages[12], 50, 1, 1, 0, 2);
             Console.WriteLine("/::          ");
 
             Console.Write("             /o-");
-            SpacesHandlerCentered(50, Language.Languages[12]);
+            SpacesHandlerCentered(50, Language.Languages[12], 0, 2);
             Console.WriteLine("+/-           ");
 
             Console.Write("             /o-");
-            SpacesHandlerLeftAligned(Language.Languages[13], Language.Languages[12], 50, 0, 0);
+            SpacesHandlerLeftAligned(Language.Languages[13], Language.Languages[12], 50, 0, 0, 0, 2);
             Console.WriteLine("+/-           ");
 
             Console.Write("             /o-");
-            SpacesHandlerLeftAligned(Language.Languages[14], Language.Languages[12], 50, 0, 0);
+            SpacesHandlerLeftAligned(Language.Languages[14], Language.Languages[12], 50, 0, 0, 0, 2);
             Console.WriteLine("+/-           ");
 
             Console.WriteLine("             /o-                                                  +/-           ");
 
             Console.Write("         `   :o-");
-            SpacesHandlerLeftAligned(Language.Languages[15], Language.Languages[12], 50, 0, -1);
+            SpacesHandlerLeftAligned(Language.Languages[15], Language.Languages[12], 50, 0, -1, 0, 2);
             Console.WriteLine("`++-           ");
 
             Console.Write("         ``  /o-`");
-            SpacesHandlerLeftAligned(Language.Languages[16], Language.Languages[12], 50, 1, -1);
+            SpacesHandlerLeftAligned(Language.Languages[16], Language.Languages[12], 50, 1, -1, 0, 2);
             Console.WriteLine(".++-           ");
 
             Console.Write("             ++-");
-            SpacesHandlerLeftAligned(Language.Languages[17], Language.Languages[12], 50,0, -3);
+            SpacesHandlerLeftAligned(Language.Languages[17], Language.Languages[12], 50,0, -3, 0, 2);
             Console.WriteLine("` .++.           ");
 
             Console.WriteLine("            .o+-                                               ``-/+`           ");
@@ -168,10 +168,12 @@ namespace Hangman2
 
         }
 
-        private static void SpacesHandlerCentered(int numberOfSpaces, string text)
+        private static void SpacesHandlerCentered(int numberOfSpaces, string text, int moveLeft, int moveRight)
         {
             int numberOfSpacesBeforeText = numberOfSpaces / 2 - (text.Length) / 2 - (text.Length) % 2;
+            numberOfSpacesBeforeText += -moveLeft + moveRight;
             int numberOfSpacesAfterText = numberOfSpaces / 2 - (text.Length) / 2 - 2 * (text.Length) % 2;
+            numberOfSpacesAfterText += moveLeft - moveRight;
 
             for (int i = 0; i < numberOfSpacesBeforeText; i++)
             {
@@ -191,15 +193,17 @@ namespace Hangman2
             }
         }
 
-        private static void SpacesHandlerLeftAligned(string text, string LongestLineToAlignWith, int SpacesinLongestRow, int startComparedToLongestRow, int endComparedWithLongestRow)
+        private static void SpacesHandlerLeftAligned(string text, string LongestLineToAlignWith, int SpacesinLongestRow,
+            int startComparedToLongestRow, int endComparedWithLongestRow, int moveLeft, int moveRight)
         {
             
             int numberOfSpacesBeforeText = SpacesinLongestRow / 2 - (LongestLineToAlignWith.Length) / 2 - (LongestLineToAlignWith.Length) % 2;
             numberOfSpacesBeforeText -= startComparedToLongestRow;
+            numberOfSpacesBeforeText += -moveLeft + moveRight;
 
             int numberOfSpacesAfterText = SpacesinLongestRow / 2 - (LongestLineToAlignWith.Length) / 2 - 2 * (LongestLineToAlignWith.Length) % 2;
             numberOfSpacesAfterText += LongestLineToAlignWith.Length - text.Length + endComparedWithLongestRow;
-            
+            numberOfSpacesAfterText += moveLeft - moveRight;
 
             for (int i = 0; i < numberOfSpacesBeforeText; i++)
             {
