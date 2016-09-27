@@ -23,7 +23,7 @@ namespace Hangman2
             Console.WriteLine("         ```.--.                                                   ++-          ");
 
             Console.Write("         ```.-+-`");
-            SpacesHandlerCentered(50, Language.Languages[1] + " " + Player.Name + " " + Language.Languages[2], 0, 0);
+            SpacesHandlerCentered(Language.Languages[1] + " " + Player.Name + " " + Language.Languages[2], 50, 0, 0);
             Console.WriteLine("//-          ");
 
             Console.WriteLine("         `` -/o-`                                                  /::          ");
@@ -32,7 +32,7 @@ namespace Hangman2
             Console.WriteLine("            ./o.                                                  .o/-          ");
 
             Console.Write("            `/o.");
-            SpacesHandlerCentered(50, Language.Languages[3], 0, 0);
+            SpacesHandlerCentered(Language.Languages[3], 50, 0, 0);
             Console.WriteLine(":o/.          ");
 
             Console.Write("             /o-");
@@ -52,7 +52,7 @@ namespace Hangman2
             Console.WriteLine("         ``  /o-`                                                .++-           ");
 
             Console.Write("             ++-");
-            SpacesHandlerCentered(47, Language.Languages[7] + " " + Game.NumberOfGuesses + " " + Language.Languages[8], 0, 3);
+            SpacesHandlerCentered(Language.Languages[7] + " " + Game.NumberOfGuesses + " " + Language.Languages[8], 47, 0, 3);
             Console.WriteLine("` .++.           ");
 
             Console.WriteLine("            .o+-                                               ``-/+`           ");
@@ -92,7 +92,7 @@ namespace Hangman2
             Console.WriteLine("/::          ");
 
             Console.Write("             /o-");
-            SpacesHandlerCentered(50, Language.Languages[12], 0, 2);
+            SpacesHandlerCentered(Language.Languages[12], 50, 0, 2);
             Console.WriteLine("+/-           ");
 
             Console.Write("             /o-");
@@ -168,7 +168,7 @@ namespace Hangman2
 
         }
 
-        private static void SpacesHandlerCentered(int numberOfSpaces, string text, int moveLeft, int moveRight)
+        private static void SpacesHandlerCentered(string text, int numberOfSpaces, int moveLeft, int moveRight)
         {
             int numberOfSpacesBeforeText = numberOfSpaces / 2 - (text.Length) / 2 - (text.Length) % 2;
             numberOfSpacesBeforeText += -moveLeft + moveRight;
@@ -219,5 +219,6 @@ namespace Hangman2
             }
 
         }
+        
     }
 }
