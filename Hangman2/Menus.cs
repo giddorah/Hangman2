@@ -113,13 +113,22 @@ namespace Hangman2
         {
             while (true)
             {
+              
                 Console.WriteLine("Please select language for the game.");
                 Console.WriteLine("1. English");
                 Console.WriteLine("2. Norrländska");
                 Console.WriteLine("3. Svenska");
                 Console.Write("Val: ");
-
-                int languageSelectionMenu = int.Parse(Console.ReadLine());
+                bool isNumber = false;
+                int languageSelectionMenu = -1;
+                while (!isNumber)
+                {
+                    isNumber = int.TryParse(Console.ReadLine(), out languageSelectionMenu);
+                    if (!isNumber)
+                    {
+                        Console.WriteLine("please type in a number");
+                    }
+                }
 
                 switch (languageSelectionMenu)
                 {
