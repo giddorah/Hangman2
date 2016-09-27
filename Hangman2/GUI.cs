@@ -52,7 +52,7 @@ namespace Hangman2
             Console.WriteLine("         ``  /o-`                                                .++-           ");
 
             Console.Write("             ++-");
-            SpacesHandler(47, Language.Languages[7], ""+Game.NumberOfGuesses, Language.Languages[8]);
+            SpacesHandler(47, Language.Languages[7], "" + Game.NumberOfGuesses, Language.Languages[8]);
             Console.WriteLine("` .++.           ");
 
             Console.WriteLine("            .o+-                                               ``-/+`           ");
