@@ -200,7 +200,7 @@ namespace Hangman2
 
             for (int i = 0; i < wordLength; i++) // En loop för att kolla igenom playerGuess och wordGeneratorword.
             {
-                if (playerGuess[0] == wordGeneratorWord[i]) // Om första bokstaven i användarens gissning är samma som wordgeneratorword på plats i.
+                if (playerGuess[0] == wordGeneratorWord[i] && playerGuess.Length == 1) // Om första bokstaven i användarens gissning är samma som wordgeneratorword på plats i.
                 {
                     maskedWord[i] = playerGuess[0]; // Så sätts maskedword position i till spelarens gissning.
                     changeMade = true; // Gör så att changemade sätts till true.

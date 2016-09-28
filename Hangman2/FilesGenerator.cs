@@ -41,17 +41,17 @@ namespace Hangman2
             File.WriteAllText(@"c:\users\public\normal.txt", normal);
 
             string hard = "åsar" + Environment.NewLine +
-           "bör" + Environment.NewLine +
-           "tår" + Environment.NewLine +
-           "byn" + Environment.NewLine +
-           "list" + Environment.NewLine +
-           "stå" + Environment.NewLine +
-           "ger" + Environment.NewLine +
-           "etsa" + Environment.NewLine +
-           "lina" + Environment.NewLine +
-           "lira" + Environment.NewLine +
-           "yr" + Environment.NewLine +
-           "yxa";
+                "bör" + Environment.NewLine +
+                "tår" + Environment.NewLine +
+               "byn" + Environment.NewLine +
+               "list" + Environment.NewLine +
+               "stå" + Environment.NewLine +
+                "ger" + Environment.NewLine +
+                "etsa" + Environment.NewLine +
+                "lina" + Environment.NewLine +
+                "lira" + Environment.NewLine +
+                "yr" + Environment.NewLine +
+                "yxa";
             File.WriteAllText(@"c:\users\public\hard.txt", hard);
         }
 
