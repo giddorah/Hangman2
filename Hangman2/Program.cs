@@ -18,6 +18,7 @@ namespace Hangman2
         {
             FilesGenerator.FilesCreator();
             Menus.LanguageSelecion();
+            Console.Clear();
             Console.WriteLine(Language.Languages[0]);
             Player.NameLengthController(Console.ReadLine());
             Menus.MainMenu();

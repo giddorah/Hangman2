@@ -95,7 +95,7 @@ namespace Hangman2
                 {
                     case 1:
                         Console.WriteLine(Language.Languages[46]);
-                        dictionary = File.ReadAllLines(@"c:\users\public\easy.txt");
+                        dictionary = File.ReadAllLines(FilesGenerator.PathString + @"\easy.txt");
                         wordGeneratorWord = dictionary[random.Next(dictionary.Length)].ToLower();
                         playerLives = 10;
                         levelPoint = 100;
@@ -106,7 +106,7 @@ namespace Hangman2
                         return;
                     case 2:
                         Console.WriteLine(Language.Languages[47]);
-                        dictionary = File.ReadAllLines(@"c:\users\public\normal.txt");
+                        dictionary = File.ReadAllLines(FilesGenerator.PathString + @"\normal.txt");
                         wordGeneratorWord = dictionary[random.Next(dictionary.Length)].ToLower();
                         playerLives = 5;
                         levelPoint = 200;
@@ -116,7 +116,7 @@ namespace Hangman2
 
                     case 3:
                         Console.WriteLine(Language.Languages[48]);
-                        dictionary = File.ReadAllLines(@"c:\users\public\hard.txt");
+                        dictionary = File.ReadAllLines(FilesGenerator.PathString + @"\hard.txt");
                         wordGeneratorWord = dictionary[random.Next(dictionary.Length)].ToLower();
                         playerLives = 2;
                         levelPoint = 400;

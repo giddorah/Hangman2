@@ -118,7 +118,7 @@ namespace Hangman2
                 Console.WriteLine("1. English");
                 Console.WriteLine("2. Norrländska");
                 Console.WriteLine("3. Svenska");
-                Console.Write("Val: ");
+                Console.Write("Choice: ");
                 bool isNumber = false;
                 int languageSelectionMenu = -1;
                 while (!isNumber)
@@ -126,15 +126,15 @@ namespace Hangman2
                     isNumber = int.TryParse(Console.ReadLine(), out languageSelectionMenu);
                     if (!isNumber)
                     {
-                        Console.WriteLine("please type in a number");
+                        Console.WriteLine("Please type in a number.");
                     }
                 }
 
                 switch (languageSelectionMenu)
                 {
-                    case 1: Language.Languages = File.ReadAllLines(@"c:\users\public\hangmandata\english.txt", Encoding.GetEncoding("iso-8859-1")); return;
-                    case 2: Language.Languages = File.ReadAllLines(@"c:\users\public\hangmandata\northlandish.txt", Encoding.GetEncoding("iso-8859-1")); return;
-                    case 3: Language.Languages = File.ReadAllLines(@"c:\users\public\hangmandata\swedish.txt", Encoding.GetEncoding("iso-8859-1")); return;
+                    case 1: Language.Languages = File.ReadAllLines(FilesGenerator.PathString + @"\english.txt", Encoding.GetEncoding("iso-8859-1")); return;
+                    case 2: Language.Languages = File.ReadAllLines(FilesGenerator.PathString + @"\northlandish.txt", Encoding.GetEncoding("iso-8859-1")); return;
+                    case 3: Language.Languages = File.ReadAllLines(FilesGenerator.PathString + @"\swedish.txt", Encoding.GetEncoding("iso-8859-1")); return;
 
                     default: break;
                 }
