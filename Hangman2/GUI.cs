@@ -133,7 +133,7 @@ namespace Hangman2
         public static void GameInterface() // Visar "gränssnittet" för spelaren. - GAME
         {
             Console.WriteLine("{0} {1}", Language.Languages[27], Game.GuessHistory);
-            Console.Write(Language.Languages[28]);
+            Console.Write(Language.Languages[28] + " ");
             for (int i = 0; i < Game.WordLength; i++) // Lägger till mellanslag i maskedWord.
             {
                 Console.Write(Game.MaskedWord[i] + " ");
