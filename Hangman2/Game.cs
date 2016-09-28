@@ -107,7 +107,7 @@ namespace Hangman2
                     case 2:
                         Console.WriteLine(Language.Languages[47]);
                         dictionary = File.ReadAllLines(FilesGenerator.PathString + @"\normal.txt");
-                        wordGeneratorWord = dictionary[10].ToLower();
+                        wordGeneratorWord = dictionary[random.Next(dictionary.Length)].ToLower();
                         playerLives = 5;
                         levelPoint = 200;
                         lifePoint = 100;
