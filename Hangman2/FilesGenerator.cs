@@ -25,8 +25,6 @@ namespace Hangman2
             private set { folderName = value; }
         }
 
-
-
         public static void FilesCreator()
         {
             pathString = Path.Combine(folderName, "HangManData");
@@ -36,10 +34,10 @@ namespace Hangman2
             LanguageStrings.Northlandish();
             LanguageStrings.English();
 
-            string easy = "Bo" + Environment.NewLine +
+            string easy = "korvkiosk" + Environment.NewLine +
                 "jesus" + Environment.NewLine +
                 "kalaspuffar" + Environment.NewLine +
-                "korv" + Environment.NewLine +
+                "glasflaska" + Environment.NewLine +
                 "kungen" + Environment.NewLine +
                 "drottningen" + Environment.NewLine +
                 "Prinsessa" + Environment.NewLine +
@@ -47,8 +45,6 @@ namespace Hangman2
                 "johan" + Environment.NewLine +
                 "Ludwig";
             File.WriteAllText(pathString + @"\easy.txt", easy);
-
-
 
             string normal = "ibrahimovic" + Environment.NewLine +
                 "bananskal" + Environment.NewLine +
@@ -60,7 +56,7 @@ namespace Hangman2
                 "sjung" + Environment.NewLine +
                 "zlatan" + Environment.NewLine +
                 "susanna" + Environment.NewLine +
-                "hyperneuroakustiskadiafragmakontravibrationer";
+                "esteban";
             File.WriteAllText(pathString + @"\normal.txt", normal);
 
             string hard = "åsar" + Environment.NewLine +
@@ -71,10 +67,10 @@ namespace Hangman2
            "stå" + Environment.NewLine +
            "ger" + Environment.NewLine +
            "etsa" + Environment.NewLine +
-           "lina" + Environment.NewLine +
            "lira" + Environment.NewLine +
            "yr" + Environment.NewLine +
-           "yxa";
+           "yxa" + Environment.NewLine +
+           "hyperneuroakustiska diafragmakontravibrationer";
             File.WriteAllText(pathString + @"\hard.txt", hard);
         }
     }
