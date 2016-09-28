@@ -33,7 +33,6 @@ namespace Hangman2
 
             }
         }
-
     }
 }
 

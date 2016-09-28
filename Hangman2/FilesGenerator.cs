@@ -43,9 +43,9 @@ namespace Hangman2
             string hard = "åsar" + Environment.NewLine +
                 "bör" + Environment.NewLine +
                 "tår" + Environment.NewLine +
-               "byn" + Environment.NewLine +
-               "list" + Environment.NewLine +
-               "stå" + Environment.NewLine +
+                "byn" + Environment.NewLine +
+                "list" + Environment.NewLine +
+                "stå" + Environment.NewLine +
                 "ger" + Environment.NewLine +
                 "etsa" + Environment.NewLine +
                 "lina" + Environment.NewLine +
