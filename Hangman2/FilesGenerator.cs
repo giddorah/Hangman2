@@ -9,7 +9,15 @@ namespace Hangman2
 {
     class FilesGenerator
     {
-        static string folderName = @"c:\users\public\";
+        static string pathString;
+
+        public static string PathString
+        {
+            get { return pathString; }
+            set { pathString = value; }
+        }
+
+        static string folderName = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
         public static string FolderName
         {
@@ -17,9 +25,11 @@ namespace Hangman2
             private set { folderName = value; }
         }
 
+
+
         public static void FilesCreator()
         {
-            string pathString = Path.Combine(folderName, "HangManData");
+            pathString = Path.Combine(folderName, "HangManData");
             Directory.CreateDirectory(pathString); 
 
             LanguageStrings.Swedish();
@@ -36,7 +46,7 @@ namespace Hangman2
                 "danskjävel" + Environment.NewLine +
                 "johan" + Environment.NewLine +
                 "Ludwig";
-            File.WriteAllText(@"c:\users\public\hangmandata\easy.txt", easy);
+            File.WriteAllText(pathString + @"\easy.txt", easy);
 
 
 
@@ -51,7 +61,7 @@ namespace Hangman2
                 "zlatan" + Environment.NewLine +
                 "susanna" + Environment.NewLine +
                 "hyperneuroakustiskadiafragmakontravibrationer";
-            File.WriteAllText(@"c:\users\public\hangmandata\normal.txt", normal);
+            File.WriteAllText(pathString + @"\normal.txt", normal);
 
             string hard = "åsar" + Environment.NewLine +
            "bör" + Environment.NewLine +
@@ -65,7 +75,7 @@ namespace Hangman2
            "lira" + Environment.NewLine +
            "yr" + Environment.NewLine +
            "yxa";
-            File.WriteAllText(@"c:\users\public\hangmandata\hard.txt", hard);
+            File.WriteAllText(pathString + @"\hard.txt", hard);
         }
     }
 }
