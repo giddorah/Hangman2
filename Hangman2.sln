@@ -7,9 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hangman2", "Hangman2\Hangma
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{60CB5C02-269D-43FB-A48F-6D9826876096}"
 	ProjectSection(SolutionItems) = preProject
-		Easy.txt = Easy.txt
-		Hard.txt = Hard.txt
-		Normal.txt = Normal.txt
+		..\..\..\Documents\HangManData\easy.txt = ..\..\..\Documents\HangManData\easy.txt
+		..\..\..\Documents\HangManData\english.txt = ..\..\..\Documents\HangManData\english.txt
+		..\..\..\Documents\HangManData\hard.txt = ..\..\..\Documents\HangManData\hard.txt
+		..\..\..\Documents\HangManData\normal.txt = ..\..\..\Documents\HangManData\normal.txt
+		..\..\..\Documents\HangManData\northlandish.txt = ..\..\..\Documents\HangManData\northlandish.txt
+		..\..\..\Documents\HangManData\swedish.txt = ..\..\..\Documents\HangManData\swedish.txt
 	EndProjectSection
 EndProject
 Global
