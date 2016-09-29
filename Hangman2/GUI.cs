@@ -75,9 +75,9 @@ namespace Hangman2
             Console.WriteLine();
             string[] highScoreList = FilesGenerator.HighScoreCreator();
             for (int i = 0; i < highScoreList.Length; i++)
-               
+
             {
-                Console.WriteLine(highScoreList[i]);  
+                Console.WriteLine(highScoreList[i]);
             }
             Console.WriteLine("Tryck enter för att komma tillbaka till huvudmenyn");
             Console.ReadLine();
@@ -151,6 +151,42 @@ namespace Hangman2
             Console.WriteLine(" |_______________ ");
             Console.WriteLine("Du... Dra.");
             Game.EndGameChoices();
+        }
+
+        public static void ByeBye()
+        {
+            {
+                Console.WriteLine(@"          ████████████████████████████████████████");
+                Console.WriteLine(@"          ██████┴┬┴███████████████████████████████");
+                Console.WriteLine(@"          ████┬┴┬┴┬┴┬█████████████████████████████");
+                Console.WriteLine(@"          ███┬┴┬████┴┬████████████████████████████");
+                Console.WriteLine(@"          ██┬┴███████┴┬███████████████████████████");
+                Console.WriteLine(@"          ██┴┬███████┬┴██┬┴┬████┴┬┴██┬┴┬┴┬████████");
+                Console.WriteLine(@"          ██┬████┴┬███┬┴┬┴┬┴┬┴┬┴┬┴┬┴┬┴┬┴┬┴┬┴██████");
+                Console.WriteLine(@"          █┬┴███┴┬┴████┬┴███┴┬┴┬███┬┴█████┴┬┴┬████");
+                Console.WriteLine(@"          █┴┬███┬┴┬█████████████████████████┬┴┬███");
+                Console.WriteLine(@"          █┬┴███┴┬┴██████████████████████████┬┴███");
+                Console.WriteLine(@"          █┴┬███┬┴┬█┬┴┴███┬██████┴████┬┴┬█████┬┴██");
+                Console.WriteLine(@"          █┬┴███┴┬┴┬┴┬┴┬█┬┴┬████┴┬┴█┴┬┴┬┴┬┴███┴┬██");
+                Console.WriteLine(@"          █┴┬███┬┴┬┴┬┴┬┴┬█┬┴┬██┴┬┴█┴┬┴┬┴┬┴┬┴██┬┴██");
+                Console.WriteLine(@"          █┬┴███┴┬┴┬██┴┬┴█┴┬┴██┬┴┬█┬┴┬██┴┬┴███┴┬██");
+                Console.WriteLine(@"          █┴┬███┬┴┬███┬┴┬█┬┴┬┴█┴┬█┬┴┬┴█┴┬┴┬███┬┴██");
+                Console.WriteLine(@"          █┬┴███┴┬┴███┴┬┴██┬┴┬┴┬┴█┴┬┴┬┴┬┴██████┬┴█");
+                Console.WriteLine(@"          █┴┬███┬┴┬███┬┴┬██┴┬┴┬┴┬█┬┴┬┴┬███┬┴███┴┬█");
+                Console.WriteLine(@"          █┬┴███┴┬┴┬┴┬┴┬┴███┴┬┴┬███┬┴┬┴┬┴┬┴┬███┬┴█");
+                Console.WriteLine(@"          █┴┬███┬┴┬┴┬┴┬┴████┬┴┬┴███┴┬┴┬┴┬┴┬┴███┴┬█");
+                Console.WriteLine(@"          █┬┴███┴┬┴┬┴┬┴█████┴┬┴█████┴┬┴┬┴┬█████┬██");
+                Console.WriteLine(@"          ██┬███████████████┬┴┬███████████████┬┴██");
+                Console.WriteLine(@"          ██┴┬█████████████┬┴┬███████████████┬┴███");
+                Console.WriteLine(@"          ██┬┴┬████████████┴┬┴███┴┬████████┴┬┴████");
+                Console.WriteLine(@"          ███┬┴┬┴┬┴┬┴┬┴┬███┬┴████┬┴┬┴┬┴┬┴┬┴┬┴█████");
+                Console.WriteLine(@"          █████┴┬┴┬┴┬┴┬┴████████┬┴██┬┴┬┴┬┴┬███████");
+                Console.WriteLine(@"          █████████████┬████████┴┬████████████████");
+                Console.WriteLine(@"          █████████████┴┬██████┴┬█████████████████");
+                Console.WriteLine(@"          ██████████████┴┬┴██┬┴┬██████████████████");
+                Console.WriteLine(@"          ███████████████┴┬┴┬┴┬███████████████████");
+                Console.WriteLine(@"          ████████████████████████████████████████");
+            }
         }
     }
 }

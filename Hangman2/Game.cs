@@ -297,7 +297,8 @@ namespace Hangman2
                 }
                 else if (input == "4")
                 {
-                    Environment.Exit(0);
+                    GUI.ByeBye();
+                    Environment.Exit(3);
                 }
                 else
                 {
