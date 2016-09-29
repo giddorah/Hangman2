@@ -28,7 +28,7 @@ namespace Hangman2
                 GUI.MainMenu(); // Visar gränssnittet för MainMenu.
                 checkInput = Console.ReadLine();
 
-                if (checkInput == "1" || checkInput == "2" || checkInput == "3")
+                if (checkInput == "1" || checkInput == "2" || checkInput == "3" || checkInput == "4")
                 {
                     mainMenuSwitch = int.Parse(checkInput);
                 }
@@ -49,6 +49,10 @@ namespace Hangman2
                         break;
 
                     case 3:
+                        GUI.ShowHighScoreList();
+                        break;
+
+                    case 4:
                         Console.WriteLine("Avslutar spelet."); // Avslutar spelet om spelaren trycker på 3.
                         Program.Timer(1);
                         Environment.Exit(0);

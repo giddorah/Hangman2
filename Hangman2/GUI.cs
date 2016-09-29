@@ -52,7 +52,8 @@ namespace Hangman2
             Console.WriteLine("            `/o.             Välj något av följande:              :o/.          ");
             Console.WriteLine("             /o-             1. Starta spel.                      /o/`          ");
             Console.WriteLine("             /o-             2. How to.                           ++:`          ");
-            Console.WriteLine("             /o-             3. Avsluta spel.                     +/-           ");
+            Console.WriteLine("         `   :o-             3. Highscore                        `++-           ");
+            Console.WriteLine("             /o-             4. Avsluta spel.                     +/-           ");
             Console.WriteLine("         `   :o-                                                 `++-           ");
             Console.WriteLine("         ``  /o-`                                                .++-           ");
             Console.WriteLine("             ++-           förra spelet tog {0} gissningar       ` .++.           ", Game.NumberOfGuesses);
@@ -65,6 +66,21 @@ namespace Hangman2
             Console.WriteLine("  `..``....`:o:.`                                             `...+/.           ");
             Console.WriteLine("            `..`                                               `..+:.           ");
             Console.WriteLine("                                                    	            `-`            ");
+        }
+
+        public static void ShowHighScoreList()
+        {
+            Console.Clear();
+            Console.WriteLine("Highscore:");
+            Console.WriteLine();
+            string[] highScoreList = FilesGenerator.HighScoreCreator();
+            for (int i = 0; i < highScoreList.Length; i++)
+               
+            {
+                Console.WriteLine(highScoreList[i]);  
+            }
+            Console.WriteLine("Tryck enter för att komma tillbaka till huvudmenyn");
+            Console.ReadLine();
         }
 
         public static void HowTo() // Metod för att visa gränssnittet för How To'n

@@ -274,7 +274,8 @@ namespace Hangman2
                 Console.WriteLine("Vill du:");
                 Console.WriteLine("1. Spela igen.");
                 Console.WriteLine("2. Byta spelare.");
-                Console.WriteLine("3. Avsluta spelet.");
+                Console.WriteLine("3. Highscore");
+                Console.WriteLine("4. Avsluta spelet.");
                 string input = Console.ReadLine();
 
                 if (input == "1")
@@ -289,6 +290,12 @@ namespace Hangman2
                     return;
                 }
                 else if (input == "3")
+                {
+                    Console.Clear();
+                    GUI.ShowHighScoreList();
+                    return;
+                }
+                else if (input == "4")
                 {
                     Environment.Exit(0);
                 }
