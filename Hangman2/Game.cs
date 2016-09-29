@@ -207,10 +207,7 @@ namespace Hangman2
                 }
 
             }
-            if (changeMade == false) // Om changemade inte är sant och inget gissat ord är rätt.
-            {
-                playerLives--; // Så spelaren ett liv.
-            }
+            
             Console.Clear(); // Rensar konsollen från text.
 
             if (changeMade == true) // Om changemade är sant
@@ -234,6 +231,12 @@ namespace Hangman2
                 Player.Score = levelPoint + (lifePoint * playerLives);
                 GUI.WinGame(); // Vinstskärm.
                 return true; // Avslutar metoden med ett truevärde.
+
+            }
+
+            if (changeMade == false) // Om changemade inte är sant och inget gissat ord är rätt.
+            {
+                playerLives--; // Så spelaren ett liv.
             }
 
             if (playerLives == 0) // Om spelarliv är 0
