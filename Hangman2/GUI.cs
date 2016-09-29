@@ -156,6 +156,7 @@ namespace Hangman2
         public static void ByeBye()
         {
             {
+                Console.Clear();
                 Console.WriteLine(@"          ████████████████████████████████████████");
                 Console.WriteLine(@"          ██████┴┬┴███████████████████████████████");
                 Console.WriteLine(@"          ████┬┴┬┴┬┴┬█████████████████████████████");

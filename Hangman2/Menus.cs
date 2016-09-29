@@ -53,7 +53,7 @@ namespace Hangman2
                         break;
 
                     case 4:
-                        Console.WriteLine("Avslutar spelet."); // Avslutar spelet om spelaren trycker på 3.
+                        GUI.ByeBye(); // Avslutar spelet om spelaren trycker på 3.
                         Program.Timer(1);
                         Environment.Exit(0);
                         break;
