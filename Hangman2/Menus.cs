@@ -54,7 +54,7 @@ namespace Hangman2
 
                     case 4:
                         GUI.ByeBye(); // Avslutar spelet om spelaren trycker på 3.
-                        Program.Timer(1);
+                        Program.Timer(3);
                         Environment.Exit(0);
                         break;
 
