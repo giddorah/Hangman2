@@ -276,6 +276,7 @@ namespace Hangman2
                 Console.WriteLine(Language.Languages[39]);
                 Console.WriteLine(Language.Languages[40]);
                 Console.WriteLine(Language.Languages[41]);
+                Console.WriteLine(Language.Languages[50]);
                 Console.WriteLine(Language.Languages[42]);
                 string input = Console.ReadLine();
 

@@ -45,10 +45,12 @@ namespace Hangman2
 
 
             Console.Write("             /o-");
-            SpacesHandlerLeftAligned(Language.Languages[6], Language.Languages[3], 50, 0, 0, 0, 0);
+            SpacesHandlerLeftAligned(Language.Languages[50], Language.Languages[3], 50, 0, 0, 0, 0);
             Console.WriteLine("+/-           ");
 
-            Console.WriteLine("         `   :o-                                                 `++-           ");
+            Console.Write("         `   :o-");
+            SpacesHandlerLeftAligned(Language.Languages[6], Language.Languages[3], 50, 0, 0, 0, 0);
+            Console.WriteLine("`++-           ");
             Console.WriteLine("         ``  /o-`                                                .++-           ");
 
             Console.Write("             ++-");
@@ -69,7 +71,7 @@ namespace Hangman2
         public static void ShowHighScoreList()
         {
             Console.Clear();
-            Console.WriteLine("Highscore:");
+            Console.WriteLine(Language.Languages[51]);
             Console.WriteLine();
             string[] highScoreList = FilesGenerator.HighScoreCreator();
 
@@ -80,7 +82,7 @@ namespace Hangman2
                 Console.WriteLine(x + ". " + highScoreList[i] + " - " + highScoreList[i + 1]);
                 i++;
             }
-            Console.WriteLine("Tryck enter för att komma tillbaka till huvudmenyn");
+            Console.WriteLine(Language.Languages[52]);
             Console.ReadLine();
         }
 
@@ -163,7 +165,7 @@ namespace Hangman2
 
         public static void WinGame() // Avslutar spelet beroende på hur spelaren presterat. - GAME
         {
-            Console.WriteLine("{0} {1} ", Language.Languages[44], Player.Scores);
+            Console.WriteLine("{0} {1} ", Language.Languages[44], Player.Score);
             Game.EndGameChoices();
         }
 
