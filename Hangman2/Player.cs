@@ -19,15 +19,7 @@ namespace Hangman2
         public static string Name
         {
             get { return name; }
-            set
-            {
-                if (value.Length >= 3 && value.Length < 25)
-                {
-                    name = value;
-
-                }
-
-            }
+            set { name = value; }
         } 
 
         public static void NameLengthController(string input)
