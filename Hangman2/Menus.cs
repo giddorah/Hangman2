@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Hangman2
 {
@@ -60,8 +61,8 @@ namespace Hangman2
 
 
                     default:
-                        Console.WriteLine("Använd enbart 1, 2 eller 3."); // Visas om spelaren trycker på någon annan knapp än tillåtet.
-                        Console.WriteLine("Tryck enter för att gå tillbaka och försöka igen.");
+                        Console.WriteLine(Language.Languages[20]); // Visas om spelaren trycker på någon annan knapp än tillåtet.
+                        Console.WriteLine(Language.Languages[21]);
                         Console.ReadLine();
                         break;
                 }
@@ -74,7 +75,7 @@ namespace Hangman2
             {
                 GUI.HowTo(); // Visar gränssnittet för HowTo'n.
 
-                Console.WriteLine("Var vänlig och skriv in 1 eller 2");
+                Console.WriteLine(Language.Languages[18]);
                 int menuSwitchHowTo;
 
                 string checkInput = Console.ReadLine();
@@ -104,7 +105,7 @@ namespace Hangman2
                         return;
 
                     default:
-                        Console.WriteLine("Du måste ange 1 eller 2.");
+                        Console.WriteLine(Language.Languages[19]);
                         Console.ReadLine();
                         break;
 
@@ -112,5 +113,37 @@ namespace Hangman2
             }
         }
 
+        public static void LanguageSelecion()
+        {
+            while (true)
+            {
+              
+                Console.WriteLine("Please select language for the game.");
+                Console.WriteLine("1. English");
+                Console.WriteLine("2. Norrländska");
+                Console.WriteLine("3. Svenska");
+                Console.Write("Choice: ");
+                bool isNumber = false;
+                int languageSelectionMenu = -1;
+                while (!isNumber)
+                {
+                    isNumber = int.TryParse(Console.ReadLine(), out languageSelectionMenu);
+                    if (!isNumber)
+                    {
+                        Console.WriteLine("Please type in a number.");
+                    }
+                }
+
+                switch (languageSelectionMenu)
+                {
+                    case 1: Language.Languages = File.ReadAllLines(FilesGenerator.PathString + @"\english.txt", Encoding.GetEncoding("iso-8859-1")); return;
+                    case 2: Language.Languages = File.ReadAllLines(FilesGenerator.PathString + @"\northlandish.txt", Encoding.GetEncoding("iso-8859-1")); return;
+                    case 3: Language.Languages = File.ReadAllLines(FilesGenerator.PathString + @"\swedish.txt", Encoding.GetEncoding("iso-8859-1")); return;
+
+                    default: break;
+                }
+            }
+        }
+           
     }
 }

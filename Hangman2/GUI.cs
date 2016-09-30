@@ -21,42 +21,40 @@ namespace Hangman2
             Console.WriteLine("        ``..-.---..````````     ``  `                       ``...``:+:.```      ");
             Console.WriteLine("        ```.-.-..`                                           `````-/+-`         ");
             Console.WriteLine("         ```.--.                                                   ++-          ");
+
             Console.Write("         ```.-+-`");
-
-            for (int i = 0; i < 12 - Player.Name.Length / 2; i++)
-            {
-                Console.Write(" ");
-            }
-            Console.Write("Välkommen {0} till Hangr 0.1", Player.Name); // Byter ut {0} mot vad spelaren angivit i TakeName.
-            if (Player.Name.Length % 2 == 0)
-            {
-
-                for (int i = 0; i < 13 - Player.Name.Length / 2; i++)
-                {
-                    Console.Write(" ");
-                }
-            }
-            else
-            {
-                for (int i = 0; i < 13 - Player.Name.Length / 2 - 1; i++)
-                {
-                    Console.Write(" ");
-                }
-            }
-
+            SpacesHandlerCentered(Language.Languages[1] + " " + Player.Name + " " + Language.Languages[2], 50, 0, 0);
             Console.WriteLine("//-          ");
+
             Console.WriteLine("         `` -/o-`                                                  /::          ");
             Console.WriteLine("         `  -:o.                                                   /::          ");
             Console.WriteLine("         `  -/o.                                                  `+:-          ");
             Console.WriteLine("            ./o.                                                  .o/-          ");
-            Console.WriteLine("            `/o.             Välj något av följande:              :o/.          ");
-            Console.WriteLine("             /o-             1. Starta spel.                      /o/`          ");
-            Console.WriteLine("             /o-             2. How to.                           ++:`          ");
-            Console.WriteLine("         `   :o-             3. Highscore                        `++-           ");
-            Console.WriteLine("             /o-             4. Avsluta spel.                     +/-           ");
+
+            Console.Write("            `/o.");
+            SpacesHandlerCentered(Language.Languages[3], 50, 0, 0);
+            Console.WriteLine(":o/.          ");
+
+            Console.Write("             /o-");
+            SpacesHandlerLeftAligned(Language.Languages[4], Language.Languages[3], 50, 0, 0, 0, 0);
+            Console.WriteLine("/o/`          ");
+
+            Console.Write("             /o-");
+            SpacesHandlerLeftAligned(Language.Languages[5], Language.Languages[3], 50, 0, 0, 0, 0);
+            Console.WriteLine("++:`          ");
+
+
+            Console.Write("             /o-");
+            SpacesHandlerLeftAligned(Language.Languages[6], Language.Languages[3], 50, 0, 0, 0, 0);
+            Console.WriteLine("+/-           ");
+
             Console.WriteLine("         `   :o-                                                 `++-           ");
             Console.WriteLine("         ``  /o-`                                                .++-           ");
-            Console.WriteLine("             ++-           förra spelet tog {0} gissningar       ` .++.           ", Game.NumberOfGuesses);
+
+            Console.Write("             ++-");
+            SpacesHandlerCentered(Language.Languages[7] + " " + Game.NumberOfGuesses + " " + Language.Languages[8], 47, 0, 3);
+            Console.WriteLine("` .++.           ");
+
             Console.WriteLine("            .o+-                                               ``-/+`           ");
             Console.WriteLine("            -o+-                ``                            ```-/+`           ");
             Console.WriteLine("      `````./o/:-----------::::://:::::::::::::------......-`....::+-`          ");
@@ -98,16 +96,45 @@ namespace Hangman2
             Console.WriteLine("       ``...//+s/-.......................-------------.....``....../+/:::--.-   ");
             Console.WriteLine("        ``..-.---..````````     ``  `                       ``...``:+:.```      ");
             Console.WriteLine("        ```.-.-..`                                           `````-/+-`         ");
-            Console.WriteLine("         ```.--.      För att spela spelet ska du                  ++-          ");
-            Console.WriteLine("         ```.-+-`     gissa antingen på ord eller bokstav          //-          ");
-            Console.WriteLine("         `` -/o-`     om du gissar fel blir du av med ett liv      /::          ");
-            Console.WriteLine("             /o-      men om du gissar rätt så behåller du liv.   +/-           ");
-            Console.WriteLine("             /o-      Antal liv bestäms genom villken             +/-           ");
-            Console.WriteLine("             /o-      svårighetsgrad som man väljer               +/-           ");
+
+            Console.Write("         ```.--.");
+            SpacesHandlerLeftAligned(Language.Languages[9], Language.Languages[12], 50, 0, 1, 0, 2);   
+            Console.WriteLine("++-          ");
+
+            Console.Write("         ```.-+-`");
+            SpacesHandlerLeftAligned(Language.Languages[10], Language.Languages[12], 50, 1, 1, 0, 2);
+            Console.WriteLine("/-          "); 
+
+            Console.Write("         `` -/o-`");
+            SpacesHandlerLeftAligned(Language.Languages[11], Language.Languages[12], 50, 1, 1, 0, 2);
+            Console.WriteLine("/::          ");
+
+            Console.Write("             /o-");
+            SpacesHandlerCentered(Language.Languages[12], 50, 0, 2);
+            Console.WriteLine("+/-           ");
+
+            Console.Write("             /o-");
+            SpacesHandlerLeftAligned(Language.Languages[13], Language.Languages[12], 50, 0, 0, 0, 2);
+            Console.WriteLine("+/-           ");
+
+            Console.Write("             /o-");
+            SpacesHandlerLeftAligned(Language.Languages[14], Language.Languages[12], 50, 0, 0, 0, 2);
+            Console.WriteLine("+/-           ");
+
             Console.WriteLine("             /o-                                                  +/-           ");
-            Console.WriteLine("         `   :o-      Välj ett av följande:                      `++-           ");
-            Console.WriteLine("         ``  /o-`     1. Återvänd till huvudmenyn                .++-           ");
-            Console.WriteLine("             ++-      2. Starta spelet                         ` .++.           ");
+
+            Console.Write("         `   :o-");
+            SpacesHandlerLeftAligned(Language.Languages[15], Language.Languages[12], 50, 0, -1, 0, 2);
+            Console.WriteLine("`++-           ");
+
+            Console.Write("         ``  /o-`");
+            SpacesHandlerLeftAligned(Language.Languages[16], Language.Languages[12], 50, 1, -1, 0, 2);
+            Console.WriteLine(".++-           ");
+
+            Console.Write("             ++-");
+            SpacesHandlerLeftAligned(Language.Languages[17], Language.Languages[12], 50,0, -3, 0, 2);
+            Console.WriteLine("` .++.           ");
+
             Console.WriteLine("            .o+-                                               ``-/+`           ");
             Console.WriteLine("            -o+-                ``                            ```-/+`           ");
             Console.WriteLine("      `````./o/:-----------::::://:::::::::::::------......-`....::+-`          ");
@@ -123,8 +150,8 @@ namespace Hangman2
 
         public static void GameInterface() // Visar "gränssnittet" för spelaren. - GAME
         {
-            Console.WriteLine("\nDu har gissat på:" + Game.GuessHistory);
-            Console.Write("Ordet är: ");
+            Console.WriteLine("{0} {1}", Language.Languages[27], Game.GuessHistory);
+            Console.Write(Language.Languages[28] + " ");
             for (int i = 0; i < Game.WordLength; i++) // Lägger till mellanslag i maskedWord.
             {
                 Console.Write(Game.MaskedWord[i] + " ");
@@ -136,7 +163,7 @@ namespace Hangman2
 
         public static void WinGame() // Avslutar spelet beroende på hur spelaren presterat. - GAME
         {
-            Console.WriteLine("Grattis. Du är awesome! Dina poäng är " + Player.Score);
+            Console.WriteLine("{0} {1} ", Language.Languages[44], Player.Scores);
             Game.EndGameChoices();
         }
 
@@ -152,8 +179,63 @@ namespace Hangman2
             Console.WriteLine(" | ");
             Console.WriteLine(" | ");
             Console.WriteLine(" |_______________ ");
-            Console.WriteLine("Du... Dra.");
+            Console.WriteLine(Language.Languages[37]);
             Game.EndGameChoices();
+
+
+
+        }
+
+        private static void SpacesHandlerCentered(string text, int numberOfSpaces, int moveLeft, int moveRight)
+        {
+            int numberOfSpacesBeforeText = numberOfSpaces / 2 - (text.Length) / 2 - (text.Length) % 2;
+            numberOfSpacesBeforeText += -moveLeft + moveRight;
+            int numberOfSpacesAfterText = numberOfSpaces / 2 - (text.Length) / 2 - 2 * (text.Length) % 2;
+            numberOfSpacesAfterText += moveLeft - moveRight;
+
+            for (int i = 0; i < numberOfSpacesBeforeText; i++)
+            {
+                Console.Write(" ");
+            }
+
+            Console.Write(text);
+
+            for (int i = 0; i < numberOfSpacesAfterText; i++)
+            {
+                Console.Write(" ");
+            }
+
+            if (numberOfSpaces % 2 == 1)
+            {
+                Console.Write(" ");
+            }
+        }
+
+        private static void SpacesHandlerLeftAligned(string text, string LongestLineToAlignWith, int SpacesinLongestRow,
+            int startComparedToLongestRow, int endComparedWithLongestRow, int moveLeft, int moveRight)
+        {
+            
+            int numberOfSpacesBeforeText = SpacesinLongestRow / 2 - (LongestLineToAlignWith.Length) / 2 - (LongestLineToAlignWith.Length) % 2;
+            numberOfSpacesBeforeText -= startComparedToLongestRow;
+            numberOfSpacesBeforeText += -moveLeft + moveRight;
+
+            int numberOfSpacesAfterText = SpacesinLongestRow / 2 - (LongestLineToAlignWith.Length) / 2 - 2 * (LongestLineToAlignWith.Length) % 2;
+            numberOfSpacesAfterText += LongestLineToAlignWith.Length - text.Length + endComparedWithLongestRow;
+            numberOfSpacesAfterText += moveLeft - moveRight;
+
+            for (int i = 0; i < numberOfSpacesBeforeText; i++)
+            {
+                Console.Write(" ");
+            }
+
+            Console.Write(text);
+
+            
+            for (int i = 0; i < numberOfSpacesAfterText; i++)
+            {
+                Console.Write(" ");
+            }
+
         }
 
         public static void ByeBye()

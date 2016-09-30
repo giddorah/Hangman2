@@ -47,6 +47,8 @@
     <Compile Include="FilesGenerator.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="GUI.cs" />
+    <Compile Include="Language.cs" />
+    <Compile Include="LanguageStrings.cs" />
     <Compile Include="Menus.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
