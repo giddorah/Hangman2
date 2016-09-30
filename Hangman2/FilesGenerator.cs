@@ -82,12 +82,12 @@ namespace Hangman2
 
             try
             {
-                HighScore = File.ReadAllLines(pathString + @"\highscore.txt");
+                HighScore = File.ReadAllLines(@"c:\users\public\highscore.txt");
             }
             catch (FileNotFoundException)
             {
-                File.WriteAllText(pathString + @"\highscore.txt", "");
-                HighScore = File.ReadAllLines(pathString + @"\highscore.txt");
+                File.WriteAllText(@"c:\users\public\highscore.txt", "");
+                HighScore = File.ReadAllLines(@"c:\users\public\highscore.txt");
             }
 
             return HighScore;
@@ -95,7 +95,7 @@ namespace Hangman2
 
         public static void SaveHighScore(string[] highScoreList)
         {
-            File.WriteAllLines(pathString + @"\highscore.txt", highScoreList);
+            File.WriteAllLines(@"c:\users\public\highscore.txt", highScoreList);
         }
     }
 }
