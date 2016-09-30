@@ -118,7 +118,7 @@ namespace Hangman2
                         Console.WriteLine(Language.Languages[48]);
                         dictionary = File.ReadAllLines(FilesGenerator.PathString + @"\hard.txt");
                         wordGeneratorWord = dictionary[random.Next(dictionary.Length)].ToLower();
-                        playerLives = 2;
+                        playerLives = 3;
                         levelPoint = 400;
                         lifePoint = 200;
                         WordGenerator();
