@@ -74,10 +74,13 @@ namespace Hangman2
             Console.WriteLine("Highscore:");
             Console.WriteLine();
             string[] highScoreList = FilesGenerator.HighScoreCreator();
-            for (int i = 0; i < highScoreList.Length; i++)
 
+            int x = 0;
+            for (int i = 0; i < highScoreList.Length - 1; i++)
             {
-                Console.WriteLine(highScoreList[i]);
+                x++;
+                Console.WriteLine(x + ". " + highScoreList[i] + " - " + highScoreList[i + 1]);
+                i++;
             }
             Console.WriteLine("Tryck enter för att komma tillbaka till huvudmenyn");
             Console.ReadLine();
