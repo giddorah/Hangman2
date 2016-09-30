@@ -269,7 +269,7 @@ namespace Hangman2
 
         public static void EndGameChoices() // Om spelaren vunnit eller förlorat körs denna metod. - GAME
         {
-            Player.HighScore();
+            
             Console.WriteLine(Language.Languages[38]);
             bool korvLoopen = true;
             while (korvLoopen)

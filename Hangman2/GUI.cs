@@ -166,6 +166,7 @@ namespace Hangman2
         public static void WinGame() // Avslutar spelet beroende på hur spelaren presterat. - GAME
         {
             Console.WriteLine("{0} {1} ", Language.Languages[44], Player.Score);
+            Player.HighScore();
             Game.EndGameChoices();
         }
 
