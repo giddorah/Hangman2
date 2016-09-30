@@ -103,7 +103,7 @@ namespace Hangman2
             "Gissning:" + Environment.NewLine +
             "Hah, du gissa fel, kö igen!" + Environment.NewLine +
             "Du ha:" + Environment.NewLine +
-            " liv." + Environment.NewLine +
+            "liv." + Environment.NewLine +
             "Du dro en tjoffsmoff rätt uppi smet'n! Kö på!" + Environment.NewLine +
             "Orde du skulle tatt va" + Environment.NewLine +
             "Hörru, dra!" + Environment.NewLine +
@@ -161,7 +161,7 @@ namespace Hangman2
             "Enter guess:" + Environment.NewLine +
             "You guessed wrong, try again!" + Environment.NewLine +
             "You have:" + Environment.NewLine +
-            " lives left." + Environment.NewLine +
+            "lives left." + Environment.NewLine +
             "You guessed the right letter, keep doing that!" + Environment.NewLine +
             "The word you were looking for was" + Environment.NewLine +
             "Hey you, leave!" + Environment.NewLine +

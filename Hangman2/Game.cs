@@ -252,7 +252,7 @@ namespace Hangman2
 
                 Console.Write(Language.Languages[33]);
                 Console.ForegroundColor = ConsoleColor.Red; // Texten blir röd.
-                Console.Write(playerLives);
+                Console.Write(" " + playerLives + " ");
                 Console.ResetColor();
                 Console.WriteLine(Language.Languages[34]);
             }
