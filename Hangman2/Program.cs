@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Media;
+using System.Runtime.InteropServices;
+
 
 namespace Hangman2
 {
@@ -14,10 +17,11 @@ namespace Hangman2
         static void Main(string[] args)
         {
             FilesGenerator.FilesCreator();
-            Console.WriteLine("Skriv in namn:");
+            Menus.LanguageSelecion();
+            Console.Clear();
+            Console.WriteLine(Language.Languages[0]);
             Player.NameLengthController(Console.ReadLine());
             Menus.MainMenu();
-        
         }
 
         public static void Timer(double seconds)
@@ -33,6 +37,8 @@ namespace Hangman2
 
             }
         }
+
+
     }
 }
 

@@ -33,7 +33,7 @@ namespace Hangman2
                 }
                 else
                 {
-                    Console.WriteLine("Namnet måste vara mellan 3 och 25 bokstäver.");
+                    Console.WriteLine(Language.Languages[45]);
                     input = Console.ReadLine();
                 }
             } while (true);
